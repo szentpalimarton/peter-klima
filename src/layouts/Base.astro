@@ -12,6 +12,8 @@ interface Props {
 const { title, description, schema = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(withBase('/images/peter-kabala.jpg'), Astro.site);
+// A github.io-s demót ne indexeljék a keresők — csak a végleges domain rangsorolhat.
+const isDemo = import.meta.env.BASE_URL !== '/';
 ---
 
 <html lang="hu">
@@ -20,6 +22,7 @@ const ogImage = new URL(withBase('/images/peter-kabala.jpg'), Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {isDemo && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
