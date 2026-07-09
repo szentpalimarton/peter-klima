@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../consts';
+
+interface Props {
+  title: string;
+  description: string;
+  /** JSON-LD objektumok, oldalanként */
+  schema?: object[];
+}
+
+const { title, description, schema = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(withBase('/images/peter-kabala.jpg'), Astro.site);
+---
+
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="hu_HU" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    {schema.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={withBase('/')}>Péter<span class="dot"> ·</span> Napelem- és Klímatisztítás</a>
+        <a class="header-phone" href={PHONE_TEL} data-cta="call-header">📞 {PHONE_DISPLAY}</a>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 {BRAND} — Fejér megye</span>
+        <nav>
+          <a href={withBase('/impresszum/')}>Impresszum</a>
+          <a href={withBase('/adatkezeles/')}>Adatkezelés</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="call-bar">
+      <a class="btn btn-call" href={PHONE_TEL} data-cta="call-sticky">📞 Hívom: {PHONE_DISPLAY}</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { PHONE_DISPLAY, EMAIL } from '../consts';
+---
+
+<Base
+  title="Impresszum | Péter · Klíma- és Napelemtisztítás"
+  description="Impresszum — szolgáltatói adatok."
+>
+  <main class="legal">
+    <div class="wrap">
+      <h1>Impresszum</h1>
+      <p>
+        Az elektronikus kereskedelmi szolgáltatásokról szóló 2001. évi CVIII. törvény
+        alapján közzétett szolgáltatói adatok.
+      </p>
+      <ul>
+        <li><strong>Szolgáltató neve:</strong> <span class="placeholder">[KITÖLTENDŐ: hivatalos név / e.v.]</span></li>
+        <li><strong>Székhely:</strong> <span class="placeholder">[KITÖLTENDŐ: székhely címe]</span></li>
+        <li><strong>Nyilvántartási szám:</strong> <span class="placeholder">[KITÖLTENDŐ: e.v. nyilvántartási szám]</span></li>
+        <li><strong>Adószám:</strong> <span class="placeholder">[KITÖLTENDŐ: adószám]</span></li>
+        <li><strong>Telefon:</strong> {PHONE_DISPLAY}</li>
+        <li><strong>E-mail:</strong> {EMAIL}</li>
+        <li><strong>Tárhelyszolgáltató:</strong> <span class="placeholder">[KITÖLTENDŐ: pl. Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA]</span></li>
+      </ul>
+    </div>
+  </main>
+</Base>

@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import { EMAIL, PHONE_DISPLAY } from '../consts';
+---
+
+<Base
+  title="Adatkezelési tájékoztató | Péter · Klíma- és Napelemtisztítás"
+  description="Adatkezelési tájékoztató — hogyan kezeljük a kapcsolatfelvétel során megadott adatokat."
+>
+  <main class="legal">
+    <div class="wrap">
+      <h1>Adatkezelési tájékoztató</h1>
+      <p>Hatályos: <span class="placeholder">[KITÖLTENDŐ: dátum az élesítéskor]</span></p>
+
+      <h2>1. Az adatkezelő</h2>
+      <ul>
+        <li><strong>Név:</strong> <span class="placeholder">[KITÖLTENDŐ: hivatalos név]</span></li>
+        <li><strong>Elérhetőség:</strong> {PHONE_DISPLAY}, {EMAIL}</li>
+      </ul>
+
+      <h2>2. Milyen adatokat kezelünk és miért?</h2>
+      <p>
+        Ha telefonon vagy e-mailben felveszi velünk a kapcsolatot, az Ön által megadott
+        adatokat (név, telefonszám, e-mail-cím, a munkavégzés címe) kizárólag az
+        ajánlatadás, az időpont-egyeztetés és a munka elvégzése céljából kezeljük.
+        Az adatkezelés jogalapja a szerződés előkészítése és teljesítése
+        (GDPR 6. cikk (1) b) pont).
+      </p>
+
+      <h2>3. Meddig tároljuk az adatokat?</h2>
+      <p>
+        A kapcsolatfelvétel adatait az ügy lezárásáig, számlázás esetén a számviteli
+        törvény szerinti 8 évig őrizzük meg.
+      </p>
+
+      <h2>4. Kinek adjuk át az adatokat?</h2>
+      <p>
+        Az adatokat harmadik félnek nem adjuk át, kivéve a jogszabályi kötelezettségen
+        alapuló eseteket (pl. számlázás, könyvelés).
+      </p>
+
+      <h2>5. Az Ön jogai</h2>
+      <p>
+        Bármikor kérhet tájékoztatást az adatai kezeléséről, kérheti azok helyesbítését
+        vagy törlését a fenti elérhetőségeken. Panasszal a Nemzeti Adatvédelmi és
+        Információszabadság Hatósághoz (NAIH, naih.hu) fordulhat.
+      </p>
+
+      <h2>6. Sütik (cookie-k)</h2>
+      <p>
+        Az oldal jelenleg nem használ követő sütiket.
+        <span class="placeholder">[FRISSÍTENDŐ, ha analitika kerül az oldalra]</span>
+      </p>
+    </div>
+  </main>
+</Base>

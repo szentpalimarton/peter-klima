@@ -1,0 +1,266 @@
+---
+import Base from '../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, withBase } from '../consts';
+
+const title = 'Napelemtisztítás és klímatisztítás Fejér megyében — korrekt árakkal | Péter';
+const description =
+  'Napelemtisztítás Fejér megyében 35 000 Ft-tól — kíméletes, vegyszermentes panelmosás a teljes hozamért. Klímatisztítás és fertőtlenítés 15 000 Ft/beltéri egységtől. Hívjon: +36 20 495 4171.';
+
+const faq = [
+  {
+    q: 'Kell-e tisztítani a napelemet? Nem elég az eső?',
+    a: 'Az eső a laposabb dőlésszögű paneleken nem mossa le a rárakódott port, pollent és madárürüléket — sőt, a száradó esővíz koszcsíkokat is hagyhat. A szennyeződés jellemzően több százalékos hozamveszteséget okoz, erősen szennyezett panelnél ennél többet is, ezért évente 1–2 tisztítás ajánlott.',
+  },
+  {
+    q: 'Nem sérül a napelem a tisztítás közben?',
+    a: 'Szakszerű tisztításnál nem: lágy kefével, tiszta vízzel, vegyszer nélkül dolgozunk, így a panel felülete és bevonata nem sérül, és a gyártói garanciát sem veszélyezteti. Éppen a házilagos, nagynyomású vagy mosószeres tisztítás az, ami kárt tud okozni.',
+  },
+  {
+    q: 'Milyen gyakran kell klímát tisztíttatni?',
+    a: 'Évente egyszer ajánlott, ideálisan a nyári szezon előtt. Ha a klímát fűtésre is használja, vagy allergiás van a háztartásban, évente két tisztítás is indokolt lehet.',
+  },
+  {
+    q: 'Hogyan zajlik az időpont-egyeztetés?',
+    a: 'Hívjon a +36 20 495 4171-es számon, röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni. Fejér megye egész területén vállalunk munkát.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: BRAND,
+    description:
+      'Napelemtisztítás, klímatisztítás és klíma-fertőtlenítés Fejér megyében, átlátható árakkal.',
+    telephone: PHONE_E164,
+    email: EMAIL,
+    url: Astro.site?.toString(),
+    image: new URL(withBase('/images/peter-kabala.jpg'), Astro.site).toString(),
+    areaServed: { '@type': 'AdministrativeArea', name: AREA },
+    priceRange: '15 000 Ft – 80 000 Ft',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Szolgáltatások',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: 'Napelemtisztítás' },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: 35000,
+            priceCurrency: 'HUF',
+            description: '1–10 panel',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: 'Klímatisztítás és fertőtlenítés' },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: 15000,
+            priceCurrency: 'HUF',
+            description: '1 beltéri egység',
+          },
+        },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Fejér megye egész területén</span>
+        <h1>Tiszta napelem, teljes hozam</h1>
+        <p class="lead">
+          Kíméletes, vegyszermentes napelemtisztítás, hogy a rendszere annyit termeljen,
+          amennyit tud — és klímatisztítás fertőtlenítéssel a friss, egészséges levegőért.
+          Előre kimondott árak, gyors időpont-egyeztetés.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-call" href={PHONE_TEL} data-cta="call-hero">📞 {PHONE_DISPLAY}</a>
+          <a class="btn btn-ghost" href="#arak">Áraink</a>
+        </div>
+        <ul class="chips">
+          <li>Kíméletes, karcmentes panelmosás</li>
+          <li>Átlátható árlista</li>
+          <li>Klíma fertőtlenítéssel</li>
+        </ul>
+      </div>
+      <img
+        class="hero-img"
+        src={withBase('/images/peter-kabala.jpg')}
+        alt="Rajzolt figura Péterről: kezében napelemtisztító kefe, mögötte napelemek és egy klíma kültéri egység"
+        width="1200"
+        height="899"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
+  <!-- Szolgáltatások -->
+  <section class="section tint" id="szolgaltatasok">
+    <div class="wrap">
+      <span class="kicker">Szolgáltatások</span>
+      <h2>Mit vállalunk?</h2>
+      <div class="cards">
+        <article class="card solar">
+          <h3>Napelemtisztítás</h3>
+          <ul>
+            <li>Kíméletes, karcmentes mosás lágy kefével és tiszta vízzel</li>
+            <li>Por, pollen, madárürülék és mezőgazdasági szennyeződés eltávolítása</li>
+            <li>Vegyszer nélkül — a panel bevonatát és a garanciát nem veszélyezteti</li>
+          </ul>
+          <p>
+            A rárakódott szennyeződés csökkenti a termelést — a laposabb szögben szerelt
+            vagy mezőgazdasági környezetben lévő paneleknél ez különösen érezhető.
+            A tisztítás visszaadja a rendszer teljes hozamát.
+          </p>
+          <span class="freq">Évente 1–2 alkalom — tavasszal, pollenszezon után a legjobb</span>
+        </article>
+        <article class="card">
+          <h3>Klímatisztítás és fertőtlenítés</h3>
+          <ul>
+            <li>A beltéri egység teljes tisztítása: hőcserélő, ventilátor, csepptálca</li>
+            <li>Fertőtlenítés a gombák, baktériumok és a kellemetlen szagok ellen</li>
+            <li>Kondenzvíz-elvezetés ellenőrzése, próbaüzem</li>
+          </ul>
+          <p>
+            A tisztítatlan klíma nemcsak büdös: allergén szennyeződéseket fúj a szobába,
+            és többet is fogyaszt, mert a koszos hőcserélővel nehezebben dolgozik.
+          </p>
+          <span class="freq">Évente ajánlott — ideálisan a nyári szezon előtt</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Árak -->
+  <section class="section" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Átlátható árak — nincs meglepetés</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+        </div>
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Miért mi -->
+  <section class="section tint" id="miert">
+    <div class="wrap">
+      <span class="kicker">Miért minket hívjon?</span>
+      <h2>Helyi szakember, egyenes beszéd</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Helyben vagyunk</h3>
+          <p>Fejér megye egész területére megyünk — Székesfehérvártól Dunaújvárosig.</p>
+        </div>
+        <div class="why-item">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Előre kimondott ár</h3>
+          <p>Az árlista nyilvános, a telefonban megbeszélt ár nem változik a helyszínen.</p>
+        </div>
+        <div class="why-item">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Gyors egyeztetés</h3>
+          <p>Egy telefon, és már tudja is az időpontot — nincs e-mail-pingpong.</p>
+        </div>
+        <div class="why-item">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h3>Gondos munka</h3>
+          <p>Kíméletes eszközök, alapos fertőtlenítés, rend a munkaterületen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GYIK -->
+  <section class="section" id="gyik">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Amit a legtöbben kérdeznek</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Kapcsolat -->
+  <section class="section" id="kapcsolat">
+    <div class="wrap">
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div>
+            <span class="kicker">Kapcsolat</span>
+            <h2>Hívjon, és megbeszéljük</h2>
+            <a class="contact-phone" href={PHONE_TEL} data-cta="call-contact">{PHONE_DISPLAY}</a>
+            <p>
+              E-mail: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+            </p>
+            <a class="btn btn-call" href={PHONE_TEL} data-cta="call-contact-btn">📞 Hívom most</a>
+          </div>
+          <div>
+            <h3>Hova megyünk ki?</h3>
+            <p>
+              Fejér megye egész területére: Székesfehérvár, Dunaújváros, Mór, Bicske,
+              Gárdony és a Velencei-tó környéke, Sárbogárd — és a köztük lévő településekre is.
+            </p>
+            <p>
+              Ha nem biztos benne, hogy Önhöz is kimegyünk-e: hívjon, egy perc alatt kiderül.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
