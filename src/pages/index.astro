@@ -4,7 +4,7 @@ import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, withBase } fr
 
 const title = 'Napelemtisztítás és klímatisztítás Fejér megyében — korrekt árakkal | Péter';
 const description =
-  'Napelemtisztítás Fejér megyében 35 000 Ft-tól — kíméletes, vegyszermentes panelmosás a teljes hozamért. Klímatisztítás és fertőtlenítés 15 000 Ft/beltéri egységtől. Hívjon: +36 20 495 4171.';
+  'Napelemtisztítás Székesfehérváron és Fejér megyében 35 000 Ft-tól — kíméletes, vegyszermentes panelmosás a teljes hozamért. Klímatisztítás és fertőtlenítés 15 000 Ft/beltéri egységtől. Számlaképes szolgáltatás. Hívjon: +36 20 495 4171.';
 
 const faq = [
   {
@@ -20,8 +20,12 @@ const faq = [
     a: 'Évente egyszer ajánlott, ideálisan a nyári szezon előtt. Ha a klímát fűtésre is használja, vagy allergiás van a háztartásban, évente két tisztítás is indokolt lehet.',
   },
   {
+    q: 'Kapok számlát? Cégeknek is dolgoznak?',
+    a: 'Igen, számlaképes szolgáltatás — a munkáról számlát adunk. Lakossági és céges ügyfeleket egyaránt kiszolgálunk.',
+  },
+  {
     q: 'Hogyan zajlik az időpont-egyeztetés?',
-    a: 'Hívjon a +36 20 495 4171-es számon, röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni. Fejér megye egész területén vállalunk munkát.',
+    a: 'Hívjon a +36 20 495 4171-es számon, vagy írjon üzenetet — röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni. Székesfehérváron, környékén és Fejér megye egész területén vállalunk munkát.',
   },
 ];
 
@@ -36,7 +40,10 @@ const schema = [
     email: EMAIL,
     url: Astro.site?.toString(),
     image: new URL(withBase('/images/peter-kabala.jpg'), Astro.site).toString(),
-    areaServed: { '@type': 'AdministrativeArea', name: AREA },
+    areaServed: [
+      { '@type': 'City', name: 'Székesfehérvár' },
+      { '@type': 'AdministrativeArea', name: AREA },
+    ],
     priceRange: '15 000 Ft – 80 000 Ft',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -82,7 +89,7 @@ const schema = [
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="kicker">Fejér megye egész területén</span>
+        <span class="kicker">Székesfehérvár és környéke · Fejér megye</span>
         <h1>Tiszta napelem, teljes hozam</h1>
         <p class="lead">
           Kíméletes, vegyszermentes napelemtisztítás, hogy a rendszere annyit termeljen,
@@ -97,6 +104,7 @@ const schema = [
           <li>Kíméletes, karcmentes panelmosás</li>
           <li>Átlátható árlista</li>
           <li>Klíma fertőtlenítéssel</li>
+          <li>Számlaképes szolgáltatás</li>
         </ul>
       </div>
       <img
@@ -178,6 +186,12 @@ const schema = [
           <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
         </div>
       </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés magassága állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk.
+      </p>
     </div>
   </section>
 
@@ -244,6 +258,7 @@ const schema = [
             <span class="kicker">Kapcsolat</span>
             <h2>Hívjon, és megbeszéljük</h2>
             <a class="contact-phone" href={PHONE_TEL} data-cta="call-contact">{PHONE_DISPLAY}</a>
+            <p>Kérjen időpontot telefonon vagy üzenetben — ahogy Önnek kényelmesebb.</p>
             <p>
               E-mail: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </p>
@@ -252,10 +267,12 @@ const schema = [
           <div>
             <h3>Hova megyünk ki?</h3>
             <p>
-              Fejér megye egész területére: Székesfehérvár, Dunaújváros, Mór, Bicske,
-              Gárdony és a Velencei-tó környéke, Sárbogárd — és a köztük lévő településekre is.
+              Elsősorban Székesfehérvárra és környékére, de Fejér megye egész területén
+              vállalunk munkát: Dunaújváros, Mór, Bicske, Gárdony és a Velencei-tó környéke,
+              Sárbogárd — és a köztük lévő települések is.
             </p>
             <p>
+              Lakossági és céges ügyfeleket egyaránt kiszolgálunk, számlaképes szolgáltatással.
               Ha nem biztos benne, hogy Önhöz is kimegyünk-e: hívjon, egy perc alatt kiderül.
             </p>
           </div>

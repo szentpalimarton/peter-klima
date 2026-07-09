@@ -251,6 +251,11 @@ img { max-width: 100%; height: auto; display: block; }
   white-space: nowrap;
 }
 .price-note { font-size: 0.94rem; margin-top: 0.8rem; margin-bottom: 0; }
+.price-disclaimer {
+  font-size: 0.88rem;
+  color: var(--muted, #56707c);
+  margin-top: 1.25rem;
+}
 
 /* Why us */
 .why-grid {
