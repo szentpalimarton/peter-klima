@@ -33,9 +33,10 @@ Done:
    Fill every `[KITÖLTENDŐ]` in `src/pages/impresszum.astro` and `adatkezeles.astro`.
 3. **Photos**: the hero and OG image is `public/images/peter-kabala.jpg` — an approved
    AI caricature of Péter (recognizable likeness, "Péter" on the shirt, brush + panels +
-   AC unit; deliberately no chemical bottle, matching the vegyszermentes claim). This is
-   the permanent brand character. Real photos are still wanted for GBP and future
-   before/after sections (10–15 pics briefed in the project plan). Keep files ≤ 200 KB.
+   AC unit; deliberately no chemical bottle — they clean with filtered, pH-neutral water
+   only, no chemicals claim must stay consistent). Real job photos live in the "Munkáink"
+   gallery (`napelem-*.jpg`, `klima-*.jpg`, sourced from ~/Documents/OP_képek). More are
+   welcome for GBP and future before/after pairs. Keep files ≤ 250 KB.
 4. **Google Business Profile**: create as service-area business, same name/phone as the site.
 
 ## Phase 2 backlog (see project plan §4–§8)

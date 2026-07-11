@@ -4,20 +4,20 @@ import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, withBase } fr
 
 const title = 'Napelemtisztítás és klímatisztítás Fejér megyében — korrekt árakkal | Péter';
 const description =
-  'Napelemtisztítás Székesfehérváron és Fejér megyében 35 000 Ft-tól — kíméletes, vegyszermentes panelmosás a teljes hozamért. Klímatisztítás és fertőtlenítés 15 000 Ft/beltéri egységtől. Számlaképes szolgáltatás. Hívjon: +36 20 495 4171.';
+  'Napelemtisztítás Székesfehérváron és Fejér megyében 35 000 Ft-tól — kíméletes panelmosás szűrt, pH-semleges vízzel, szennyezettségtől függően akár 15–20% teljesítménynövekedés. Klímatisztítás és fertőtlenítés 15 000 Ft-tól. Hívjon: +36 20 495 4171.';
 
 const faq = [
   {
     q: 'Kell-e tisztítani a napelemet? Nem elég az eső?',
-    a: 'Az eső a laposabb dőlésszögű paneleken nem mossa le a rárakódott port, pollent és madárürüléket — sőt, a száradó esővíz koszcsíkokat is hagyhat. A szennyeződés jellemzően több százalékos hozamveszteséget okoz, erősen szennyezett panelnél ennél többet is, ezért évente 1–2 tisztítás ajánlott.',
+    a: 'Az eső a laposabb dőlésszögű paneleken nem mossa le a rárakódott port, pollent és madárürüléket — sőt, a száradó esővíz koszcsíkokat is hagyhat. A tisztítással a szennyezettségtől függően akár 15–20% teljesítménynövekedés érhető el, ezért évente egy tisztítás ajánlott, ideálisan tavasszal, a pollenszezon után.',
   },
   {
     q: 'Nem sérül a napelem a tisztítás közben?',
-    a: 'Szakszerű tisztításnál nem: lágy kefével, tiszta vízzel, vegyszer nélkül dolgozunk, így a panel felülete és bevonata nem sérül, és a gyártói garanciát sem veszélyezteti. Éppen a házilagos, nagynyomású vagy mosószeres tisztítás az, ami kárt tud okozni.',
+    a: 'Szakszerű tisztításnál nem: lágy kefével és szűrt, pH-semleges vízzel dolgozunk, így a panel felülete és bevonata nem sérül, és a gyártói garanciát sem veszélyezteti. Éppen a házilagos, nagynyomású vagy mosószeres tisztítás az, ami kárt tud okozni.',
   },
   {
     q: 'Milyen gyakran kell klímát tisztíttatni?',
-    a: 'Évente egyszer ajánlott, ideálisan a nyári szezon előtt. Ha a klímát fűtésre is használja, vagy allergiás van a háztartásban, évente két tisztítás is indokolt lehet.',
+    a: 'Évente 1–2 alkalommal ajánlott: mindenképp a nyári hűtési szezon előtt, fűtésre is használt készüléknél pedig ősszel is. Allergiásoknál különösen fontos a rendszeres tisztítás.',
   },
   {
     q: 'Kapok számlát? Cégeknek is dolgoznak?',
@@ -92,9 +92,9 @@ const schema = [
         <span class="kicker">Székesfehérvár és környéke · Fejér megye</span>
         <h1>Tiszta napelem, teljes hozam</h1>
         <p class="lead">
-          Kíméletes, vegyszermentes napelemtisztítás, hogy a rendszere annyit termeljen,
-          amennyit tud — és klímatisztítás fertőtlenítéssel a friss, egészséges levegőért.
-          Előre kimondott árak, gyors időpont-egyeztetés.
+          Kíméletes napelemtisztítás szűrt, pH-semleges vízzel, hogy a rendszere annyit
+          termeljen, amennyit tud — és klímatisztítás fertőtlenítéssel a friss, egészséges
+          levegőért. Előre kimondott árak, gyors időpont-egyeztetés.
         </p>
         <div class="hero-cta">
           <a class="btn btn-call" href={PHONE_TEL} data-cta="call-hero">📞 {PHONE_DISPLAY}</a>
@@ -127,16 +127,17 @@ const schema = [
         <article class="card solar">
           <h3>Napelemtisztítás</h3>
           <ul>
-            <li>Kíméletes, karcmentes mosás lágy kefével és tiszta vízzel</li>
+            <li>Kíméletes, karcmentes mosás lágy kefével és szűrt, pH-semleges vízzel</li>
             <li>Por, pollen, madárürülék és mezőgazdasági szennyeződés eltávolítása</li>
-            <li>Vegyszer nélkül — a panel bevonatát és a garanciát nem veszélyezteti</li>
+            <li>A panel bevonatát és a gyártói garanciát nem veszélyezteti</li>
           </ul>
           <p>
             A rárakódott szennyeződés csökkenti a termelést — a laposabb szögben szerelt
             vagy mezőgazdasági környezetben lévő paneleknél ez különösen érezhető.
-            A tisztítás visszaadja a rendszer teljes hozamát.
+            A tisztítással szennyezettségtől függően akár 15–20% teljesítménynövekedés
+            érhető el.
           </p>
-          <span class="freq">Évente 1–2 alkalom — tavasszal, pollenszezon után a legjobb</span>
+          <span class="freq">Évente ajánlott — tavasszal, pollenszezon után a legjobb</span>
         </article>
         <article class="card">
           <h3>Klímatisztítás és fertőtlenítés</h3>
@@ -149,7 +150,7 @@ const schema = [
             A tisztítatlan klíma nemcsak büdös: allergén szennyeződéseket fúj a szobába,
             és többet is fogyaszt, mert a koszos hőcserélővel nehezebben dolgozik.
           </p>
-          <span class="freq">Évente ajánlott — ideálisan a nyári szezon előtt</span>
+          <span class="freq">Évente 1–2 alkalom — a hűtési szezon előtt, fűtésnél ősszel is</span>
         </article>
       </div>
     </div>
@@ -233,8 +234,58 @@ const schema = [
     </div>
   </section>
 
+  <!-- Munkáink -->
+  <section class="section" id="munkaink">
+    <div class="wrap">
+      <span class="kicker">Munkáink</span>
+      <h2>Így dolgozunk — képekben</h2>
+      <div class="gallery">
+        <figure>
+          <img
+            src={withBase('/images/napelem-tisztitas-kozben.jpg')}
+            alt="Napelemtisztítás munka közben: lágy kefe a panelsoron"
+            width="1200"
+            height="900"
+            loading="lazy"
+          />
+          <figcaption>Napelemtisztítás munka közben — lágy kefe, szűrt, pH-semleges víz</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={withBase('/images/napelem-tisztan.jpg')}
+            alt="Frissen tisztított, ragyogó napelemsor a tetőn"
+            width="1200"
+            height="900"
+            loading="lazy"
+          />
+          <figcaption>A végeredmény: ragyogó panelek, teljes hozamon</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={withBase('/images/klima-hocserelo-koszos.jpg')}
+            alt="Erősen szennyezett klíma hőcserélő közelről, tisztítás előtt"
+            width="1200"
+            height="900"
+            loading="lazy"
+          />
+          <figcaption>Ez rakódik le a klíma hőcserélőjén — ezt fújná a levegőbe tisztítás nélkül</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={withBase('/images/klima-melytisztitas.jpg')}
+            alt="Szétszerelt klíma beltéri egység mélytisztítás közben, letakart környezetben"
+            width="1200"
+            height="900"
+            loading="lazy"
+          />
+          <figcaption>Mélytisztítás szétszerelve — letakart, védett környezetben</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- GYIK -->
-  <section class="section" id="gyik">
+  <section class="section tint" id="gyik">
     <div class="wrap">
       <span class="kicker">Gyakori kérdések</span>
       <h2>Amit a legtöbben kérdeznek</h2>

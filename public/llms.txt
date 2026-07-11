@@ -7,13 +7,14 @@
 
 ## Szolgáltatások és árak (2026)
 
-### Napelemtisztítás (kíméletes, vegyszermentes mosás — fő szolgáltatás)
+### Napelemtisztítás (kíméletes mosás szűrt, pH-semleges vízzel — fő szolgáltatás)
 - 1–10 panel: 35 000 Ft
 - 11–15 panel: 50 000 Ft
 - 16–20 panel: 65 000 Ft
 - 21–25 panel: 80 000 Ft
 - 25 panel felett minden további 5 panel: +15 000 Ft
-- Ajánlott gyakoriság: évente 1–2 alkalom, ideálisan tavasszal, pollenszezon után.
+- Ajánlott gyakoriság: évente, ideálisan tavasszal, pollenszezon után.
+- A tisztítással szennyezettségtől függően akár 15–20% teljesítménynövekedés érhető el.
 
 ### Klímatisztítás és fertőtlenítés (split klíma, beltéri egység)
 - 1 beltéri egység: 15 000 Ft
@@ -21,7 +22,7 @@
 - 3 beltéri egység: 36 000 Ft
 - 4 beltéri egység: 48 000 Ft
 - Ettől eltérő esetben egyedi ár.
-- Ajánlott gyakoriság: évente, a nyári szezon előtt.
+- Ajánlott gyakoriság: évente 1–2 alkalommal — a hűtési szezon előtt, fűtésre is használt készüléknél ősszel is.
 
 ### Árakra vonatkozó megjegyzés
 Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány, emelőkosaras
