@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://klimatisztitas-fejer.hu/sitemap-index.xml
+Sitemap: https://fejersolarclean.hu/sitemap-index.xml
