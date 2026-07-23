@@ -1,0 +1,234 @@
+---
+import Base from '../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, withBase } from '../consts';
+
+const title = 'Napelemtisztítás Székesfehérváron és Fejér megyében | Péter';
+const description =
+  'Kíméletes napelemtisztítás pH-semleges vízzel Székesfehérváron és Fejér megyében. Akár 15–20% többlet-termelés, előre kalkulálható ár 35 000 Ft-tól.';
+
+const homeUrl = withBase('/');
+const pageUrl = new URL(withBase('/napelem-tisztitas/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Kell-e tisztítani a napelemet? Nem elég az eső?',
+    a: 'Az eső önmagában nem elég, főleg a laposabb dőlésszögű paneleknél: nem mossa le a rárakódott port, pollent és madárürüléket, sőt a száradó esővíz koszcsíkokat is hagyhat. A Google 2009-es mérésén a csak eső által tisztított panelek 12%-kal kevesebbet termeltek, mint a szakszerűen tisztítottak. Ezért évente egy tisztítás ajánlott.',
+  },
+  {
+    q: 'Mennyivel termel többet egy tiszta napelem?',
+    a: 'A szennyezettségtől és az elrendezéstől függ. Tapasztalatunk szerint jellemzően akár 15–20% teljesítménynövekedés is elérhető; erősen szennyezett vagy lapos szögű paneleknél még több. A számokról és a forrásokról külön cikkben írtunk részletesen.',
+  },
+  {
+    q: 'Nem sérül a napelem a tisztítás közben?',
+    a: 'Szakszerű tisztításnál nem: lágy kefével és szűrt, pH-semleges vízzel dolgozunk, így a panel felülete és bevonata nem sérül, és a gyártói garanciát sem veszélyezteti. Éppen a házilagos, nagynyomású vagy mosószeres tisztítás az, ami kárt tud okozni.',
+  },
+  {
+    q: 'Tűző napon is lehet napelemet tisztítani?',
+    a: 'Nem ajánlott: a felforrósodott panel a hidegebb víztől hősokkot kaphat, és az üvege elpattanhat. Ezért a tisztítást kora reggel, késő délután vagy borult időben végezzük — így a panel biztonságban van, és a víz sem szárad rá foltosan.',
+  },
+  {
+    q: 'Milyen gyakran érdemes napelemet tisztíttatni?',
+    a: 'Évente egyszer általában elég, ideálisan tavasszal, a pollenszezon után. Mezőgazdasági környezetben, sok madár vagy erős porterhelés esetén évente két alkalom is indokolt lehet.',
+  },
+  {
+    q: 'Mennyibe kerül a napelemtisztítás?',
+    a: '1–10 panel 35 000 Ft, 11–15 panel 50 000 Ft, 16–20 panel 65 000 Ft, 21–25 panel 80 000 Ft; 25 panel felett minden további 5 panel +15 000 Ft. Az ár normál körülmények között érvényes; állvány vagy emelőkosár szükségessége esetén azt előre egyeztetjük.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás',
+    name: 'Napelemtisztítás Székesfehérváron és Fejér megyében',
+    description:
+      'Kíméletes, karcmentes napelemtisztítás szűrt, pH-semleges vízzel, lakossági és céges ügyfeleknek.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Székesfehérvár' },
+      { '@type': 'AdministrativeArea', name: AREA },
+    ],
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'HUF',
+      price: 35000,
+      description: '1–10 panel',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Napelemtisztítás', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › Napelemtisztítás</nav>
+      <span class="kicker">Székesfehérvár és környéke · Fejér megye</span>
+      <h1>Napelemtisztítás — hogy a rendszere annyit termeljen, amennyit tud</h1>
+      <p class="lead">
+        Kíméletes, karcmentes panelmosás szűrt, pH-semleges vízzel. A rárakódott por,
+        pollen és madárürülék évi több százalék termelést vihet el — a tisztítás ezt adja
+        vissza. Előre kalkulálható ár, gyors időpont-egyeztetés, számlaképes szolgáltatás.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-napelem-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Miért fontos a napelemtisztítás?</h2>
+      <p>
+        A napelem akkor termel a legtöbbet, ha tiszta a felülete. A rárakódó por, pollen,
+        madárürülék és — Fejér megyében különösen — a mezőgazdasági por csökkenti a
+        fényáteresztést, így a rendszer kevesebb áramot ad. A veszteség mértéke a
+        szennyezettségtől és a panelek dőlésszögétől függ, de nem elhanyagolható:
+      </p>
+
+      <div class="stat solar">
+        <span class="big">A lapos panelek tisztítása után a termelés megduplázódott</span>
+        <p>
+          A Google 2009-es, Mountain View-i napelemes projektjén a 15 hónapig nem tisztított,
+          lapos panelek termelése a tisztítás után a kétszeresére nőtt. A megdöntött
+          paneleknél az eső nagyrészt elvégezte a munkát — de a csak eső által „mosott”
+          panelek így is 12%-kal kevesebbet termeltek, mint a szakszerűen tisztítottak.
+        </p>
+        <span class="src">Forrás: Google, 2009 (Mountain View napelemes projekt)</span>
+      </div>
+
+      <div class="stat">
+        <span class="big">Jellemzően ~5%, de akár 10–15%+ éves veszteség</span>
+        <p>
+          Az amerikai NREL (nemzeti megújulóenergia-labor) mérései szerint az éves
+          szennyeződési veszteség tipikusan 5% körüli, de a helytől és az elrendezéstől
+          függően ennél lényegesen több is lehet — poros, mezőgazdasági környezetben vagy
+          lapos szögű paneleknél különösen.
+        </p>
+        <span class="src">Forrás: NREL / PV-szakirodalom</span>
+      </div>
+
+      <p>
+        A saját tapasztalatunk ezt megerősíti: a szennyezettségtől függően a tisztítás
+        után <strong>akár 15–20% teljesítménynövekedés</strong> is elérhető. Ez egy tipikus
+        háztartási rendszernél évi több ezer–tízezer forintnyi megtermelt áramot jelent —
+        a tisztítás sok esetben megtérül.
+      </p>
+
+      <a class="crosslink" href={withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/')}>
+        <span class="k">Tudástár · részletes számítás</span>
+        Mennyivel termel többet a tiszta napelem? — konkrét számok, források és egy forintos
+        példa <span class="arw">→</span>
+      </a>
+
+      <h2>Hogyan tisztítunk?</h2>
+      <p>
+        A módszerünk kifejezetten kíméletes — a lényeg, hogy a panel felülete és a bevonata
+        ne sérüljön:
+      </p>
+      <ul>
+        <li><strong>Szűrt, pH-semleges víz</strong> és <strong>lágy kefe</strong> — vegyszer és mosószer nélkül, így a bevonat és a gyártói garancia is épségben marad.</li>
+        <li>Por, pollen, madárürülék és mezőgazdasági lerakódás eltávolítása a teljes panelsorról.</li>
+        <li><strong>Nem tűző napon dolgozunk</strong> — a forró üveg a hidegebb víztől elpattanhat, ezért kora reggel, késő délután vagy borult időben tisztítunk. Így folt sem szárad a panelre.</li>
+        <li>Óvatos munka a tetőn, rend a munkaterületen.</li>
+      </ul>
+      <p>
+        Éppen ezért nem érdemes házilag, nagynyomású mosóval vagy mosószerrel próbálkozni:
+        ezek karcolhatják vagy repeszthetik a panelt, és a garanciát is veszélyeztethetik.
+      </p>
+
+      <h2>Milyen gyakran érdemes?</h2>
+      <p>
+        A legtöbb rendszernél <strong>évente egy tisztítás</strong> elegendő, ideálisan
+        tavasszal, a pollenszezon után. Mezőgazdasági környezetben, sok madár vagy erős
+        porterhelés esetén évente kettő is indokolt lehet. Ha bizonytalan, hívjon —
+        megmondjuk, mi éri meg a maga esetében.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Napelemtisztítás árai</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés magassága állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="gyik">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Napelemtisztítás — gyakori kérdések</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot</h2>
+        <p>Mondja meg, hány panelről van szó, és máris egyeztetünk egy időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-napelem-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-napelem-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <div class="sources">
+        <h2>Források</h2>
+        <ol>
+          <li>Google napelemes projekt (Mountain View, 2009) — a lapos panelek tisztításának hatása a termelésre. Áttekintés: <a href="https://en.wikipedia.org/wiki/Mountain_View_Solar_Energy_Project" rel="nofollow">Mountain View Solar Energy Project</a>.</li>
+          <li>NREL / PV-szakirodalom a szennyeződési (soiling) veszteségekről: <a href="https://www.pv-magazine.com/2023/03/02/guide-to-understanding-solar-production-losses/" rel="nofollow">Guide to understanding solar production losses, pv magazine</a>.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</Base>

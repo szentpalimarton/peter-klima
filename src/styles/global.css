@@ -416,3 +416,83 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 600;
   color: var(--amber);
 }
+
+/* Header nav (desktop) */
+.site-nav { display: none; }
+@media (min-width: 780px) {
+  .site-nav { display: flex; gap: 1.35rem; align-items: center; margin-left: auto; margin-right: 1.4rem; }
+}
+.site-nav a {
+  color: var(--ink); text-decoration: none; font-size: 0.95rem; font-weight: 600;
+}
+.site-nav a:hover { color: var(--blue); }
+
+/* Subpage hero + breadcrumb */
+.page-hero { padding: 2.4rem 0 0.5rem; }
+.breadcrumb { font-size: 0.85rem; color: #64798a; margin-bottom: 0.7rem; }
+.breadcrumb a { color: #64798a; text-decoration: none; }
+.breadcrumb a:hover { color: var(--blue); text-decoration: underline; }
+
+/* Article / long-form prose */
+.prose { max-width: 44rem; }
+.prose > p, .prose > ul, .prose > ol { font-size: 1.06rem; }
+.prose h2 { margin-top: 2.4rem; }
+.prose h3 { margin-top: 1.7rem; font-size: 1.15rem; }
+.lede { font-size: 1.2rem; color: var(--ink); font-weight: 500; }
+
+/* Sourced-statistic callout */
+.stat {
+  background: var(--blue-soft);
+  border-left: 4px solid var(--blue);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1.4rem 0;
+}
+.stat.solar { background: var(--amber-soft); border-left-color: var(--amber); }
+.stat .big {
+  display: block; font-size: 1.35rem; font-weight: 780; color: var(--ink);
+  line-height: 1.25; margin-bottom: 0.25rem;
+}
+.stat .src { display: block; font-size: 0.82rem; color: #64798a; margin-top: 0.5rem; }
+.stat p { margin: 0.3rem 0 0; }
+
+/* Cross-link card (related content) */
+.crosslink {
+  display: block; background: var(--mist); border: 1px solid var(--line);
+  border-radius: 12px; padding: 1rem 1.25rem; margin: 1.5rem 0;
+  text-decoration: none; color: var(--ink);
+}
+.crosslink:hover { border-color: var(--blue); }
+.crosslink .k {
+  display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.11em;
+  color: var(--blue); font-weight: 700; margin-bottom: 0.2rem;
+}
+.crosslink .arw { color: var(--blue); }
+
+/* Sources block */
+.sources { border-top: 1px solid var(--line); margin-top: 2.6rem; padding-top: 1.3rem; }
+.sources h2 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.sources ol { color: #64798a; font-size: 0.9rem; padding-left: 1.2rem; }
+.sources a { color: var(--blue-deep); }
+
+/* Compact CTA band for subpages */
+.cta-band {
+  background: var(--ink); color: #cfdde6; border-radius: 20px;
+  padding: 2.2rem 2rem; margin-top: 2.6rem; text-align: center;
+}
+.cta-band h2 { color: #fff; margin-top: 0; }
+.cta-band p { margin: 0.4rem 0 1.1rem; }
+.cta-band .contact-phone {
+  font-family: 'Archivo Variable', sans-serif; font-size: clamp(1.5rem, 5vw, 2.1rem);
+  font-weight: 780; font-variant-numeric: tabular-nums; text-decoration: none;
+  color: #fff; display: inline-block; margin-bottom: 0.8rem;
+}
+.cta-band .btn-call { }
+
+/* "Details" link on service cards */
+.card .more {
+  display: inline-block; margin-top: 0.9rem; font-weight: 700; text-decoration: none;
+  color: var(--blue-deep);
+}
+.card.solar .more { color: var(--amber); }
+.card .more:hover { text-decoration: underline; }

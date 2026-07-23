@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Mennyivel termel többet a tiszta napelem? — számok és források | Péter';
+const description =
+  'Mennyivel termel többet egy tiszta napelem? A szennyezettségtől függően jellemzően néhány %-tól akár 15–20%-ig. Konkrét számok, források és egy forintos példa.';
+
+const homeUrl = withBase('/');
+const tudastarUrl = withBase('/tudastar/');
+const pageUrl = new URL(withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/'), Astro.site).toString();
+const napelemUrl = withBase('/napelem-tisztitas/');
+const ogImg = new URL(withBase('/images/napelem-tisztitas-kozben.jpg'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Nem mossa le az eső a napelemet?',
+    a: 'Nem eléggé, főleg a laposabb dőlésszögű paneleken. A Google 2009-es mérésén a csak eső által tisztított panelek 12%-kal kevesebbet termeltek, mint a szakszerűen tisztítottak; a lapos paneleknél a tisztítás után a termelés megduplázódott.',
+  },
+  {
+    q: 'Mennyivel termel többet egy tiszta napelem?',
+    a: 'A szennyezettségtől és a panelek szögétől függően jellemzően néhány százaléktól akár 15–20%-ig, erősen szennyezett vagy lapos elrendezésnél még többel. Az NREL mérései szerint az éves szennyeződési veszteség tipikusan 5% körüli, de a helytől függően ennél lényegesen nagyobb is lehet.',
+  },
+  {
+    q: 'Megéri egyáltalán napelemet tisztíttatni?',
+    a: 'A legtöbb esetben igen. Egy tipikus háztartási rendszernél a visszanyert termelés évi több ezer–tízezer forint, így a tisztítás sok esetben egy-két szezon alatt megtérül — erősen szennyezett paneleknél hamarabb.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Mennyivel termel többet a tiszta napelem?',
+    description,
+    image: ogImg,
+    datePublished: '2026-07-15',
+    dateModified: '2026-07-15',
+    inLanguage: 'hu',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND },
+    mainEntityOfPage: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Tudástár', item: new URL(withBase('/tudastar/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Mennyivel termel többet a tiszta napelem?', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={tudastarUrl}>Tudástár</a> › Mennyivel termel többet a tiszta napelem?</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Mennyivel termel többet a tiszta napelem?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <p class="lede">
+        A szennyeződéstől és a panelek szögétől függően jellemzően néhány százaléktól
+        <strong>akár 15–20%-ig</strong> — erősen szennyezett vagy lapos szögű paneleknél
+        még ennél is többel. Egy tipikus háztartási rendszernél ez évi több ezer–tízezer
+        forintnyi extra megtermelt áramot jelent.
+      </p>
+      <p>
+        A napelem üvegére rárakódó por, pollen, madárürülék és mezőgazdasági szennyeződés
+        csökkenti a fényáteresztést, így a rendszer kevesebbet termel. Nézzük, mit mutatnak
+        a mérések — és mennyit ér ez forintban.
+      </p>
+
+      <h2>Nem mossa le az eső?</h2>
+      <p>
+        Sokan gondolják, hogy az eső elvégzi a munkát. A valóság árnyaltabb: a
+        <strong>megdöntött</strong> paneleket az eső nagyrészt tisztán tartja, a
+        <strong>lapos</strong> elrendezésnél viszont nem — ott a víz megáll, beszárad, és
+        koszcsíkokat hagy.
+      </p>
+      <div class="stat solar">
+        <span class="big">Lapos paneleknél a tisztítás megduplázta a termelést</span>
+        <p>
+          A Google 2009-ben, Mountain View-i naperőművén 15 hónapig nem tisztított lapos
+          paneleket vizsgált: a tisztítás után a termelésük a kétszeresére ugrott. A
+          megdöntött paneleknél az eső sokat segített — de a csak eső által „mosott" panelek
+          így is <strong>12%-kal kevesebbet</strong> termeltek, mint a szakszerűen
+          tisztítottak.
+        </p>
+        <span class="src">Forrás: Google, 2009 (Mountain View napelemes projekt)</span>
+      </div>
+
+      <h2>Mennyivel több egy tiszta panel? — amit a kutatások mutatnak</h2>
+      <div class="stat">
+        <span class="big">Tipikusan ~5%, de akár 10–15%+ éves veszteség</span>
+        <p>
+          Az amerikai NREL (nemzeti megújulóenergia-labor) szerint az éves szennyeződési
+          (soiling) veszteség jellemzően 5% körüli, de a helytől és az elrendezéstől függően
+          ennél lényegesen több is lehet; szélsőségesen poros vidékeken akár többszörös.
+          Mérsékelt éghajlaton a veszteség kisebb, de a mezőgazdasági por, a pollen és a
+          madárürülék — Fejér megyében mindegyik reális — így is számottevő.
+        </p>
+        <span class="src">Forrás: NREL / PV-szakirodalom</span>
+      </div>
+      <p>
+        A saját tapasztalatunk ezzel összhangban van: a szennyezettségtől függően a tisztítás
+        után <strong>akár 15–20% teljesítménynövekedés</strong> is elérhető.
+      </p>
+
+      <h2>Mennyit ér ez forintban? — egy példa</h2>
+      <p>
+        Vegyünk egy tipikus, kb. <strong>5 kWp-os</strong> háztartási rendszert. Magyarországon
+        ez nagyjából <strong>évi 5000–5500 kWh</strong> áramot termel. Már egy óvatos, 10%-os
+        szennyeződési veszteség is <strong>évi ~500–550 kWh</strong> kiesést jelent.
+      </p>
+      <p>
+        A megtermelt (és így megtakarított) áram értékétől függően ez nagyságrendileg
+        <strong>évi 15 000–30 000 Ft</strong> — erősen szennyezett paneleknél vagy magasabb
+        áron ennél több. Egy ekkora rendszer tisztítása 35 000–50 000 Ft körül van, vagyis a
+        tisztítás <strong>sok esetben egy-két szezon alatt megtérül</strong>, és utána már a
+        többlet-termelés a nyereség.
+      </p>
+      <p>
+        <em>A számok illusztratív jellegűek — a pontos érték a rendszer méretétől, a
+        szennyezettségtől és attól függ, milyen áron számol a saját áramával.</em>
+      </p>
+
+      <h2>Mikor éri meg tisztíttatni?</h2>
+      <p>
+        A legtöbb rendszernél évente egy tisztítás elég, ideálisan tavasszal, a pollenszezon
+        után. Ha a panelek laposabb szögben állnak, mezőgazdasági környezetben vannak, vagy
+        sok madár jár a környéken, évente kettő is indokolt lehet. Fontos: tűző napon nem
+        szabad tisztítani — a forró üveg a hidegebb víztől elpattanhat.
+      </p>
+
+      <a class="crosslink" href={napelemUrl}>
+        <span class="k">Szolgáltatás</span>
+        Napelemtisztítás Székesfehérváron és Fejér megyében — módszer, árak, időpont
+        <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Tisztíttatná a napelemét?</h2>
+        <p>Mondja meg, hány panelről van szó, és egyeztetünk egy időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-article-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-article-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <div class="sources">
+        <h2>Források</h2>
+        <ol>
+          <li>Google napelemes projekt (Mountain View, 2009) — a tisztítás hatása a lapos és megdöntött panelek termelésére. Áttekintés: <a href="https://en.wikipedia.org/wiki/Mountain_View_Solar_Energy_Project" rel="nofollow">Mountain View Solar Energy Project</a>.</li>
+          <li>NREL / PV-szakirodalom a szennyeződési (soiling) veszteségekről: <a href="https://www.pv-magazine.com/2023/03/02/guide-to-understanding-solar-production-losses/" rel="nofollow">Guide to understanding solar production losses, pv magazine</a>.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</Base>

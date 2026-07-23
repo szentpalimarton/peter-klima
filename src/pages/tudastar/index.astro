@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import { withBase } from '../../consts';
+
+const title = 'Tudástár — napelem- és klímatisztítás | Péter';
+const description =
+  'Hasznos tudnivalók a napelem- és klímatisztításról: mennyivel termel többet a tiszta napelem, miért fontos a rendszeres tisztítás, gyakori kérdések.';
+
+const homeUrl = withBase('/');
+
+const articles = [
+  {
+    href: withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/'),
+    title: 'Mennyivel termel többet a tiszta napelem?',
+    excerpt:
+      'Konkrét számok és források arról, mennyit veszít egy koszos panel — és egy forintos példa, hogy mikor térül meg a tisztítás.',
+  },
+];
+---
+
+<Base {title} {description}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › Tudástár</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Tudástár</h1>
+      <p class="lead">
+        Hasznos, forrásokkal alátámasztott tudnivalók a napelem- és klímatisztításról —
+        hogy tudja, mikor és miért érdemes tisztíttatni.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      {articles.map((a) => (
+        <a class="crosslink" href={a.href}>
+          <span class="k">Cikk</span>
+          <strong>{a.title}</strong><br />
+          {a.excerpt} <span class="arw">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>
