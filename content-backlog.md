@@ -1,6 +1,6 @@
 # Content backlog — Péter · Napelem- és Klímatisztítás
 
-_Last updated: 2026-07-15_
+_Last updated: 2026-07-24_
 _Built with the `local-business-seo-geo` skill._
 
 ## Positioning reminder
@@ -12,10 +12,10 @@ klíma erős második. Cél: csörögjön a telefon.
 | Page | Primary keyword | Secondary keywords | Status |
 |------|-----------------|--------------------|--------|
 | / (home) | napelemtisztítás Fejér megye | klímatisztítás Fejér megye, napelem és klíma tisztítás | live |
-| /napelem-tisztitas | napelemtisztítás Székesfehérvár | napelem tisztítás ár, napelem mosás, napelem karbantartás | todo |
-| /klimatisztitas | klímatisztítás Székesfehérvár | klíma tisztítás ár, klíma fertőtlenítés, split klíma tisztítás | todo |
-| /arak | napelem tisztítás árak | klímatisztítás árak 2026 | todo |
-| /gyik | question long-tails | „milyen gyakran…”, „mennyivel termel többet…”, „miért büdös a klíma” | todo |
+| /napelem-tisztitas | napelemtisztítás Székesfehérvár | napelem tisztítás ár, napelem mosás, napelem karbantartás | live |
+| /klimatisztitas | klímatisztítás Székesfehérvár | klíma tisztítás ár, klíma fertőtlenítés, split klíma tisztítás | live |
+| /arak | napelem tisztítás árak | klímatisztítás árak 2026 | live |
+| /gyik | question long-tails | „milyen gyakran…”, „mennyivel termel többet…”, „miért büdös a klíma” | live |
 
 ## Pages to build (priority order)
 - [x] **/napelem-tisztitas** — fő szolgáltatás oldal (Service+FAQPage+BreadcrumbList séma) — 2026-07-23
@@ -23,11 +23,11 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] /tudastar — Tudástár hub — 2026-07-23
 - [x] /klimatisztitas — klíma szolgáltatás oldal (EPA+DOE forrásokkal) — 2026-07-24
 - [ ] **fejerklimaclean.hu átirányítása → /klimatisztitas** (tarhely.eu, Márton teendője) **← KÖVETKEZŐ**
-- [ ] /arak — kombinált árlista oldal
-- [ ] /gyik — teljes GYIK (15–20 valódi kérdés)
+- [x] /arak — kombinált árlista oldal (OfferCatalog séma) — 2026-07-24
+- [x] /gyik — teljes GYIK (14 kérdés, csoportosítva) — 2026-07-24
 
 ## Articles / knowledge base (flagship first)
-- [ ] „Mennyivel termel többet a tiszta napelem? — számok és források” (globális statisztikákkal, HUF megtérülési példával)
+- [x] „Mennyivel termel többet a tiszta napelem? — számok és források” (Google/NREL, HUF példa) — 2026-07-23
 - [ ] „Miért büdös a klíma, és mit lehet tenni ellene?” (magas keresési volumen)
 - [ ] „Napelem tisztítás árak 2026-ban — mitől függ?” (ár-intent, évente frissítendő)
 - [ ] „Napelem tisztítás házilag: mikor szabad, és mikor veszélyes?” (DIY-keresők konvertálása; hősokk/elpattanás)
