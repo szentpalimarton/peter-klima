@@ -79,6 +79,11 @@ klíma erős második. Cél: csörögjön a telefon.
 - [ ] „…árak 2026” évenkénti frissítés
 - [ ] fejerklimaclean.hu átirányítása a /klimatisztitas oldalra, amint kész
 
+## Márton kézi teendői (review 2026-07-24 alapján)
+- [ ] Search Console: URL-ellenőrzés → „Indexelés kérése" a 8 új oldalra (2 szolgáltatás, /arak, /gyik, hub + 4 cikkből az újak) — gyorsítja az indexelést
+- [ ] GBP igazolás státuszának ellenőrzése Péterrel (videós verifikáció megjött-e); ha kész: profil feltöltése az útmutató szerint + Márton felvétele kezelőnek
+- [ ] Facebook-oldal létrehozása Péternek (NAP-konzisztens név/telefon) — a helyi ügyfelek jelentős része ott keres; a kabala + munkafotók újrafelhasználhatók
+
 ## Local SEO
 - [ ] Google Cégprofil — beállítva 2026-07-14, **igazolásra vár** (videós ellenőrzés)
 - [ ] Vélemény-rutin: minden munka után SMS-ben a Google-értékelő link
