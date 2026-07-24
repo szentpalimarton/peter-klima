@@ -28,10 +28,10 @@ klíma erős második. Cél: csörögjön a telefon.
 
 ## Articles / knowledge base (flagship first)
 - [x] „Mennyivel termel többet a tiszta napelem? — számok és források” (Google/NREL, HUF példa) — 2026-07-23
-- [ ] „Miért büdös a klíma, és mit lehet tenni ellene?” (magas keresési volumen)
+- [x] „Miért büdös a klíma, és mit lehet tenni ellene?” (EPA forrás, FAQ) — 2026-07-24
+- [x] „Napelem tisztítás házilag: mikor szabad, és mikor veszélyes?” (DIY konverzió; hősokk) — 2026-07-24
+- [x] „Milyen gyakran kell klímát tisztíttatni?” (DOE forrás, FAQ) — 2026-07-24
 - [ ] „Napelem tisztítás árak 2026-ban — mitől függ?” (ár-intent, évente frissítendő)
-- [ ] „Napelem tisztítás házilag: mikor szabad, és mikor veszélyes?” (DIY-keresők konvertálása; hősokk/elpattanás)
-- [ ] „Milyen gyakran kell klímát tisztíttatni? — a gyártói ajánlások”
 - [ ] „Tűző napon miért nem szabad napelemet tisztítani?” (szakértelem-jelzés)
 
 ## Sourced statistics bank (verify each at primary source before use)
