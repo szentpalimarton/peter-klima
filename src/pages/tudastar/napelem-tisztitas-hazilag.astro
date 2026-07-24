@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Napelem tisztítás házilag: mikor szabad, és mikor veszélyes? | Péter';
+const description =
+  'Napelem tisztítás házilag: enyhe pornál, tiszta vízzel, puha eszközzel, hűvös időben belefér. De a tűző nap, a nagynyomású mosó és a mosószer kárt okozhat.';
+
+const homeUrl = withBase('/');
+const tudastarUrl = withBase('/tudastar/');
+const napelemUrl = withBase('/napelem-tisztitas/');
+const pageUrl = new URL(withBase('/tudastar/napelem-tisztitas-hazilag/'), Astro.site).toString();
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Napelem tisztítás házilag: mikor szabad, és mikor veszélyes?',
+    description,
+    datePublished: '2026-07-24',
+    dateModified: '2026-07-24',
+    inLanguage: 'hu',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND },
+    mainEntityOfPage: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Tudástár', item: new URL(withBase('/tudastar/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Napelem tisztítás házilag', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={tudastarUrl}>Tudástár</a> › Napelem tisztítás házilag</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Napelem tisztítás házilag: mikor szabad, és mikor veszélyes?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <p class="lede">
+        Röviden: egy könnyen, <strong>biztonságosan elérhető</strong> (pl. földre telepített),
+        csak enyhén poros panelt tiszta vízzel és puha eszközzel, hűvös, borult időben óvatosan
+        magad is leöblíthetsz. De több gyakori eset van, amikor a házi tisztítás <strong>többet
+        árt, mint használ</strong> — nézzük, mikor melyik.
+      </p>
+
+      <h2>Amikor belefér a házi öblítés</h2>
+      <ul>
+        <li>A panel <strong>talajszinten vagy biztonságosan elérhető</strong> — nem kell tetőre, létrára mászni.</li>
+        <li>Csak <strong>enyhe por</strong> van rajta, nem rászáradt sár, madárürülék vagy zsíros lerakódás.</li>
+        <li><strong>Tiszta, lágy vízzel</strong> és <strong>puha eszközzel</strong> (mikroszálas, puha kefe) dolgozol.</li>
+        <li><strong>Hűvös, borult időben</strong>, kora reggel vagy késő délután — soha nem tűző napon.</li>
+      </ul>
+
+      <h2>Amikor viszont veszélyes — inkább kerüld</h2>
+      <div class="stat solar">
+        <span class="big">Tűző napon az üveg elpattanhat</span>
+        <p>
+          A napon felforrósodott panelt hideg víz éri, a hirtelen hőmérséklet-különbség
+          (hősokk) pedig megrepesztheti az üveget. Ezért profi tisztításnál is csak hűvös
+          időben, reggel vagy késő délután dolgozunk.
+        </p>
+      </div>
+      <ul>
+        <li><strong>Nagynyomású mosó:</strong> a nyomás benyomhatja a tömítéseket és megsértheti a panel felületét — tartós beázást és teljesítményvesztést okozva.</li>
+        <li><strong>Mosószer, tisztítószer:</strong> csíkot, filmréteget hagyhat, és megtámadhatja a panel fényáteresztő bevonatát.</li>
+        <li><strong>Kemény, vízköves csapvíz:</strong> száradás után foltokat, ásványi lerakódást hagy, ami pont a fényt gátolja.</li>
+        <li><strong>Tetőn, magasban:</strong> a legnagyobb kockázat maga a leesés — ezt egyszerűen nem éri meg házilag.</li>
+        <li><strong>Garancia:</strong> a nem előírásszerű tisztítás egyes gyártóknál a garanciát is érintheti.</li>
+      </ul>
+
+      <h2>Mit csinál másképp a szakember?</h2>
+      <p>
+        Mi <strong>szűrt, pH-semleges vízzel</strong> és lágy kefével dolgozunk: a szűrt víz
+        folt- és lerakódásmentesen szárad, a puha eszköz nem karcol, a vegyszermentes eljárás
+        pedig a bevonatot és a garanciát sem veszélyezteti. A magasban lévő paneleket
+        biztonságos hozzáféréssel, a megfelelő napszakban tisztítjuk — kockázat nélkül.
+      </p>
+
+      <a class="crosslink" href={napelemUrl}>
+        <span class="k">Szolgáltatás</span>
+        <strong>Napelemtisztítás Székesfehérváron és Fejér megyében</strong> — módszer, árak, időpont
+        <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Inkább bízná szakemberre?</h2>
+        <p>Mondja meg, hány panelről van szó, és egyeztetünk egy biztonságos időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-hazilag-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-hazilag-cta-btn">📞 Hívom most</a>
+      </div>
+    </div>
+  </section>
+</Base>

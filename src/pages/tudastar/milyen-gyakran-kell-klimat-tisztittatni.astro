@@ -1,0 +1,123 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Milyen gyakran kell klímát tisztíttatni? | Péter';
+const description =
+  'Milyen gyakran kell klímát tisztíttatni? Évente 1–2 alkalommal — a hűtési szezon előtt, fűtésre is használt készüléknél ősszel is. Allergiásoknál gyakrabban.';
+
+const homeUrl = withBase('/');
+const tudastarUrl = withBase('/tudastar/');
+const klimaUrl = withBase('/klimatisztitas/');
+const pageUrl = new URL(withBase('/tudastar/milyen-gyakran-kell-klimat-tisztittatni/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Milyen gyakran kell klímát tisztíttatni?',
+    a: 'Évente 1–2 alkalommal ajánlott: mindenképp a nyári hűtési szezon előtt, fűtésre is használt (hőszivattyús) készüléknél pedig ősszel is. Allergiás háztartásban gyakrabban is indokolt.',
+  },
+  {
+    q: 'Mikor a legjobb időpont a klímatisztításra?',
+    a: 'Tavasszal, a hűtési szezon beindulása előtt — így a nyarat már tiszta, fertőtlenített készülékkel kezdi. Ha fűtésre is használja, ősszel érdemes egy második tisztítás.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Milyen gyakran kell klímát tisztíttatni?',
+    description,
+    datePublished: '2026-07-24',
+    dateModified: '2026-07-24',
+    inLanguage: 'hu',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND },
+    mainEntityOfPage: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Tudástár', item: new URL(withBase('/tudastar/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Milyen gyakran kell klímát tisztíttatni?', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={tudastarUrl}>Tudástár</a> › Milyen gyakran kell klímát tisztíttatni?</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Milyen gyakran kell klímát tisztíttatni?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <p class="lede">
+        Röviden: <strong>évente 1–2 alkalommal</strong>. Mindenképp a nyári hűtési szezon
+        előtt, és ha fűtésre is használja (hőszivattyú), ősszel is érdemes. Allergiás
+        háztartásban gyakrabban is indokolt lehet.
+      </p>
+
+      <h2>Miért érdemes évente?</h2>
+      <p>
+        A beltéri egység nedves hőcserélőjén egész évben gyűlik a por, és megtelepszik a
+        gomba és a baktérium. Ez két dolgot okoz: romlik a levegő minősége (szag, allergének),
+        és nő a fogyasztás, mert a koszos hőcserélővel a készülék nehezebben dolgozik.
+      </p>
+      <div class="stat">
+        <span class="big">A koszos klíma akár 5–15%-kal többet fogyaszt</span>
+        <p>
+          Az US DOE szerint már a koszos szűrő tisztára cseréje is 5–15%-kal csökkentheti a
+          klíma energiafogyasztását — a rendszeres tisztítás tehát a villanyszámlán is
+          meglátszik, és a készülék élettartamát is óvja.
+        </p>
+        <span class="src">Forrás: US DOE (energy.gov)</span>
+      </div>
+
+      <h2>Mikor a legjobb időpont?</h2>
+      <ul>
+        <li><strong>Tavasszal</strong>, a hűtési szezon beindulása előtt — így a nyarat tiszta, fertőtlenített készülékkel kezdi.</li>
+        <li><strong>Ősszel</strong> is, ha a klímát fűtésre (hőszivattyúként) is használja.</li>
+      </ul>
+
+      <h2>Jelek, hogy tisztításra szorul</h2>
+      <ul>
+        <li>Dohos, savanyú szag bekapcsoláskor.</li>
+        <li>Gyengébb hűtés, hosszabb ideig jár ugyanahhoz a hőmérséklethez.</li>
+        <li>Magasabb villanyszámla, látható ok nélkül.</li>
+        <li>Csöpögés vagy pára a beltéri egységből (eltömődött kondenzvíz-elvezetés).</li>
+      </ul>
+
+      <a class="crosslink" href={klimaUrl}>
+        <span class="k">Szolgáltatás</span>
+        <strong>Klímatisztítás és fertőtlenítés</strong> — módszer, árak, időpont
+        <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Esedékes a tisztítás?</h2>
+        <p>Mondja meg, hány beltéri egységről van szó, és egyeztetünk egy időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-gyakran-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-gyakran-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <div class="sources">
+        <h2>Források</h2>
+        <ol>
+          <li>US Department of Energy — a klíma karbantartása és a szűrőcsere energiahatása: <a href="https://www.energy.gov/energysaver/maintaining-your-air-conditioner" rel="nofollow">Maintaining Your Air Conditioner, energy.gov</a>.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</Base>

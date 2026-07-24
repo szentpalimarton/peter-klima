@@ -1,0 +1,139 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Miért büdös a klíma, és mit lehet tenni ellene? | Péter';
+const description =
+  'Miért büdös a klíma? A dohos szagot a nedves hőcserélőn megtelepedő gomba és baktérium okozza. Így szüntethető meg tartósan — tisztítással és fertőtlenítéssel.';
+
+const homeUrl = withBase('/');
+const tudastarUrl = withBase('/tudastar/');
+const klimaUrl = withBase('/klimatisztitas/');
+const pageUrl = new URL(withBase('/tudastar/miert-budos-a-klima/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Miért büdös a klíma, amikor bekapcsolom?',
+    a: 'A dohos, savanyú szagot szinte mindig a beltéri egység nedves hőcserélőjén és csepptálcájában megtelepedő gomba és baktérium okozza. Amint elindul a ventilátor, ezt a szagot fújja a szobába.',
+  },
+  {
+    q: 'Elmúlik a szag légfrissítőtől vagy sprayből?',
+    a: 'Csak átmenetileg. A szagosító elfedi a tünetet, de a forrás — a hőcserélőn lévő gomba és baktérium — a helyén marad, így a szag hamar visszatér. Tartósan csak alapos tisztítás és fertőtlenítés szünteti meg.',
+  },
+  {
+    q: 'Meg lehet előzni a klímaszagot?',
+    a: 'Igen: rendszeres (évi 1–2) tisztítással, és azzal, hogy hűtés után pár percre ventilátor/szárító üzemmódba kapcsolod a készüléket, hogy a hőcserélő felszáradjon. A száraz felületen nem szaporodnak el a mikrobák.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Miért büdös a klíma, és mit lehet tenni ellene?',
+    description,
+    datePublished: '2026-07-24',
+    dateModified: '2026-07-24',
+    inLanguage: 'hu',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND },
+    mainEntityOfPage: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Tudástár', item: new URL(withBase('/tudastar/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Miért büdös a klíma?', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={tudastarUrl}>Tudástár</a> › Miért büdös a klíma?</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Miért büdös a klíma, és mit lehet tenni ellene?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <p class="lede">
+        A dohos, savanyú „klímaszagot" szinte mindig a beltéri egység <strong>nedves
+        hőcserélőjén és csepptálcájában megtelepedő gomba és baktérium</strong> okozza.
+        Amint elindul a ventilátor, ezt fújja a szobába. Tartósan csak alapos tisztítással
+        és fertőtlenítéssel szüntethető meg — a szagosító spray csak elfedi.
+      </p>
+
+      <h2>Honnan jön a szag?</h2>
+      <p>
+        A klíma hűtés közben párát csap ki, ezért a hőcserélője és a csepptálcája
+        folyamatosan nedves. Ez ideális táptalaj a gombáknak és baktériumoknak, amelyek
+        idővel elszaporodnak, és jellegzetes dohos-savanyú szagot árasztanak. A készülék
+        pedig ezt a levegőt — a mikrobákkal együtt — visszafújja a helyiségbe.
+      </p>
+      <div class="stat">
+        <span class="big">A beltéri levegő szennyezettebb lehet, mint a kültéri</span>
+        <p>
+          Az EPA szerint a beltéri levegő 2–5-ször (rossz szellőzésnél akár sokszorosan)
+          szennyezettebb lehet a kültérinél. Egy elhanyagolt klíma ehhez érdemben hozzátesz:
+          a szag mellett allergén gomba- és baktériumspórákat is a szobába juttat, ami
+          különösen érzékenyeknél és gyerekeknél okozhat légúti panaszt.
+        </p>
+        <span class="src">Forrás: US EPA (beltéri levegőminőség)</span>
+      </div>
+
+      <h2>Miért nem elég a légfrissítő vagy a spray?</h2>
+      <p>
+        A szagosítók elfedik a tünetet, de a forrást nem szüntetik meg: a gomba és a
+        baktérium a hőcserélőn marad, és a szag hamar visszatér. Sőt, a boltban kapható
+        „klímatisztító" habok jó része sem jut el a mélyben lévő lerakódáshoz. A tartós
+        megoldás a szennyeződés fizikai eltávolítása és a felület fertőtlenítése.
+      </p>
+
+      <h2>Mit lehet tenni ellene?</h2>
+      <p>
+        A biztos megoldás a szakszerű mélytisztítás. Mi <strong>zsákos-átmosásos
+        technikával</strong> dolgozunk: a hőcserélőt és a ventilátort a helyszínen mossuk
+        át, a leoldott szennyeződést és vizet felfogó zsák gyűjti össze — így a lakás tiszta
+        marad —, majd fertőtlenítjük a felületet, hogy a szag a forrásánál szűnjön meg.
+      </p>
+
+      <h2>Hogyan előzhető meg?</h2>
+      <ul>
+        <li><strong>Évente 1–2 tisztítás</strong> — a hűtési szezon előtt, fűtésre is használt készüléknél ősszel is.</li>
+        <li><strong>Szárítás használat után</strong>: hűtés után pár percre ventilátor/„dry" üzemmód, hogy a hőcserélő felszáradjon — a száraz felületen nem szaporodnak el a mikrobák.</li>
+        <li>A beltéri szűrők rendszeres tisztán tartása.</li>
+      </ul>
+
+      <a class="crosslink" href={klimaUrl}>
+        <span class="k">Szolgáltatás</span>
+        <strong>Klímatisztítás és fertőtlenítés</strong> — módszer, árak, időpont
+        <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Büdös a klímája?</h2>
+        <p>Egy alapos tisztítás a forrásánál szünteti meg a szagot. Hívjon, és egyeztetünk.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-budos-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-budos-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <div class="sources">
+        <h2>Források</h2>
+        <ol>
+          <li>US EPA — beltéri levegőminőség: <a href="https://www.epa.gov/indoor-air-quality-iaq" rel="nofollow">Indoor Air Quality (IAQ), epa.gov</a>.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</Base>
