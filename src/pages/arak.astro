@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, withBase } from '../consts';
+
+const title = 'Napelemtisztítás és klímatisztítás árak — Székesfehérvár, Fejér megye | Péter';
+const description =
+  'Napelemtisztítás 35 000 Ft-tól, klímatisztítás 15 000 Ft-tól — átlátható, előre kalkulálható árak Székesfehérváron és Fejér megyében. Nincs rejtett költség.';
+
+const homeUrl = withBase('/');
+const pageUrl = new URL(withBase('/arak/'), Astro.site).toString();
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: BRAND,
+    telephone: PHONE_E164,
+    email: EMAIL,
+    url: Astro.site?.toString(),
+    areaServed: [
+      { '@type': 'City', name: 'Székesfehérvár' },
+      { '@type': 'AdministrativeArea', name: AREA },
+    ],
+    priceRange: '15 000 Ft – 80 000 Ft',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Napelem- és klímatisztítás árak',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Napelemtisztítás 1–10 panel' }, priceSpecification: { '@type': 'PriceSpecification', price: 35000, priceCurrency: 'HUF' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Napelemtisztítás 11–15 panel' }, priceSpecification: { '@type': 'PriceSpecification', price: 50000, priceCurrency: 'HUF' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Napelemtisztítás 16–20 panel' }, priceSpecification: { '@type': 'PriceSpecification', price: 65000, priceCurrency: 'HUF' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Napelemtisztítás 21–25 panel' }, priceSpecification: { '@type': 'PriceSpecification', price: 80000, priceCurrency: 'HUF' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Klímatisztítás 1 beltéri egység' }, priceSpecification: { '@type': 'PriceSpecification', price: 15000, priceCurrency: 'HUF' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Klímatisztítás 2 beltéri egység' }, priceSpecification: { '@type': 'PriceSpecification', price: 26000, priceCurrency: 'HUF' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Klímatisztítás 3 beltéri egység' }, priceSpecification: { '@type': 'PriceSpecification', price: 36000, priceCurrency: 'HUF' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Klímatisztítás 4 beltéri egység' }, priceSpecification: { '@type': 'PriceSpecification', price: 48000, priceCurrency: 'HUF' } },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Árak', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › Árak</nav>
+      <span class="kicker">Székesfehérvár és környéke · Fejér megye</span>
+      <h1>Áraink — napelem- és klímatisztítás</h1>
+      <p class="lead">
+        Átlátható, <strong>előre kalkulálható árak</strong>: az árlista nyilvános, és a
+        telefonban megbeszélt ár nem változik a helyszínen. Nincs rejtett költség.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-arak-hero">📞 {PHONE_DISPLAY}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="price-grid">
+        <div class="price-card">
+          <h2>Napelemtisztítás</h2>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h2>Klímatisztítás</h2>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés magassága állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+
+      <div class="prose">
+        <div class="cta-band">
+          <h2>Kérjen pontos árat</h2>
+          <p>Mondja meg, hány panelről vagy klímáról van szó, és megmondjuk a pontos árat.</p>
+          <a class="contact-phone" href={PHONE_TEL} data-cta="call-arak-cta">{PHONE_DISPLAY}</a><br />
+          <a class="btn btn-call" href={PHONE_TEL} data-cta="call-arak-cta-btn">📞 Hívom most</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

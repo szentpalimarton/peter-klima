@@ -418,6 +418,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* Header nav (desktop) */
+.faq-group { margin-bottom: 2.2rem; }
+.faq-group > h2 { margin-bottom: 0.6rem; }
 .site-nav { display: none; }
 @media (min-width: 780px) {
   .site-nav { display: flex; gap: 1.35rem; align-items: center; margin-left: auto; margin-right: 1.4rem; }

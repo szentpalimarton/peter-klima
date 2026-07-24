@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import { PHONE_DISPLAY, PHONE_TEL, withBase } from '../consts';
+
+const title = 'Gyakori kérdések — napelem- és klímatisztítás | Péter';
+const description =
+  'Gyakori kérdések a napelem- és klímatisztításról: árak, gyakoriság, módszer, biztonság, számla. Válaszok Péter napelem- és klímatisztítójától Fejér megyében.';
+
+const homeUrl = withBase('/');
+const pageUrl = new URL(withBase('/gyik/'), Astro.site).toString();
+
+const groups = [
+  {
+    title: 'Napelemtisztítás',
+    items: [
+      { q: 'Kell-e tisztítani a napelemet? Nem elég az eső?', a: 'Az eső a laposabb dőlésszögű paneleken nem mossa le a rárakódott port, pollent és madárürüléket — sőt, a száradó esővíz koszcsíkokat is hagyhat. A Google 2009-es mérésén a csak eső által tisztított panelek 12%-kal kevesebbet termeltek, mint a szakszerűen tisztítottak. Ezért évente egy tisztítás ajánlott.' },
+      { q: 'Mennyivel termel többet a tiszta napelem?', a: 'A szennyezettségtől és a panelek szögétől függően jellemzően néhány százaléktól akár 15–20%-ig, erősen szennyezett vagy lapos elrendezésnél még többel. Az NREL mérései szerint az éves szennyeződési veszteség tipikusan 5% körüli, de a helytől függően ennél lényegesen nagyobb is lehet.' },
+      { q: 'Nem sérül a napelem a tisztítás közben?', a: 'Szakszerű tisztításnál nem: lágy kefével és szűrt, pH-semleges vízzel dolgozunk, így a panel felülete és bevonata nem sérül, és a gyártói garanciát sem veszélyezteti. Éppen a házilagos, nagynyomású vagy mosószeres tisztítás az, ami kárt tud okozni.' },
+      { q: 'Tisztíthatom-e magam a napelemet?', a: 'Nem javasoljuk. A nem megfelelő víz, a nagynyomású mosó vagy a mosószer megkárosíthatja a panel bevonatát és a garanciát; a tetőn végzett munka pedig balesetveszélyes. A szakszerű, szűrt vizes, kefés tisztítás kíméletes és biztonságos.' },
+      { q: 'Tűző napon is lehet napelemet tisztítani?', a: 'Nem ajánlott: a felforrósodott panel a hidegebb víztől hősokkot kaphat, és az üvege elpattanhat. Ezért a tisztítást kora reggel, késő délután vagy borult időben végezzük — így a panel biztonságban van, és a víz sem szárad rá foltosan.' },
+      { q: 'Milyen gyakran érdemes napelemet tisztíttatni?', a: 'A legtöbb rendszernél évente egy tisztítás elég, ideálisan tavasszal, a pollenszezon után. Laposabb szögű, mezőgazdasági környezetben lévő vagy madárjárta paneleknél évente kettő is indokolt lehet.' },
+    ],
+  },
+  {
+    title: 'Klímatisztítás',
+    items: [
+      { q: 'Miért büdös a klíma?', a: 'A kellemetlen szagot szinte mindig a beltéri egység nedves hőcserélőjén és csepptálcájában megtelepedő gombák és baktériumok okozzák. Az alapos tisztítás és fertőtlenítés a szagot a forrásánál szünteti meg.' },
+      { q: 'Mi történik, ha nem tisztíttatom a klímát?', a: 'A tisztítatlan klíma allergén szennyeződéseket, gomba- és baktériumspórákat fúj a szobába, ami hozzájárulhat a kellemetlen szaghoz és a légúti panaszokhoz. Ráadásul a koszos hőcserélővel nehezebben dolgozik, így többet is fogyaszt — az US DOE szerint a koszos szűrő tiszta cseréje 5–15%-kal csökkentheti a fogyasztást.' },
+      { q: 'Mit jelent a zsákos-átmosásos tisztítás?', a: 'A beltéri egységet a helyszínen, egy felfogó zsák segítségével mossuk át: a hőcserélőről és a ventilátorról leoldott szennyeződést és vizet a zsák fogja fel, így a lakás tiszta és száraz marad a művelet közben.' },
+      { q: 'Milyen gyakran kell klímát tisztíttatni?', a: 'Évente 1–2 alkalommal ajánlott: mindenképp a nyári hűtési szezon előtt, fűtésre is használt készüléknél pedig ősszel is. Allergiásoknál különösen fontos a rendszeres tisztítás.' },
+      { q: 'Mennyibe kerül a klímatisztítás?', a: '1 beltéri egység 15 000 Ft, 2 egység 26 000 Ft, 3 egység 36 000 Ft, 4 egység 48 000 Ft. Ettől eltérő esetben egyedi ár.' },
+    ],
+  },
+  {
+    title: 'Általános',
+    items: [
+      { q: 'Hova mentek ki?', a: 'Elsősorban Székesfehérvárra és környékére, de Fejér megye egész területén vállalunk munkát: Dunaújváros, Mór, Bicske, Gárdony és a Velencei-tó környéke, Sárbogárd — és a köztük lévő települések is.' },
+      { q: 'Hogyan zajlik az időpont-egyeztetés?', a: 'Hívjon a +36 20 495 4171-es számon, vagy írjon üzenetet — röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni.' },
+      { q: 'Kapok számlát? Cégeknek is dolgoznak?', a: 'Igen, számlaképes szolgáltatás — a munkáról számlát adunk. Lakossági és céges ügyfeleket egyaránt kiszolgálunk.' },
+    ],
+  },
+];
+
+const allItems = groups.flatMap((g) => g.items);
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: allItems.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'GYIK', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › GYIK</nav>
+      <span class="kicker">Gyakori kérdések</span>
+      <h1>Gyakori kérdések</h1>
+      <p class="lead">
+        A napelem- és klímatisztítással kapcsolatos leggyakoribb kérdések — árak,
+        gyakoriság, módszer, biztonság. Ha nem találja a választ, hívjon bizalommal.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      {groups.map((g) => (
+        <div class="faq-group">
+          <h2>{g.title}</h2>
+          <div class="faq">
+            {g.items.map((f) => (
+              <details>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="prose">
+        <div class="cta-band">
+          <h2>Nem találta a választ?</h2>
+          <p>Hívjon, és egy perc alatt megbeszéljük.</p>
+          <a class="contact-phone" href={PHONE_TEL} data-cta="call-gyik-cta">{PHONE_DISPLAY}</a><br />
+          <a class="btn btn-call" href={PHONE_TEL} data-cta="call-gyik-cta-btn">📞 Hívom most</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -21,7 +21,8 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] **/napelem-tisztitas** — fő szolgáltatás oldal (Service+FAQPage+BreadcrumbList séma) — 2026-07-23
 - [x] **Zászlóshajó cikk**: „Mennyivel termel többet a tiszta napelem?” (answer-first, forrásolt, HUF példa) — 2026-07-23
 - [x] /tudastar — Tudástár hub — 2026-07-23
-- [ ] /klimatisztitas — klíma szolgáltatás oldal (utána: a fejerklimaclean.hu erre irányítson) **← KÖVETKEZŐ**
+- [x] /klimatisztitas — klíma szolgáltatás oldal (EPA+DOE forrásokkal) — 2026-07-24
+- [ ] **fejerklimaclean.hu átirányítása → /klimatisztitas** (tarhely.eu, Márton teendője) **← KÖVETKEZŐ**
 - [ ] /arak — kombinált árlista oldal
 - [ ] /gyik — teljes GYIK (15–20 valódi kérdés)
 
