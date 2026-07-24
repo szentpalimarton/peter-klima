@@ -18,9 +18,10 @@ klíma erős második. Cél: csörögjön a telefon.
 | /gyik | question long-tails | „milyen gyakran…”, „mennyivel termel többet…”, „miért büdös a klíma” | todo |
 
 ## Pages to build (priority order)
-- [ ] **/napelem-tisztitas** — fő szolgáltatás oldal (miért fontos + módszer + globális forrásolt statisztikák + GYIK-séma). **Ezzel kezdünk.**
-- [ ] **Zászlóshajó cikk**: „Mennyivel termel többet a tiszta napelem?” (answer-first, forrásolt) — párhuzamosan az előzővel.
-- [ ] /klimatisztitas — klíma szolgáltatás oldal (utána: a fejerklimaclean.hu erre irányítson)
+- [x] **/napelem-tisztitas** — fő szolgáltatás oldal (Service+FAQPage+BreadcrumbList séma) — 2026-07-23
+- [x] **Zászlóshajó cikk**: „Mennyivel termel többet a tiszta napelem?” (answer-first, forrásolt, HUF példa) — 2026-07-23
+- [x] /tudastar — Tudástár hub — 2026-07-23
+- [ ] /klimatisztitas — klíma szolgáltatás oldal (utána: a fejerklimaclean.hu erre irányítson) **← KÖVETKEZŐ**
 - [ ] /arak — kombinált árlista oldal
 - [ ] /gyik — teljes GYIK (15–20 valódi kérdés)
 
