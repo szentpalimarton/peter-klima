@@ -1,6 +1,6 @@
 # Content backlog — Péter · Napelem- és Klímatisztítás
 
-_Last updated: 2026-07-24_
+_Last updated: 2026-07-25_
 _Built with the `local-business-seo-geo` skill._
 
 ## Positioning reminder
@@ -22,7 +22,7 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] **Zászlóshajó cikk**: „Mennyivel termel többet a tiszta napelem?” (answer-first, forrásolt, HUF példa) — 2026-07-23
 - [x] /tudastar — Tudástár hub — 2026-07-23
 - [x] /klimatisztitas — klíma szolgáltatás oldal (EPA+DOE forrásokkal) — 2026-07-24
-- [ ] **fejerklimaclean.hu átirányítása → /klimatisztitas** (tarhely.eu, Márton teendője) **← KÖVETKEZŐ**
+- [x] fejerklimaclean.hu (+www) átirányítva → /klimatisztitas — 2026-07-25
 - [x] /arak — kombinált árlista oldal (OfferCatalog séma) — 2026-07-24
 - [x] /gyik — teljes GYIK (14 kérdés, csoportosítva) — 2026-07-24
 
@@ -31,8 +31,8 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] „Miért büdös a klíma, és mit lehet tenni ellene?” (EPA forrás, FAQ) — 2026-07-24
 - [x] „Napelem tisztítás házilag: mikor szabad, és mikor veszélyes?” (DIY konverzió; hősokk) — 2026-07-24
 - [x] „Milyen gyakran kell klímát tisztíttatni?” (DOE forrás, FAQ) — 2026-07-24
-- [ ] „Napelem tisztítás árak 2026-ban — mitől függ?” (ár-intent, évente frissítendő)
-- [ ] „Tűző napon miért nem szabad napelemet tisztítani?” (szakértelem-jelzés)
+- [x] „Napelem tisztítás árak 2026-ban — mitől függ?” — 2026-07-25 (ÉVENTE FRISSÍTENDŐ)
+- [x] „Tűző napon miért nem szabad napelemet tisztítani?” — 2026-07-25
 
 ## Sourced statistics bank (verify each at primary source before use)
 | Claim | Source (named — VERIFY) | Use on |
@@ -72,15 +72,13 @@ klíma erős második. Cél: csörögjön a telefon.
 - NEM megerősített (ne publikáld, míg Péter nem mondja): évek száma, biztosítás, garancia
 
 ## Technical / SEO todos
-- [ ] Meta description rövidítése ~155 karakterre (jelenleg 285, a Google levágja)
-- [ ] Belső linkek a home/szolgáltatás-oldalakról minden új cikkre
-- [ ] Strukturált adat (Service / FAQPage) minden új oldalon
-- [ ] Új oldalak beküldése Search Console URL-ellenőrzéssel
+- [x] Meta description-ök ~155 karakterre rövidítve minden oldalon
+- [x] Belső linkelés rendben: minden cikkre 2–4 oldalról mutat link (Tudástár a navban is)
+- [x] Strukturált adat minden oldalon (LocalBusiness/Service/FAQPage/Article/BreadcrumbList)
+- [x] Search Console: minden oldal beküldve; 7 oldal már indexelve (2026-07-25)
 - [ ] „…árak 2026” évenkénti frissítés
-- [ ] fejerklimaclean.hu átirányítása a /klimatisztitas oldalra, amint kész
 
 ## Márton kézi teendői (review 2026-07-24 alapján)
-- [ ] Search Console: URL-ellenőrzés → „Indexelés kérése" a 8 új oldalra (2 szolgáltatás, /arak, /gyik, hub + 4 cikkből az újak) — gyorsítja az indexelést
 - [ ] GBP igazolás státuszának ellenőrzése Péterrel (videós verifikáció megjött-e); ha kész: profil feltöltése az útmutató szerint + Márton felvétele kezelőnek
 - [ ] Facebook-oldal létrehozása Péternek (NAP-konzisztens név/telefon) — a helyi ügyfelek jelentős része ott keres; a kabala + munkafotók újrafelhasználhatók
 
@@ -89,7 +87,7 @@ klíma erős második. Cél: csörögjön a telefon.
 - [ ] Vélemény-rutin: minden munka után SMS-ben a Google-értékelő link
 - [ ] Katalógus-idézetek: Cylex, Aranyoldalak, joszaki.hu, qjob.hu — NAP-konzisztensen
 - [ ] Google-vélemények kirakása az oldalra (badge), amint van néhány
-- [ ] Bing Webmaster Tools beküldés (a ChatGPT/Copilot ebből táplálkozik)
+- [x] Bing Webmaster Tools: importálva a Search Console-ból — 2026-07-25 (ChatGPT/Copilot ebből táplálkozik)
 
 ## Done
 - Egyoldalas MVP + élesítés fejersolarclean.hu-n, HTTPS-sel — 2026-07-13
