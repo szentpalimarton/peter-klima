@@ -2,8 +2,10 @@
 
 > Napelemtisztítás (fő profil), valamint klímatisztítás és klíma-fertőtlenítés
 > Székesfehérváron és környékén, illetve Fejér megye egész területén (Magyarország),
-> átlátható, előre kimondott árakkal. Számlaképes szolgáltatás, lakossági és céges
+> átlátható, előre kalkulálható árakkal. Számlaképes szolgáltatás, lakossági és céges
 > ügyfeleknek. Elsődleges kapcsolat: telefon vagy üzenet.
+>
+> Szolgáltató: Oroszi Péter egyéni vállalkozó · Weboldal: https://fejersolarclean.hu
 
 ## Szolgáltatások és árak (2026)
 
@@ -42,3 +44,29 @@ Gárdony és a Velencei-tó környéke, Sárbogárd és a környező település
 
 - Telefon: +36 20 495 4171
 - E-mail: prokontra.oroszi@gmail.com
+
+## Oldalak
+
+Szolgáltatások:
+- https://fejersolarclean.hu/napelem-tisztitas/ — Napelemtisztítás: miért fontos, hogyan
+  végezzük (szűrt, pH-semleges víz), gyakoriság, árak, gyakori kérdések.
+- https://fejersolarclean.hu/klimatisztitas/ — Klímatisztítás és fertőtlenítés:
+  zsákos-átmosásos mélytisztítás, egészségügyi és energiafogyasztási háttér, árak.
+- https://fejersolarclean.hu/arak/ — Teljes árlista mindkét szolgáltatásra.
+- https://fejersolarclean.hu/gyik/ — Gyakori kérdések (napelem, klíma, általános).
+
+Tudástár (forrásokkal alátámasztott cikkek):
+- https://fejersolarclean.hu/tudastar/ — Tudástár főoldal.
+- https://fejersolarclean.hu/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/ —
+  Mennyivel termel többet a tiszta napelem? Számok, források (Google 2009-es mérése,
+  NREL soiling-kutatás) és forintos megtérülési példa.
+- https://fejersolarclean.hu/tudastar/miert-budos-a-klima/ — Miért büdös a klíma?
+  A szag oka a nedves hőcserélőn megtelepedő gomba és baktérium; megszüntetés, megelőzés.
+- https://fejersolarclean.hu/tudastar/napelem-tisztitas-hazilag/ — Napelem tisztítás
+  házilag: mikor fér bele, és mikor veszélyes (hősokk, nagynyomású mosó, mosószer).
+- https://fejersolarclean.hu/tudastar/milyen-gyakran-kell-klimat-tisztittatni/ —
+  Milyen gyakran kell klímát tisztíttatni? Időpontok és a tisztításra utaló jelek.
+
+Jogi:
+- https://fejersolarclean.hu/impresszum/
+- https://fejersolarclean.hu/adatkezeles/
