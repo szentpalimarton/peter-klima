@@ -38,6 +38,12 @@ const isDemo = import.meta.env.BASE_URL !== '/';
     {schema.map((s) => (
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
+    {/* Cloudflare Web Analytics — sütimentes, anonim látogatottsági statisztika */}
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "8076197d25c144d49449e634f5f22bef"}'
+    ></script>
   </head>
   <body>
     <header class="site-header">
