@@ -1,0 +1,142 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Napelem tisztítás árak 2026-ban — mitől függ, mennyibe kerül? | Péter';
+const description =
+  'Mennyibe kerül a napelem tisztítás 2026-ban? Nálunk 1–10 panel 35 000 Ft-tól. Mitől függ az ár: panelszám, hozzáférés, szennyezettség — átlátható árlistával.';
+
+const homeUrl = withBase('/');
+const tudastarUrl = withBase('/tudastar/');
+const napelemUrl = withBase('/napelem-tisztitas/');
+const arakUrl = withBase('/arak/');
+const pageUrl = new URL(withBase('/tudastar/napelem-tisztitas-arak-2026/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Mennyibe kerül a napelem tisztítás 2026-ban?',
+    a: 'Nálunk 1–10 panel 35 000 Ft, 11–15 panel 50 000 Ft, 16–20 panel 65 000 Ft, 21–25 panel 80 000 Ft; 25 panel felett minden további 5 panel +15 000 Ft. Az ár normál körülmények között érvényes.',
+  },
+  {
+    q: 'Mitől függ a napelemtisztítás ára?',
+    a: 'Elsősorban a panelek számától, valamint attól, hogy a tetőn milyen a hozzáférés. Ha a munkavégzéshez állvány, emelőkosaras gép vagy más speciális megoldás kell, annak költsége külön kerül felszámításra — ezt előre, az egyeztetéskor tisztázzuk.',
+  },
+  {
+    q: 'Megéri kifizetni a napelem tisztítást?',
+    a: 'A legtöbb esetben igen. Egy tipikus 5 kWp-os rendszernél már egy óvatos, 10%-os szennyeződési veszteség is évi több tízezer forintnyi kiesést jelenthet, így a tisztítás sok esetben egy-két szezon alatt megtérül.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Napelem tisztítás árak 2026-ban — mitől függ, mennyibe kerül?',
+    description,
+    datePublished: '2026-07-25',
+    dateModified: '2026-07-25',
+    inLanguage: 'hu',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND },
+    mainEntityOfPage: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Tudástár', item: new URL(withBase('/tudastar/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Napelem tisztítás árak 2026', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={tudastarUrl}>Tudástár</a> › Napelem tisztítás árak 2026</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Napelem tisztítás árak 2026-ban — mitől függ, mennyibe kerül?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <p class="lede">
+        Nálunk a napelemtisztítás <strong>1–10 panelig 35 000 Ft</strong>, és onnantól
+        sávosan nő a panelszámmal — a teljes árlista lent, kitalálósdi nélkül. Az árat
+        elsősorban a <strong>panelek száma</strong> és a <strong>hozzáférés</strong>
+        határozza meg.
+      </p>
+
+      <h2>Az aktuális árlista</h2>
+      <div class="price-card" style="margin: 1.2rem 0;">
+        <table>
+          <tbody>
+            <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+            <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+            <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+            <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            <tr><td>25 panel felett, minden további 5 panel</td><td class="ar">+15 000 Ft</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Mitől függ az ár?</h2>
+      <ul>
+        <li><strong>A panelek száma</strong> — ez a fő tényező, ezért sávos az árazás.</li>
+        <li><strong>A hozzáférés</strong> — ha a munkavégzéshez állvány, emelőkosaras gép vagy más speciális megoldás szükséges, annak költségét külön számítjuk fel. Ezt <strong>előre, az egyeztetéskor tisztázzuk</strong>, nem a helyszínen derül ki.</li>
+        <li><strong>A szennyezettség mértéke</strong> — az erősen rászáradt szennyeződés (madárürülék, mezőgazdasági por) több munkát igényel.</li>
+      </ul>
+
+      <h2>Miért mondjuk ki előre az árat?</h2>
+      <p>
+        A szakmában elterjedt a „kérjen ajánlatot" gyakorlat: az ember addig nem tudja meg,
+        mennyibe kerül, amíg le nem adta az adatait. Mi ezt fordítva csináljuk — az árlista
+        nyilvános, és <strong>a telefonban megbeszélt ár nem változik a helyszínen</strong>.
+        Így Ön előre tudja kalkulálni a költséget, mi pedig nem vesztegetjük egymás idejét.
+      </p>
+
+      <h2>Megéri-e? Egy gyors számítás</h2>
+      <p>
+        Egy tipikus, kb. 5 kWp-os háztartási rendszer Magyarországon nagyjából évi 5000–5500
+        kWh áramot termel. Már egy óvatos, 10%-os szennyeződési veszteség is évi ~500–550 kWh
+        kiesést jelent — ez az áram értékétől függően nagyságrendileg évi több tízezer forint.
+        Egy ekkora rendszer tisztítása 35 000–50 000 Ft körül van, vagyis a tisztítás
+        <strong>sok esetben egy-két szezon alatt megtérül</strong>.
+      </p>
+      <p>
+        <em>A számok illusztratív jellegűek — a pontos érték a rendszer méretétől, a
+        szennyezettségtől és az áram árától függ.</em>
+      </p>
+
+      <a class="crosslink" href={withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/')}>
+        <span class="k">Cikk</span>
+        <strong>Mennyivel termel többet a tiszta napelem?</strong><br />
+        A megtérülés mögötti számok és a mérési források részletesen. <span class="arw">→</span>
+      </a>
+      <a class="crosslink" href={arakUrl}>
+        <span class="k">Árak</span>
+        <strong>Teljes árlista</strong><br />
+        Napelem- és klímatisztítás árai egy helyen. <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Kérjen pontos árat</h2>
+        <p>Mondja meg, hány panelről van szó, és megmondjuk a pontos árat.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-arak2026-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-arak2026-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <p style="font-size:0.9rem;margin-top:1.5rem;">
+        <a href={napelemUrl}>Napelemtisztítás szolgáltatásunkról részletesen →</a>
+      </p>
+    </div>
+  </section>
+</Base>

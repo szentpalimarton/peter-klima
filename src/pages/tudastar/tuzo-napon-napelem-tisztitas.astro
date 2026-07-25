@@ -1,0 +1,132 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Tűző napon miért nem szabad napelemet tisztítani? | Péter';
+const description =
+  'Tűző napon a felforrósodott napelem üvege a hidegebb víztől elpattanhat. Ezért kora reggel, késő délután vagy borult időben tisztítunk — így a panel biztonságban van.';
+
+const homeUrl = withBase('/');
+const tudastarUrl = withBase('/tudastar/');
+const napelemUrl = withBase('/napelem-tisztitas/');
+const pageUrl = new URL(withBase('/tudastar/tuzo-napon-napelem-tisztitas/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Tűző napon is lehet napelemet tisztítani?',
+    a: 'Nem ajánlott. A napon felforrósodott panelt hideg víz éri, és a hirtelen hőmérséklet-különbség (hősokk) megrepesztheti az üveget. Ezért a tisztítást kora reggel, késő délután vagy borult időben végezzük.',
+  },
+  {
+    q: 'Mi az a hősokk a napelemnél?',
+    a: 'A napon a panel üvege jóval melegebb lehet a levegő hőmérsékleténél. Ha ilyenkor hidegebb víz éri, a felület hirtelen összehúzódik, miközben a mélyebb rétegek még tágultak — ez a feszültség repedést okozhat az üvegben.',
+  },
+  {
+    q: 'Mikor a legjobb napszak a napelemtisztításra?',
+    a: 'Kora reggel vagy késő délután, illetve borult, hűvös időben. Ilyenkor a panel nem forró, és a víz sem szárad rá azonnal, így foltmentes marad a felület.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Tűző napon miért nem szabad napelemet tisztítani?',
+    description,
+    datePublished: '2026-07-25',
+    dateModified: '2026-07-25',
+    inLanguage: 'hu',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND },
+    mainEntityOfPage: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Tudástár', item: new URL(withBase('/tudastar/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Tűző napon napelem tisztítás', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={tudastarUrl}>Tudástár</a> › Tűző napon napelem tisztítás</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Tűző napon miért nem szabad napelemet tisztítani?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <p class="lede">
+        Mert a napon felforrósodott panelt hideg víz éri, és a hirtelen
+        hőmérséklet-különbség — a <strong>hősokk</strong> — megrepesztheti az üveget.
+        Ezért dolgozunk kora reggel, késő délután vagy borult időben: így a panel
+        biztonságban van, és a víz sem szárad rá foltosan.
+      </p>
+
+      <h2>Mi történik a panellel a napon?</h2>
+      <p>
+        Erős napsütésben a panel üvegének hőmérséklete jóval a levegő hőmérséklete fölé
+        emelkedik — nyáron egy sötét felület igen forróvá válik. Ha ilyenkor hidegebb víz
+        éri, a felszín hirtelen összehúzódik, miközben a mélyebb rétegek még tágult
+        állapotban vannak. Ez a belső feszültség az, ami repedést okozhat az üvegben.
+      </p>
+      <div class="stat solar">
+        <span class="big">Egy repedt panel nem javítható — cserélni kell</span>
+        <p>
+          Egy mikrorepedés nemcsak a termelést rontja: utat nyit a nedvességnek is, ami
+          hosszú távon a cellák tönkremeneteléhez vezet. Egy panel cseréje pedig
+          nagyságrendekkel drágább, mint egy tisztítás — ezért nem éri meg kockáztatni
+          egy rosszul megválasztott napszakkal.
+        </p>
+      </div>
+
+      <h2>A másik ok: a foltos száradás</h2>
+      <p>
+        Tűző napon a víz szinte azonnal elpárolog a forró üvegről, és a benne oldott
+        ásványi anyagok ottmaradnak. Az eredmény foltos, csíkos felület — ami pontosan azt
+        a fényáteresztést rontja, amiért az egész tisztítás történt. Hűvösebb időben a víz
+        lassabban szárad, és egyenletesen, folt nélkül fut le.
+      </p>
+
+      <h2>Mikor tisztítunk tehát?</h2>
+      <ul>
+        <li><strong>Kora reggel</strong> — a panel még nem melegedett fel.</li>
+        <li><strong>Késő délután</strong> — a legerősebb sugárzás már elmúlt.</li>
+        <li><strong>Borult, hűvös időben</strong> — ilyenkor egész nap dolgozhatunk.</li>
+      </ul>
+      <p>
+        Ezért fordulhat elő, hogy egy nyári hőségnapra nem tudunk délre időpontot adni —
+        nem kényelmi kérdés, hanem a panel védelme. Az időpontot ennek megfelelően
+        egyeztetjük.
+      </p>
+
+      <a class="crosslink" href={withBase('/tudastar/napelem-tisztitas-hazilag/')}>
+        <span class="k">Cikk</span>
+        <strong>Napelem tisztítás házilag: mikor szabad, és mikor veszélyes?</strong><br />
+        A hősokk mellett a másik három gyakori hiba, ami kárt okoz. <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Tisztíttatná a napelemét?</h2>
+        <p>A megfelelő napszakot mi választjuk ki — Ön csak szóljon.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-tuzonap-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-tuzonap-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <p style="font-size:0.9rem;margin-top:1.5rem;">
+        <a href={napelemUrl}>Napelemtisztítás szolgáltatásunkról részletesen →</a>
+      </p>
+    </div>
+  </section>
+</Base>
