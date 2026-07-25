@@ -307,6 +307,10 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0.8rem 1.1rem;
 }
 
+.faq-more { margin-top: -0.4rem; padding-bottom: 1.1rem; font-size: 0.92rem; font-weight: 600; }
+.faq-group { margin-bottom: 2.2rem; }
+.faq-group > h2 { margin-bottom: 0.6rem; }
+
 /* FAQ */
 .faq { max-width: 46rem; margin-top: 1.5rem; }
 .faq details {
@@ -418,11 +422,15 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* Header nav (desktop) */
-.faq-group { margin-bottom: 2.2rem; }
-.faq-group > h2 { margin-bottom: 0.6rem; }
 .site-nav { display: none; }
 @media (min-width: 780px) {
   .site-nav { display: flex; gap: 1.35rem; align-items: center; margin-left: auto; margin-right: 1.4rem; }
+  /* Szűk desktopon csak a fő linkek férnek el a márkanév + telefon mellett;
+     a másodlagosak 1060px felett jelennek meg (különben a fejléc túlcsordul). */
+  .site-nav a.nav-wide { display: none; }
+}
+@media (min-width: 1060px) {
+  .site-nav a.nav-wide { display: inline; }
 }
 .site-nav a {
   color: var(--ink); text-decoration: none; font-size: 0.95rem; font-weight: 600;

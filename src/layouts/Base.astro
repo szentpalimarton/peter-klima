@@ -43,9 +43,10 @@ const isDemo = import.meta.env.BASE_URL !== '/';
         <nav class="site-nav">
           <a href={withBase('/napelem-tisztitas/')}>Napelemtisztítás</a>
           <a href={withBase('/klimatisztitas/')}>Klímatisztítás</a>
-          <a href={withBase('/arak/')}>Árak</a>
-          <a href={withBase('/gyik/')}>GYIK</a>
-          <a href={`${withBase('/')}#kapcsolat`}>Kapcsolat</a>
+          <a class="nav-wide" href={withBase('/arak/')}>Árak</a>
+          <a href={withBase('/tudastar/')}>Tudástár</a>
+          <a class="nav-wide" href={withBase('/gyik/')}>GYIK</a>
+          <a class="nav-wide" href={`${withBase('/')}#kapcsolat`}>Kapcsolat</a>
         </nav>
         <a class="header-phone" href={PHONE_TEL} data-cta="call-header">📞 {PHONE_DISPLAY}</a>
       </div>
@@ -57,6 +58,7 @@ const isDemo = import.meta.env.BASE_URL !== '/';
       <div class="wrap">
         <span>© 2026 {BRAND} — Fejér megye</span>
         <nav>
+          <a href={withBase('/tudastar/')}>Tudástár</a>
           <a href={withBase('/impresszum/')}>Impresszum</a>
           <a href={withBase('/adatkezeles/')}>Adatkezelés</a>
         </nav>
