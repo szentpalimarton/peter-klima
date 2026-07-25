@@ -1,12 +1,15 @@
 # Péter · Napelem- és Klímatisztítás — website
 
 Mobile-first, Hungarian lead-generation site for solar panel cleaning (core service)
-and AC (klíma) cleaning in Fejér county. Static Astro site; the phone call is the
-only conversion. **Positioning: solar-first** — solar leads the hero, card order,
-price tables, FAQ order, metadata, and keyword targeting; klíma is the strong second.
+and AC (klíma) cleaning in Fejér county. Static Astro site; **the phone call is the
+only conversion**. Positioning is solar-first — solar leads the hero, card order,
+price tables, FAQ order, metadata, and keyword targeting; klíma is a strong second.
 
-Full project plan (architecture, SEO/AIO/GEO strategy, content backlog, phases):
-see the "Klíma & napelem tisztítás — website project plan" artifact from the planning session.
+**Live:** https://fejersolarclean.hu
+`fejerklimaclean.hu` (+ its `www`) 301-redirects to `/klimatisztitas/`.
+
+Built with the `local-business-seo-geo` skill. Content planning lives in
+[`content-backlog.md`](content-backlog.md) — read that before adding pages.
 
 ## Commands
 
@@ -17,40 +20,50 @@ npm run build    # static output to dist/
 npm run preview
 ```
 
-## Status: Phase 1 (MVP one-pager)
+## Deploy
 
-Done:
-- One-page landing: hero, services, price tables, why-us, mini-FAQ, contact
-- `LocalBusiness` + `FAQPage` JSON-LD, OG tags, sitemap (`@astrojs/sitemap`), robots.txt, llms.txt
-- Legal skeletons: `/impresszum`, `/adatkezeles` (with `[KITÖLTENDŐ]` placeholders)
-- Sticky mobile call bar; all `tel:` links tagged with `data-cta` for later GA4 event wiring
+Push to `main` → GitHub Actions builds and deploys to GitHub Pages (~1 min).
+No manual step. `public/CNAME` pins the custom domain; HTTPS is enforced.
 
-## Before go-live (blockers)
+## Site structure (14 pages)
 
-1. **Domain**: register the chosen `.hu` domain, then update `site` in `astro.config.mjs`
-   and the Sitemap URL in `public/robots.txt`.
-2. **Impresszum data** from Péter: official name, seat, registration + tax number.
-   Fill every `[KITÖLTENDŐ]` in `src/pages/impresszum.astro` and `adatkezeles.astro`.
-3. **Photos**: the hero and OG image is `public/images/peter-kabala.jpg` — an approved
-   AI caricature of Péter (recognizable likeness, "Péter" on the shirt, brush + panels +
-   AC unit; deliberately no chemical bottle — they clean with filtered, pH-neutral water
-   only, no chemicals claim must stay consistent). Real job photos live in the "Munkáink"
-   gallery (`napelem-*.jpg`, `klima-*.jpg`, sourced from ~/Documents/OP_képek). More are
-   welcome for GBP and future before/after pairs. Keep files ≤ 250 KB.
-4. **Google Business Profile**: create as service-area business, same name/phone as the site.
+```
+/                          Home — hero, services, prices, gallery, FAQ, Tudástár, contact
+/napelem-tisztitas         Solar service page (sourced stats, FAQ)
+/klimatisztitas            AC service page (sourced stats, FAQ)
+/arak                      Combined price list (OfferCatalog schema)
+/gyik                      Full FAQ, 14 grouped Q&A
+/tudastar                  Knowledge-base hub
+/tudastar/…                6 articles (see content-backlog.md)
+/impresszum, /adatkezeles  Legal (real data, no placeholders)
+```
 
-## Phase 2 backlog (see project plan §4–§8)
+Every page carries JSON-LD: `LocalBusiness` / `Service` / `FAQPage` /
+`BreadcrumbList` / `Article`. `public/llms.txt` lists all URLs for AI crawlers.
 
-- `/klimatisztitas`, `/napelem-tisztitas`, `/arak`, `/gyik` full pages
-- Verified, cited stats (NREL soiling, Google flat-panel study, DOE 5–15% filter figure)
-- Tudástár articles (flagship: "Mennyivel termel többet a tiszta napelem?")
-- GA4 (or cookieless analytics) + tel: click events on the `data-cta` attributes
-- Bing Webmaster Tools + Google Search Console submission after domain is live
+## Status
 
-## Content rules
+- ✅ Live on the custom domain with HTTPS; Search Console verified + sitemap submitted
+- ✅ Impresszum/adatkezelés filled with real business data
+- ✅ Content engine: 6 service/price/FAQ pages + 6 sourced articles
+- 🟡 Google Business Profile created 2026-07-14, **awaiting verification** (video)
+- ⬜ Analytics not yet installed (planned: cookieless + `data-cta` call-click events)
+- ⬜ Bing Webmaster Tools not yet submitted (feeds ChatGPT/Copilot)
 
-- Prices and the service list come from Péter only — never invent facts
-  (no "számlával", "biztosítással", experience claims until he confirms them).
-- Every published statistic must be verified against its primary source and cited.
-- Copy is Hungarian, answer-first (first sentence answers the question) — this is the
-  AIO/GEO strategy; keep it when editing.
+## Content rules (important)
+
+- **Only publish facts Péter confirms.** No invented claims (guarantees, insurance,
+  years of experience). See "Trust signals confirmed by owner" in `content-backlog.md`.
+- Say **"szűrt, pH-semleges víz"**, never "vegyszermentes"; prices are
+  **"előre kalkulálható"**, never "kimondott" — these are the owner's wordings.
+- **Every statistic needs a named, verified source** (Google 2009, NREL, US DOE, EPA).
+  Never publish an unverified number — it undermines both trust and AI citations.
+- Copy is Hungarian and **answer-first** (the first sentence answers the question).
+  This is the GEO strategy — keep it when editing.
+- The `napelem-tisztitas-arak-2026` article needs a **yearly title/content refresh**.
+
+## Assets
+
+- `public/images/peter-kabala.jpg` — approved AI caricature of Péter; hero + OG image.
+  Deliberately shows no chemical bottle (consistent with the pH-neutral-water claim).
+- `public/images/napelem-*.jpg`, `klima-*.jpg` — real job photos (Munkáink gallery).
