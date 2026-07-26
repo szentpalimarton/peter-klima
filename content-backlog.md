@@ -1,6 +1,6 @@
 # Content backlog — Péter · Napelem- és Klímatisztítás
 
-_Last updated: 2026-07-25_
+_Last updated: 2026-07-26_
 _Built with the `local-business-seo-geo` skill._
 
 ## Positioning reminder
@@ -71,7 +71,19 @@ klíma erős második. Cél: csörögjön a telefon.
 - Tűző napon nem tisztít (hősokk elkerülése) ✓
 - NEM megerősített (ne publikáld, míg Péter nem mondja): évek száma, biztosítás, garancia
 
+## Területek-silo terv (videó-tanulságok alapján, 2026-07-26 — módszer: skill area-pages.md)
+Városonként EGY kombinált oldal (/teruletek/<varos>/), valódi helyi ground-truth
+kutatással (40–50% egyedi tartalom, csak ellenőrizhető tények). Székesfehérvár NEM
+kap városoldalt — azt a szolgáltatás-oldalak célozzák (kannibalizáció-védelem).
+Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
+- [ ] Kutatási fájlok: research/teruletek/*.md (5 város, forrásokkal) — task #10
+- [ ] /teruletek/ hub + Gárdony–Velencei-tó oldal (Péter hazai terepe: Nadap!) — task #10
+- [ ] Dunaújváros (ipari por/vasmű) · Mór (bor/mezőgazdaság) · Bicske (M1 agglomeráció) · Sárbogárd (mezőgazdaság) — task #11, az első oldal indexelése UTÁN
+- [ ] Térkép a városoldalakra: OSM embed vagy statikus kép (Google Maps iframe TILOS — sütimentes ígéret!)
+
 ## Technical / SEO todos
+- [ ] Képek WebP-re (JPG-k 166–248 KB → ~fele; OG-kép marad JPG) + PageSpeed mérés — task #9
+- [ ] GBP feltöltéskor: a GBP-szolgáltatáslista tükrözze a weboldal szolgáltatásait (név szerint egyezzen)
 - [x] Meta description-ök ~155 karakterre rövidítve minden oldalon
 - [x] Belső linkelés rendben: minden cikkre 2–4 oldalról mutat link (Tudástár a navban is)
 - [x] Strukturált adat minden oldalon (LocalBusiness/Service/FAQPage/Article/BreadcrumbList)
