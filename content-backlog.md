@@ -82,7 +82,18 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 - [ ] Térkép a városoldalakra: OSM embed vagy statikus kép (Google Maps iframe TILOS — sütimentes ígéret!)
 
 ## Technical / SEO todos
-- [ ] Képek WebP-re (JPG-k 166–248 KB → ~fele; OG-kép marad JPG) + PageSpeed mérés — task #9
+- [x] **Képek WebP-re + favicon zsugorítás — 2026-07-26.** Képek 817→291 KB (61–73%
+      megtakarítás/kép), favicon 269→52 KB. OG-képek szándékosan JPG maradtak
+      (peter-kabala.jpg = oldal-OG + LocalBusiness séma; napelem-tisztitas-kozben.jpg
+      = zászlóshajó cikk OG) — a social scraperek megbízhatatlanok WebP-vel.
+      **Éles mérés (főoldal, CDN-en keresztül):** 136 kB összes súly, 7 erőforrás,
+      load 527 ms, DOMContentLoaded 360 ms, 0 kB JS. Bontás: betűtípus 67 kB,
+      kép 60 kB, CSS 3 kB, HTML 5 kB. (A hivatalos PageSpeed pontszám azért nem
+      került ide, mert a publikus PSI API napi kvótája elfogyott — érdemes majd
+      kézzel lefuttatni a pagespeed.web.dev-en.)
+      Megjegyzés: a betűtípus már nagyobb tétel, mint a kép — ha valaha optimalizálni
+      kell, ott van a következő nyerhető kB (a böngésző a felesleges vietnami
+      subsetet unicode-range alapján eleve nem tölti le, tehát az nem probléma).
 - [ ] GBP feltöltéskor: a GBP-szolgáltatáslista tükrözze a weboldal szolgáltatásait (név szerint egyezzen)
 - [x] Meta description-ök ~155 karakterre rövidítve minden oldalon
 - [x] Belső linkelés rendben: minden cikkre 2–4 oldalról mutat link (Tudástár a navban is)
