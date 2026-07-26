@@ -1,0 +1,249 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Gárdonyban és a Velencei-tónál | Péter';
+const description =
+  'Napelemtisztítás és klímatisztítás Gárdonyban, Agárdon, Dinnyésen és a Velencei-tó körül. Helyi szakember Nadapról, előre kalkulálható árakkal. Hívjon!';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/gardony-velencei-to/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Miért koszolódik gyorsabban a napelem a Velencei-tó környékén?',
+    a: 'A tó nyugati medencéjében, Dinnyés és Pákozd között fekszik a Velencei-tavi Madárrezervátum, ahol nagy kócsag, kanalasgém, nyári lúd és számos más vízimadár fészkel, októbertől pedig hattyúk telelnek. A sok vízimadár miatt itt jellemzően több madárürülék kerül a tetőkre és a napelemekre, mint egy átlagos településen — ez pedig részlegesen árnyékol, és a lefedett felületnél aránytalanul nagyobb termelésveszteséget okoz.',
+  },
+  {
+    q: 'Kimennek Gárdonyba, Agárdra és Dinnyésre is?',
+    a: 'Igen, mindhárom városrészbe. Nadapon lakunk, ami ugyanabba a kistérségbe tartozik, aminek Gárdony a központja — vagyis pár perc alatt ott vagyunk, nem másik megyéből utazunk.',
+  },
+  {
+    q: 'Nyaralóhoz is kimennek, ha csak szezonban használjuk?',
+    a: 'Természetesen. A hónapokig zárva álló nyaralóknál különösen indokolt a szezonnyitás előtti klímatisztítás és fertőtlenítés, mert az álló készülékben megtelepedhet a gomba és a baktérium. A napelemek is hosszú ideig mosatlanul állnak ilyenkor.',
+  },
+  {
+    q: 'Panziónak, apartmanháznak több klímát is tisztítanak?',
+    a: 'Igen, lakossági és céges ügyfeleket egyaránt kiszolgálunk, számlaképes szolgáltatással. Több beltéri egységnél kedvezőbb az egységár: 2 egység 26 000 Ft, 3 egység 36 000 Ft, 4 egység 48 000 Ft; ennél több egységnél egyedi árat adunk.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Gárdonyban és a Velencei-tó környékén',
+    description:
+      'Kíméletes napelemtisztítás szűrt, pH-semleges vízzel és klímatisztítás zsákos-átmosásos technikával Gárdonyban, Agárdon, Dinnyésen és a Velencei-tó környékén.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Gárdony' },
+      { '@type': 'City', name: 'Velence' },
+      { '@type': 'City', name: 'Sukoró' },
+      { '@type': 'City', name: 'Pákozd' },
+      { '@type': 'City', name: 'Kápolnásnyék' },
+      { '@type': 'City', name: 'Nadap' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Gárdony és a Velencei-tó', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Gárdony és a Velencei-tó</nav>
+      <span class="kicker">Gárdony · Agárd · Dinnyés · Velencei-tó</span>
+      <h1>Napelem- és klímatisztítás Gárdonyban és a Velencei-tó környékén</h1>
+      <p class="lead">
+        Helyi szakember <strong>Nadapról</strong> — ugyanabból a kistérségből, aminek
+        Gárdony a központja. Kíméletes napelemtisztítás szűrt, pH-semleges vízzel és
+        klímatisztítás fertőtlenítéssel, előre kalkulálható árakkal.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-gardony-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Miért más a Velencei-tó környéke?</h2>
+      <p>
+        A tóparti települések két dologban térnek el egy átlagos Fejér megyei
+        helyszíntől: <strong>sokkal több a vízimadár</strong>, és nagyon sok az
+        <strong>időszakosan használt nyaraló és szálláshely</strong>. Mindkettő
+        érezhetően befolyásolja, mikor és milyen gyakran érdemes tisztíttatni.
+      </p>
+
+      <div class="stat solar">
+        <span class="big">Madárrezervátum a szomszédban — több madárürülék a paneleken</span>
+        <p>
+          A <strong>Velencei-tavi Madárrezervátum</strong> a tó nyugati medencéjében,
+          <strong>Dinnyés</strong> (Gárdony városrésze) és Pákozd között fekszik.
+          1958 óta védett terület, 1989 óta pedig nemzetközi jelentőségű vizes élőhely
+          (ramsari terület). A nádasban rendszeresen fészkel a nagy kócsag, a kanalasgém,
+          a búbos vöcsök és a nyári lúd; októbertől hattyúcsapatok telelnek itt.
+        </p>
+        <p>
+          A sűrű vízimadár-populáció miatt a környéken jellemzően több madárürülék kerül
+          a tetőkre és a napelemekre. Ez nem csak esztétikai kérdés: a rárakódott folt
+          <strong>részlegesen árnyékolja</strong> a cellákat, és a lefedett felületnél
+          aránytalanul nagyobb termeléskiesést okoz.
+        </p>
+        <span class="src">Forrás: Duna-Ipoly Nemzeti Park; Natura 2000 (HUDI10007) adatlap</span>
+      </div>
+
+      <h2>Nyaralók és szálláshelyek: amit a szezon előtt érdemes tudni</h2>
+      <p>
+        Gárdony három városrésze eltérő jellegű: a <strong>gárdonyi</strong> rész
+        városias, <strong>Agárd</strong> kertváros jellegű, sok hétvégi házzal és
+        idegenforgalmi létesítménnyel, <strong>Dinnyés</strong> pedig csendes,
+        ökoturisztikai célpont. A tó körül összesen több száz szálláshely — apartman,
+        vendégház, panzió, üdülőház — működik.
+      </p>
+      <p>
+        Ez két gyakorlati következménnyel jár:
+      </p>
+      <ul>
+        <li>
+          <strong>A hónapokig zárt nyaralóknál</strong> a klíma állva marad, a nedves
+          hőcserélőn pedig megtelepedhet a gomba és a baktérium — ezért érdemes
+          <em>szezonnyitás előtt</em> tisztíttatni, nem akkor, amikor már büdös.
+        </li>
+        <li>
+          <strong>Panzióknál, apartmanházaknál</strong> jellemzően több beltéri egység
+          van egy helyen. Ilyenkor a többdarabos ársáv lép életbe, és a munkát egy
+          kiszállással elvégezzük.
+        </li>
+      </ul>
+
+      <h2>Helyben vagyunk — nem másik megyéből utazunk</h2>
+      <p>
+        <strong>Nadapon</strong> lakunk, ami annak a kistérségnek a része, amelynek
+        Gárdony a központja (Kápolnásnyék, Nadap, Pákozd, Pázmánd, Sukoró, Vereb,
+        Velence, Zichyújfalu). Ez a gyakorlatban gyors időpont-egyeztetést jelent, és
+        azt, hogy a tóparti települések nem „kiszállási körzet" a számunkra, hanem a
+        saját környékünk.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Gárdonyban és környékén</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések a Velencei-tó környékéről</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Gárdony és a Velencei-tó</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.55%2C47.16%2C18.72%2C47.25&amp;layer=mapnik"
+          title="Gárdony és a Velencei-tó térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot</h2>
+        <p>Mondja meg, hol van és hány panelről vagy klímáról van szó — mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-gardony-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-gardony-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={teruletekUrl}>
+        <span class="k">Területek</span>
+        <strong>Hol dolgozunk még?</strong><br />
+        Székesfehérvár, Velence, Dunaújváros, Mór, Bicske és Fejér megye többi települése.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>

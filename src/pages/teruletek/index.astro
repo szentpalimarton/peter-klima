@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+import { PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Hol dolgozunk? — Székesfehérvár és Fejér megye | Péter';
+const description =
+  'Napelem- és klímatisztítás Székesfehérváron, a Velencei-tó környékén és Fejér megye egész területén. Nézze meg, kimegyünk-e Önhöz — vagy hívjon egy percre.';
+
+const homeUrl = withBase('/');
+const pageUrl = new URL(withBase('/teruletek/'), Astro.site).toString();
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › Területek</nav>
+      <span class="kicker">Kiszolgált terület</span>
+      <h1>Hol dolgozunk?</h1>
+      <p class="lead">
+        Elsősorban Székesfehérváron és a Velencei-tó környékén, de <strong>Fejér megye
+        egész területén</strong> vállalunk munkát. Ha nem biztos benne, hogy Önhöz is
+        kimegyünk-e: hívjon, egy perc alatt kiderül.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-teruletek-hero">📞 {PHONE_DISPLAY}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Településenként</h2>
+      <a class="crosslink" href={withBase('/teruletek/gardony-velencei-to/')}>
+        <span class="k">Terület</span>
+        <strong>Gárdony és a Velencei-tó környéke</strong><br />
+        Miért koszolódnak itt gyorsabban a napelemek — és mire figyeljünk a nyaralók
+        klímáinál. <span class="arw">→</span>
+      </a>
+
+      <p>
+        Ezeken a településeken is rendszeresen dolgozunk:
+        <strong>Székesfehérvár</strong>, <strong>Velence</strong>, <strong>Sukoró</strong>,
+        <strong>Pákozd</strong>, <strong>Kápolnásnyék</strong>, <strong>Nadap</strong>,
+        <strong>Dunaújváros</strong>, <strong>Mór</strong>, <strong>Bicske</strong>,
+        <strong>Sárbogárd</strong> — és a köztük lévő kisebb települések is.
+      </p>
+
+      <h2>Kimegyünk Önhöz?</h2>
+      <p>
+        Ha a települése nem szerepel a listán, attól még jó eséllyel vállaljuk — Fejér
+        megyén belül szinte mindenhová megyünk. A legegyszerűbb, ha felhív: megmondja,
+        hol van és hány panelről vagy klímáról van szó, mi pedig azonnal mondjuk az árat
+        és egy időpontot.
+      </p>
+
+      <a class="crosslink" href={withBase('/napelem-tisztitas/')}>
+        <span class="k">Szolgáltatás</span>
+        <strong>Napelemtisztítás</strong> — módszer, árak, gyakoriság
+        <span class="arw">→</span>
+      </a>
+      <a class="crosslink" href={withBase('/klimatisztitas/')}>
+        <span class="k">Szolgáltatás</span>
+        <strong>Klímatisztítás és fertőtlenítés</strong> — módszer, árak, gyakoriság
+        <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Kérdezze meg egy hívással</h2>
+        <p>Megmondja, hol van és mit szeretne — mi mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-teruletek-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-teruletek-cta-btn">📞 Hívom most</a>
+      </div>
+    </div>
+  </section>
+</Base>
