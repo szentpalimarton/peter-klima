@@ -16,6 +16,8 @@ klíma erős második. Cél: csörögjön a telefon.
 | /klimatisztitas | klímatisztítás Székesfehérvár | klíma tisztítás ár, klíma fertőtlenítés, split klíma tisztítás | live |
 | /arak | napelem tisztítás árak | klímatisztítás árak 2026 | live |
 | /gyik | question long-tails | „milyen gyakran…”, „mennyivel termel többet…”, „miért büdös a klíma” | live |
+| /teruletek | kiszolgált terület (hub) | Fejér megye települései | live |
+| /teruletek/gardony-velencei-to | napelemtisztítás Gárdony | klímatisztítás Velencei-tó, napelemtisztítás Agárd/Dinnyés/Velence | live |
 
 ## Pages to build (priority order)
 - [x] **/napelem-tisztitas** — fő szolgáltatás oldal (Service+FAQPage+BreadcrumbList séma) — 2026-07-23
@@ -76,10 +78,12 @@ Városonként EGY kombinált oldal (/teruletek/<varos>/), valódi helyi ground-t
 kutatással (40–50% egyedi tartalom, csak ellenőrizhető tények). Székesfehérvár NEM
 kap városoldalt — azt a szolgáltatás-oldalak célozzák (kannibalizáció-védelem).
 Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
-- [ ] Kutatási fájlok: research/teruletek/*.md (5 város, forrásokkal) — task #10
-- [ ] /teruletek/ hub + Gárdony–Velencei-tó oldal (Péter hazai terepe: Nadap!) — task #10
+- [x] Kutatási fájlok: research/teruletek/*.md (5 város, forrásokkal) — 2026-07-26
+- [x] /teruletek/ hub + Gárdony–Velencei-tó oldal — 2026-07-26 (madárrezervátum + nyaralók az angle)
+- [ ] **VÁRAKOZÁS: a Gárdony-oldal indexelése** — Márton kérje az indexelést; ha hetekig
+      „feltérképezve, de nincs indexelve", NEM skálázunk, hanem mélyítjük a differenciálást
 - [ ] Dunaújváros (ipari por/vasmű) · Mór (bor/mezőgazdaság) · Bicske (M1 agglomeráció) · Sárbogárd (mezőgazdaság) — task #11, az első oldal indexelése UTÁN
-- [ ] Térkép a városoldalakra: OSM embed vagy statikus kép (Google Maps iframe TILOS — sütimentes ígéret!)
+- [x] Térkép: OSM embed (sütimentes) — a Gárdony-oldalon él, minta a többihez
 
 ## Technical / SEO todos
 - [x] **Képek WebP-re + favicon zsugorítás — 2026-07-26.** Képek 817→291 KB (61–73%
