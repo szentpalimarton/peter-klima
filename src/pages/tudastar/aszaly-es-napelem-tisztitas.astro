@@ -1,0 +1,166 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Aszályos évben gyakrabban kell napelemet tisztítani? | Péter';
+const description =
+  'Aszályos évben kevesebb eső mossa át a napelemeket, és több a levegőben a por. Mit jelent ez a tisztítás gyakoriságára Fejér megyében? Számok és tanácsok.';
+
+const homeUrl = withBase('/');
+const tudastarUrl = withBase('/tudastar/');
+const napelemUrl = withBase('/napelem-tisztitas/');
+const pageUrl = new URL(withBase('/tudastar/aszaly-es-napelem-tisztitas/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Aszályos évben gyakrabban kell tisztítani a napelemet?',
+    a: 'Jellemzően igen. Két hatás adódik össze: kevesebb eső esik, ami átmoshatná a paneleket, és a száraz talaj miatt több por kerül a levegőbe. Ilyen években érdemes lehet a szokásos évi egy helyett kettő tisztítással számolni, különösen mezőgazdasági környezetben.',
+  },
+  {
+    q: 'Az eső egyébként sem mossa le a panelt?',
+    a: 'Csak részben. A megdöntött paneleket az eső nagyrészt tisztán tartja, a laposabb elrendezésnél viszont nem — ott a víz megáll és koszcsíkot hagy. A Google 2009-es mérésén a csak eső által tisztított panelek 12%-kal kevesebbet termeltek, mint a szakszerűen tisztítottak. Aszályos évben ez a részleges átmosás is elmarad.',
+  },
+  {
+    q: 'Honnan tudom, hogy esedékes-e a tisztítás?',
+    a: 'A legjobb jel a saját inverter vagy monitoring alkalmazás: ha hasonló napsütéses napokon a termelés fokozatosan csökken, az a szennyeződésre utal. Emellett szemrevételezéssel is látszik a rárakódott por, pollen vagy madárürülék.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Aszályos évben gyakrabban kell napelemet tisztítani?',
+    description,
+    datePublished: '2026-07-26',
+    dateModified: '2026-07-26',
+    inLanguage: 'hu',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND },
+    mainEntityOfPage: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Tudástár', item: new URL(withBase('/tudastar/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Aszály és napelemtisztítás', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema} ogType="article">
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={tudastarUrl}>Tudástár</a> › Aszály és napelemtisztítás</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Aszályos évben gyakrabban kell napelemet tisztítani?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <p class="lede">
+        Jellemzően igen. Aszályos évben <strong>két hatás adódik össze</strong>: kevesebb
+        eső esik, ami átmoshatná a paneleket, és a száraz talaj miatt több por kerül a
+        levegőbe. Ilyenkor a szokásos évi egy tisztítás helyett érdemes kettővel
+        számolni — különösen mezőgazdasági környezetben.
+      </p>
+
+      <h2>Miért számít, ha kevés az eső?</h2>
+      <p>
+        Az eső soha nem helyettesíti a szakszerű tisztítást, de a megdöntött paneleken
+        a durvább port valamennyire lemossa. Ez az „ingyen részleges átmosás" az, ami
+        egy száraz évben elmarad — a szennyeződés pedig hónapokon át rétegződik a
+        panelen.
+      </p>
+      <div class="stat solar">
+        <span class="big">A csak esővel „tisztított" panel 12%-kal kevesebbet termelt</span>
+        <p>
+          A Google 2009-es, Mountain View-i mérésén a szakszerűen tisztított panelekhez
+          képest a csak esőre hagyott panelek 12%-kal kevesebbet termeltek — és ez
+          normál csapadékú körülmények között. Aszályos évben még ez a részleges
+          segítség is elmarad.
+        </p>
+        <span class="src">Forrás: Google, 2009 (Mountain View napelemes projekt)</span>
+      </div>
+
+      <h2>A másik hatás: a száraz talaj port ad</h2>
+      <p>
+        Aszály idején a talaj kiszárad, a növénytakaró gyérebb, és a szél több port
+        emel a levegőbe. Mezőgazdasági környezetben — Fejér megye jelentős részén ez a
+        helyzet — a betakarítási és talajmunkák ezt tovább növelik. A port pedig
+        pontosan az a felület fogja meg, amelyiket nem mos át az eső.
+      </p>
+
+      <h2>Mennyire volt száraz az elmúlt időszak? Egy helyi mérőszám</h2>
+      <div class="stat">
+        <span class="big">A Velencei-tó 2022-ben történelmi mélypontra süllyedt</span>
+        <p>
+          A 2022-es aszályos nyáron a Velencei-tó vízszintje <strong>2022. szeptember
+          19-én 53 cm</strong> volt az agárdi vízmércén — ez alulmúlta az addigi,
+          1949-es rekord-minimumot (63 cm). Két év alatt a tó víztömegének mintegy
+          <strong>49%-a</strong> tűnt el a mederből. A kiszáradt talaj a lehullott eső
+          jelentős részét elnyelte, így a tó természetes utánpótlása is elmaradt.
+          A vízpótlás azóta a Pátkai-tározóból zajlik.
+        </p>
+        <span class="src">Forrás: Magyar Hidrológiai Társaság; Állami Számvevőszék</span>
+      </div>
+      <p>
+        Ez a szám nem a napelemekről szól — de jól mutatja, mennyire száraz tud lenni
+        egy szezon a térségben. Ha a tóból ennyi víz hiányzott, a tetőkre sem jutott
+        sok eső.
+      </p>
+
+      <h2>Mit érdemes tenni egy száraz évben?</h2>
+      <ul>
+        <li>
+          <strong>Figyelje a saját termelését.</strong> Ha hasonlóan napos napokon a
+          termelés fokozatosan csökken, az szennyeződésre utal — ez a legmegbízhatóbb
+          jelzés, mert a saját rendszerét méri.
+        </li>
+        <li>
+          <strong>Az őszi tisztítás felértékelődik.</strong> Mezőgazdasági környezetben
+          a betakarítás utáni por leülepedése után érdemes tisztíttatni.
+        </li>
+        <li>
+          <strong>Ne halassza a következő tavaszra</strong>, ha látható lerakódás van a
+          panelen: a szennyeződés minden nap termelést visz el.
+        </li>
+      </ul>
+
+      <a class="crosslink" href={withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/')}>
+        <span class="k">Cikk</span>
+        <strong>Mennyivel termel többet a tiszta napelem?</strong><br />
+        A számok, a források és egy forintos megtérülési példa. <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Esedékes a tisztítás?</h2>
+        <p>Mondja meg, hány panelről van szó, és egyeztetünk egy időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-aszaly-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-aszaly-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <p style="font-size:0.9rem;margin-top:1.5rem;">
+        <a href={napelemUrl}>Napelemtisztítás szolgáltatásunkról részletesen →</a>
+      </p>
+
+      <div class="sources">
+        <h2>Források</h2>
+        <ol>
+          <li>Google napelemes projekt (Mountain View, 2009) — a tisztítás hatása a termelésre. Áttekintés: <a href="https://en.wikipedia.org/wiki/Mountain_View_Solar_Energy_Project" rel="nofollow">Mountain View Solar Energy Project</a>.</li>
+          <li>A Velencei-tó vízpótlási változatai, 2021–2022 — Magyar Hidrológiai Társaság: <a href="https://hidrologia.hu/wp-content/uploads/2023/11/0125_toth_sandor.pdf" rel="nofollow">tanulmány (PDF)</a>.</li>
+          <li>A Velencei-tó fenntartható vízpótlásának megteremtése — Állami Számvevőszék: <a href="https://www.asz.hu/dokumentumok/25140.pdf" rel="nofollow">elemzés (PDF)</a>.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</Base>

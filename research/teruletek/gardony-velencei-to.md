@@ -68,3 +68,34 @@ Ez **ellenőrizhető, valós** helyi ok — nyugodtan kimondható.
 - Gárdony bemutatása (városrészek, kistérség) — gardony.hu:
   https://www.gardony.hu/bemutatkozas
 - Szálláshelyek a Velencei-tónál — szallas.hu: https://szallas.hu/velencei-to
+
+---
+
+## 5. KIEGÉSZÍTÉS (2026-07-26): aszály és vízhiány — erős, ellenőrzött angle
+
+- A 2022-es aszályos nyáron a tó vízszintje **2022. szeptember 19-én 53 cm** volt az
+  **agárdi vízmércén** — ez **alulmúlta az 1949-es addigi rekord-minimumot (63 cm)**.
+- Két év alatt a **víztömeg kb. 49%-a eltűnt** a mederből.
+- A strandokon víz helyett helyenként **iszapos meder** fogadta a fürdőzőket.
+- A **vízpótlás** a Pátkai-tározóból zajlik; 2022. február 24-én vízminőségi okból
+  le kellett állítani, majd **2023 január vége óta** újraindult. A téma 2026-ban is
+  napirenden van (Duna-i vízpótlás, tisztított szennyvíz, karsztvíz ötletek).
+- A kiszáradt talaj a lehullott eső jelentős részét elnyelte, így a tó nem kapott
+  elegendő természetes pótlást.
+
+**Hogyan használjuk — óvatosan és igazul:**
+- ✅ Aszályos évben **kevesebb az eső = kevesebb a természetes átmosás** a paneleken.
+  Ez logikus, védhető, és illeszkedik a meglévő „az eső nem elég" tartalomhoz.
+- ✅ A száraz talaj és a szárazabb környezet **több légköri port** jelent.
+- ❌ NE állítsuk dokumentált tényként, hogy „a kiszáradt tómeder pora rakódik a
+  panelekre" — erre **nincs forrásunk**. A száraz mederről van adat, a porképződés
+  panelekre gyakorolt hatásáról nincs.
+- ❌ Ne sugalljuk, hogy a tó „kiszáradt" jelen időben — a vízpótlás zajlik.
+
+**Források:**
+- A Velencei-tó vízpótlási változatai, 2021–2022 (Magyar Hidrológiai Társaság):
+  https://hidrologia.hu/wp-content/uploads/2023/11/0125_toth_sandor.pdf
+- Kritikus helyzetben a Velencei-tó — Világgazdaság, 2023.01:
+  https://www.vg.hu/agrar/2023/01/kritikus-helyzetben-a-velencei-to-fontos-dontest-hoztak-a-szakemberek
+- Állami Számvevőszék: A Velencei-tó fenntartható vízpótlása:
+  https://www.asz.hu/dokumentumok/25140.pdf

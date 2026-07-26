@@ -1,0 +1,251 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Velencén | Péter';
+const description =
+  'Napelemtisztítás és klímatisztítás Velencén és a Velencei-tó partján. Helyi szakember a szomszéd Nadapról, előre kalkulálható árakkal. Hívjon időpontért!';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/velence/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Régi, parkosított villakertben mire kell figyelni a napelemnél?',
+    a: 'A Velencén jellemző, 1930-as évektől kiépült villasoroknál a beállt, nagy lombkoronájú fák szerves szennyeződést — levelet, pollent, magvakat — juttatnak a tetőre, és a madarak kedvelt ülőhelyei is. Ez ragadósabb, nehezebben leoldódó lerakódás, mint a száraz por, ezért itt különösen indokolt a szakszerű, lágy kefés, szűrt vizes tisztítás.',
+  },
+  {
+    q: 'Kimennek Velencére Nadapról?',
+    a: 'Igen, Velence a szomszéd település — pár perc alatt ott vagyunk. Nem másik megyéből utazunk, ezért az időpont-egyeztetés is rugalmasabb.',
+  },
+  {
+    q: 'Apartmanház, vendégház több klímájához is jönnek?',
+    a: 'Igen, lakossági és céges ügyfeleket egyaránt kiszolgálunk, számlaképes szolgáltatással. Több beltéri egységnél kedvezőbb az egységár: 2 egység 26 000 Ft, 3 egység 36 000 Ft, 4 egység 48 000 Ft; ennél többnél egyedi árat adunk.',
+  },
+  {
+    q: 'Mikor érdemes szezon előtt tisztíttatni?',
+    a: 'A klímát a nyári szezon indulása előtt, tavasszal érdemes tisztíttatni és fertőtleníteni — különösen a télen zárva álló nyaralókban. A napelemeknél a pollenszezon utáni tavaszi tisztítás a legjobb, aszályos évben pedig ősszel is indokolt lehet egy második.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Velencén',
+    description:
+      'Kíméletes napelemtisztítás szűrt, pH-semleges vízzel és klímatisztítás zsákos-átmosásos technikával Velencén és a Velencei-tó partján.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Velence' },
+      { '@type': 'City', name: 'Kápolnásnyék' },
+      { '@type': 'City', name: 'Sukoró' },
+      { '@type': 'City', name: 'Nadap' },
+      { '@type': 'City', name: 'Pázmánd' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Velence', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Velence</nav>
+      <span class="kicker">Velence · Velencei-tó északi part</span>
+      <h1>Napelem- és klímatisztítás Velencén</h1>
+      <p class="lead">
+        A szomszéd <strong>Nadapról</strong> járunk — Velence pár perc. Kíméletes
+        napelemtisztítás szűrt, pH-semleges vízzel és klímatisztítás fertőtlenítéssel,
+        előre kalkulálható árakkal.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-velence-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Velencén más a szennyeződés jellege</h2>
+      <p>
+        Velence a Velencei-tó legrégebbi üdülőhelye: a partszakasz kiépülése az
+        <strong>1930-as években</strong> kezdődött, és akkoriban <strong>parkokkal
+        körülvett villák</strong> sora épült (a Vitorlázó Jacht Club 1937-ben alakult).
+        Ez ma azt jelenti, hogy sok az <strong>idősebb épület és a beállt,
+        nagy lombkoronájú kert</strong>.
+      </p>
+      <div class="stat solar">
+        <span class="big">Beállt kertek: szerves szennyeződés, nem csak por</span>
+        <p>
+          A parkosított villakertekben a nagy fák <strong>levelet, pollent és magvakat</strong>
+          juttatnak a tetőre, a lombkorona pedig a madarak kedvelt ülőhelye. Ez
+          <strong>ragadósabb, nehezebben leoldódó lerakódás</strong>, mint a száraz por —
+          és pont ezért nem elég rá egy futó eső.
+        </p>
+        <p>
+          Ilyen szennyeződésnél számít igazán a módszer: lágy kefe és <strong>szűrt,
+          pH-semleges víz</strong>, ami folt- és lerakódásmentesen szárad, és nem sérti
+          a panel bevonatát.
+        </p>
+      </div>
+
+      <h2>Strandváros: sok szálláshely, erős szezonalitás</h2>
+      <p>
+        Velencéhez <strong>hét engedélyezett fürdővíz</strong> tartozik — a tópart
+        egyik legintenzívebben használt szakasza. Ezzel együtt jár a sok apartman,
+        vendégház és panzió a strandok környékén.
+      </p>
+      <ul>
+        <li>
+          <strong>Szálláshelyeknél</strong> jellemzően több beltéri egység van egy
+          helyen: ilyenkor a többdarabos ársáv él, és egy kiszállással végzünk.
+        </li>
+        <li>
+          <strong>Télen zárva álló nyaralóknál</strong> a klíma hónapokig áll; a nedves
+          hőcserélőn megtelepedhet a gomba és a baktérium, ezért a szezonnyitás előtti
+          tisztítás és fertőtlenítés a legjobb időzítés.
+        </li>
+      </ul>
+
+      <h2>Száraz évek a tónál</h2>
+      <p>
+        A térség több aszályos szezont élt meg: 2022 szeptemberében a tó vízszintje
+        rekord-alacsony volt. Kevesebb eső <strong>kevesebb természetes átmosást</strong>
+        jelent a paneleken, a száraz talaj pedig több port emel a levegőbe — ilyen
+        években érdemes gyakoribb tisztítással számolni.
+      </p>
+      <a class="crosslink" href={withBase('/tudastar/aszaly-es-napelem-tisztitas/')}>
+        <span class="k">Cikk</span>
+        <strong>Aszályos évben gyakrabban kell napelemet tisztítani?</strong><br />
+        Mit jelent a száraz szezon a tisztítás gyakoriságára — számokkal.
+        <span class="arw">→</span>
+      </a>
+
+      <h2>A környező településekre is megyünk</h2>
+      <p>
+        Velence mellett rendszeresen dolgozunk <strong>Kápolnásnyéken</strong>,
+        <strong>Sukorón</strong>, <strong>Pázmándon</strong>, <strong>Nadapon</strong> és
+        <strong>Pákozdon</strong> is — ezek mind pár perc a bázisunktól.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Velencén és környékén</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések Velencéről</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Velence és környéke</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.62%2C47.22%2C18.72%2C47.28&amp;layer=mapnik"
+          title="Velence és a Velencei-tó északi partjának térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot</h2>
+        <p>Mondja meg, hol van és hány panelről vagy klímáról van szó — mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-velence-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-velence-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={withBase('/teruletek/gardony-velencei-to/')}>
+        <span class="k">Terület</span>
+        <strong>Gárdony és a Velencei-tó déli partja</strong><br />
+        Madárrezervátum, nyaralók — miért koszolódnak ott gyorsabban a panelek.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>
