@@ -99,3 +99,54 @@ Ez **ellenőrizhető, valós** helyi ok — nyugodtan kimondható.
   https://www.vg.hu/agrar/2023/01/kritikus-helyzetben-a-velencei-to-fontos-dontest-hoztak-a-szakemberek
 - Állami Számvevőszék: A Velencei-tó fenntartható vízpótlása:
   https://www.asz.hu/dokumentumok/25140.pdf
+
+---
+
+## 6. ⚠️ KORREKCIÓ (2026-07-26): az 5. pont ELAVULT volt — ez ÉLŐ, 2026-os válság
+
+Az 5. pontban 2022-es adatra építettem, és azt írtam, „a vízpótlás azóta zajlik" —
+ez azt sugallta, hogy a probléma kezelve van. **Nem az.** A friss adatok:
+
+- **2026. június 20-án 52 cm** az agárdi vízmércén — **történelmi mélypont**,
+  1 cm-rel a 2022. szeptemberi korábbi rekord alatt.
+- Június elején két hét alatt **66 → 59 cm** volt az esés.
+- Előrejelzés: havi 6–8 cm nettó apadás mellett **kora őszre akár ~30 cm**.
+- A tó vízmennyiségének **több mint a fele, kb. 22 millió m³ hiányzik**.
+- **Három strand a teljes 2026-os szezonban zárva marad**: Sirály Strand (Gárdony),
+  Napsugár Strand (Agárd), Panoráma Partszakasz Pisztráng úti Strand (Gárdony).
+- A párolgás miatt koncentrálódó vízben megváltozott az algaösszetétel és a tó színe.
+- 2026 nyarán válságértekezlet; külön „Velencei-tó törvény" előkészítése zajlik.
+  Öt vízpótlási koncepció van napirenden (Vál-völgyi patak, Pátkai/Zámolyi tározó
+  rekonstrukció, Duna, tisztított szennyvíz, karsztvíz).
+
+### Az 5. pont tiltásai FELÜLÍRVA
+
+- ~~„Ne sugalljuk, hogy a tó kiszáradt jelen időben"~~ → **A helyzet jelen időben
+  kritikus**, jelen időben kell írni, friss adattal és dátummal.
+- Továbbra is érvényes: ❌ NE állítsuk, hogy a száraz mederből származó por rakódik a
+  panelekre — erre továbbra sincs forrás.
+
+### HANGNEM — ez fontos
+
+Három strand bezárása a helyi turizmusnak (panziók, apartmanok = Péter potenciális
+ügyfelei) **valódi csapás**. A tó helyzete NEM lehet marketinges „hook".
+Használjuk **kontextusként** arra, hogy mennyire száraz a szezon (ezért nem mosódnak
+át a panelek), tárgyilagosan és rövid empátiával. Ne dramatizáljunk, ne építsünk rá
+sürgetést.
+
+### ⏳ EZ AZ ADAT GYORSAN AVUL
+
+A vízszint hetente változik. **Minden szerkesztéskor ellenőrizni kell újra**, és a
+szövegben mindig szerepeljen a mérés dátuma („2026 júniusában"), hogy ne váljon
+észrevétlenül hamissá.
+
+**Források:**
+- Történelmi mélyponton a Velencei-tó vízszintje, több strand egész nyáron ki se nyit
+  — 444.hu, 2026.06.23:
+  https://444.hu/2026/06/23/tortenelmi-melyponton-a-velencei-to-vizszintje-tobb-strand-egesz-nyaron-ki-se-nyit
+- Drámai a helyzet a Velencei-tónál — Index, 2026.06.04:
+  https://index.hu/belfold/2026/06/04/velencei-to-kiszaradas-aszalyhelyzet-vizallas-csapadek-turizmus-gajdos-laszlo/
+- Válságértekezlet a rendkívüli helyzetről — FEOL, 2026.07:
+  https://www.feol.hu/helyi-kozelet/2026/07/velencei-to-valsagertekezlet-vizallas-furdoviz-kockazat
+- Kiszáradó Velencei-tó: alkalmazkodási válság — Másfélfok, 2026.06.23:
+  https://masfelfok.hu/2026/06/23/kiszarado-velencei-to-nem-vizhiany-van-hanem-alkalmazkodasi-valsag/
