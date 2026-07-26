@@ -17,7 +17,8 @@ klíma erős második. Cél: csörögjön a telefon.
 | /arak | napelem tisztítás árak | klímatisztítás árak 2026 | live |
 | /gyik | question long-tails | „milyen gyakran…”, „mennyivel termel többet…”, „miért büdös a klíma” | live |
 | /teruletek | kiszolgált terület (hub) | Fejér megye települései | live |
-| /teruletek/gardony-velencei-to | napelemtisztítás Gárdony | klímatisztítás Velencei-tó, napelemtisztítás Agárd/Dinnyés/Velence | live |
+| /teruletek/gardony-velencei-to | napelemtisztítás Gárdony | klímatisztítás Velencei-tó, napelemtisztítás Agárd/Dinnyés | live |
+| /teruletek/velence | napelemtisztítás Velence | klímatisztítás Velence, napelemtisztítás Kápolnásnyék/Sukoró | live |
 
 ## Pages to build (priority order)
 - [x] **/napelem-tisztitas** — fő szolgáltatás oldal (Service+FAQPage+BreadcrumbList séma) — 2026-07-23
@@ -35,6 +36,8 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] „Milyen gyakran kell klímát tisztíttatni?” (DOE forrás, FAQ) — 2026-07-24
 - [x] „Napelem tisztítás árak 2026-ban — mitől függ?” — 2026-07-25 (ÉVENTE FRISSÍTENDŐ)
 - [x] „Tűző napon miért nem szabad napelemet tisztítani?” — 2026-07-25
+- [x] „Aszályos évben gyakrabban kell napelemet tisztítani?” — 2026-07-26 (Velencei-tó
+      2022-es rekord vízszintje mint helyi illusztráció; megyei érvényű tartalom)
 
 ## Sourced statistics bank (verify each at primary source before use)
 | Claim | Source (named — VERIFY) | Use on |
@@ -80,8 +83,11 @@ kap városoldalt — azt a szolgáltatás-oldalak célozzák (kannibalizáció-v
 Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 - [x] Kutatási fájlok: research/teruletek/*.md (5 város, forrásokkal) — 2026-07-26
 - [x] /teruletek/ hub + Gárdony–Velencei-tó oldal — 2026-07-26 (madárrezervátum + nyaralók az angle)
-- [ ] **VÁRAKOZÁS: a Gárdony-oldal indexelése** — Márton kérje az indexelést; ha hetekig
-      „feltérképezve, de nincs indexelve", NEM skálázunk, hanem mélyítjük a differenciálást
+- [x] Gárdony-oldal **indexelése végigment** (Márton, 2026-07-26) → a rollout feloldva
+- [x] /teruletek/velence — 2026-07-26 (angle: 1930-as villakertek, beállt fák szerves
+      szennyeződése + 7 fürdővíz; 78% egyedi tartalom a Gárdony-oldalhoz képest)
+- [x] Aszály-angle kutatva és felhasználva: 2022-es rekord vízszint (53 cm, agárdi
+      vízmérce), külön Tudástár-cikk + blokk a Gárdony/Velence oldalakon
 - [ ] Dunaújváros (ipari por/vasmű) · Mór (bor/mezőgazdaság) · Bicske (M1 agglomeráció) · Sárbogárd (mezőgazdaság) — task #11, az első oldal indexelése UTÁN
 - [x] Térkép: OSM embed (sütimentes) — a Gárdony-oldalon él, minta a többihez
 
@@ -120,3 +126,13 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 - Egyoldalas MVP + élesítés fejersolarclean.hu-n, HTTPS-sel — 2026-07-13
 - Search Console verifikáció + sitemap beküldés — 2026-07-14
 - Impresszum/adatkezelés valós adatokkal — 2026-07-14
+
+## Tóparti kisfalvak — miért NINCS külön oldaluk (döntés, 2026-07-26)
+Kápolnásnyék, Sukoró, Pákozd, Pázmánd, Lovasberény: a **szolgáltatás szempontjából
+releváns** helyi jellemzőik (vízimadarak, nyaralók, aszály) gyakorlatilag azonosak a
+tóparti profillal — külön oldalt írni nekik klónozás lenne. A látnivalóik (ingókövek,
+arborétum, Vörösmarty-emlékház) turisztikai színezet, nem befolyásolják, miért és
+mikor kell tisztítani. Ezért: **a hubon és a Velence/Gárdony oldalakon nevesítve
+vannak**, saját oldalt csak akkor kapnak, ha a Search Console tényleges
+megjelenéseket (impressions) mutat rájuk. Lovasberény profilja eltér (nem tóparti,
+mezőgazdasági) — ha lesz oldala, azt az agrár-porral kell megalapozni.
