@@ -1,6 +1,6 @@
 # Content backlog — Péter · Napelem- és Klímatisztítás
 
-_Last updated: 2026-07-26_
+_Last updated: 2026-07-27_
 _Built with the `local-business-seo-geo` skill._
 
 ## Positioning reminder
@@ -70,10 +70,18 @@ klíma erős második. Cél: csörögjön a telefon.
 ## Trust signals confirmed by owner (only publish these)
 - Számlaképes szolgáltatás ✓
 - Lakossági és céges ügyfelek ✓
-- Szűrt, pH-semleges víz (NEM „vegyszermentes” szó!) ✓
+- Szűrt, pH-semleges víz + lágy kefe ✓
+- **HASZNÁLNAK tisztítószert** (Péter, 2026-07-27): „a gyártó által ajánlott anyagok,
+  amelyek kíméletesen oldják fel a szennyeződéseket". TILOS a „vegyszermentes",
+  „vegyszer nélkül" megfogalmazás — sem a klímánál, sem a napelemnél! ✓
 - Zsákos-átmosásos klímatisztítási technika (a szennyvizet zsák fogja fel) ✓
 - Ár normál körülmények között; állvány/emelőkosár külön (előre egyeztetve) ✓
 - Tűző napon nem tisztít (hősokk elkerülése) ✓
+- Klíma gyakoriság: hűtési szezon előtt, és **fűtésre optimalizált** készüléknél ősszel is
+  (NEM „fűtésre is használt" / „hőszivattyús") ✓
+- NE állítsuk, hogy a tisztítás „1–2 szezon alatt megtérül" — ez ellentmond az évi
+  rendszeres tisztítás ajánlásának. Helyette: a veszteség **évente újratermelődik**,
+  és kézzelfoghatóan ~2–3 téli hónap termelésének felel meg. ✓
 - NEM megerősített (ne publikáld, míg Péter nem mondja): évek száma, biztosítás, garancia
 
 ## Területek-silo terv (videó-tanulságok alapján, 2026-07-26 — módszer: skill area-pages.md)
