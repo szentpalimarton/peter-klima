@@ -1,6 +1,6 @@
 # Content backlog — Péter · Napelem- és Klímatisztítás
 
-_Last updated: 2026-07-27_
+_Last updated: 2026-07-28_
 _Built with the `local-business-seo-geo` skill._
 
 ## Positioning reminder
@@ -19,6 +19,7 @@ klíma erős második. Cél: csörögjön a telefon.
 | /teruletek | kiszolgált terület (hub) | Fejér megye települései | live |
 | /teruletek/gardony-velencei-to | napelemtisztítás Gárdony | klímatisztítás Velencei-tó, napelemtisztítás Agárd/Dinnyés | live |
 | /teruletek/velence | napelemtisztítás Velence | klímatisztítás Velence, napelemtisztítás Kápolnásnyék/Sukoró | live |
+| /teruletek/siofok | klímatisztítás Siófok | napelemtisztítás Siófok, apartman/panzió klímatisztítás Balaton | live |
 
 ## Pages to build (priority order)
 - [x] **/napelem-tisztitas** — fő szolgáltatás oldal (Service+FAQPage+BreadcrumbList séma) — 2026-07-23
@@ -144,3 +145,34 @@ mikor kell tisztítani. Ezért: **a hubon és a Velence/Gárdony oldalakon neves
 vannak**, saját oldalt csak akkor kapnak, ha a Search Console tényleges
 megjelenéseket (impressions) mutat rájuk. Lovasberény profilja eltér (nem tóparti,
 mezőgazdasági) — ha lesz oldala, azt az agrár-porral kell megalapozni.
+
+## ⚠️ TERÜLETI TERJESZKEDÉS (2026-07-28) — 5 megyére nőtt a szolgáltatási terület
+
+Márton/Péter döntése: Fejér megyén túl **Budaörs, Érd, Biatorbágy, Martonvásár,
+Tatabánya, Veszprém, Siófok, Balatonfüred**. Ez **Fejér, Pest, Komárom-Esztergom,
+Veszprém és Somogy** megyét érinti.
+
+**Megcsinálva:**
+- [x] Pozicionálás javítva az egész oldalon (a „Fejér megye" 20 helyen szerepelt; egy
+      budaörsi látogató visszapattant volna). consts.ts: AREA_SHORT / AREA_PROSE /
+      AREAS_SERVED (15 terület, központi séma-lista). Lábléc, főoldal (desc + séma +
+      „miért mi" + kapcsolat), GYIK „hova mentek ki", kickerek, llms.txt.
+- [x] **A szolgáltatás-oldalak CÍMÉT szándékosan NEM bántottuk** — azok a bejáratott,
+      már indexelt „Székesfehérvár" kulcsszót célozzák. Az új helyszínek kulcsszavait a
+      városoldalak viszik.
+- [x] Hub régiók szerint átstrukturálva (hazai terep / Fejér / agglomeráció / Balaton /
+      megyeszékhelyek).
+- [x] Kutatási fájlok: budapesti-agglomeracio.md, balaton.md, tatabanya-veszprem.md
+- [x] /teruletek/siofok — 2026-07-28 (angle: ötszörös nyári népesség, 903e vendégéjszaka;
+      84% egyedi a Gárdony-oldalhoz képest)
+
+**Hátralévő** (taskok: #12 Balatonfüred, #13 agglomeráció, #14 Tatabánya/Veszprém).
+
+**⚠️ MÁRTON TEENDŐJE — enélkül a helyi SEO nem működik az új területeken:**
+A **Google Cégprofilban bővíteni kell a kiszolgált területeket** ugyanezekkel a
+településekkel! A Google csak azokra a területekre rangsorol a térképes találatokban,
+amelyek a GBP-ben szerepelnek — a weboldal önmagában ezt nem pótolja.
+
+**Nyitott stratégiai kérdés:** a domain `fejersolarclean.hu`, miközben már öt megyét
+szolgálunk ki. Nem sürgős (a domain nem korlátoz), de ha valaha újramárkázás merül fel,
+ez az érv mellette. Domaint NE cseréljünk — az indexelt oldalak elvesznének.
