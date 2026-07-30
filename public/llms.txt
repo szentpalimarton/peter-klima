@@ -72,6 +72,36 @@ Tudástár (forrásokkal alátámasztott cikkek):
 - https://fejersolarclean.hu/tudastar/milyen-gyakran-kell-klimat-tisztittatni/ —
   Milyen gyakran kell klímát tisztíttatni? Időpontok és a tisztításra utaló jelek.
 
+- https://fejersolarclean.hu/tudastar/napelem-tisztitas-arak-2026/ — Napelem tisztítás
+  árak 2026-ban: mitől függ az ár, teljes árlista, megtérülési számítás.
+- https://fejersolarclean.hu/tudastar/tuzo-napon-napelem-tisztitas/ — Miért nem szabad
+  tűző napon napelemet tisztítani? Hősokk, foltos száradás, a helyes napszakok.
+- https://fejersolarclean.hu/tudastar/aszaly-es-napelem-tisztitas/ — Aszályos évben
+  gyakrabban kell tisztítani? Kevesebb eső = kevesebb átmosás, több légköri por.
+
+Területek (városonkénti oldalak, helyi sajátosságokkal):
+- https://fejersolarclean.hu/teruletek/ — Kiszolgált terület, régiónként.
+- https://fejersolarclean.hu/teruletek/gardony-velencei-to/ — Gárdony és a Velencei-tó:
+  madárrezervátum a szomszédban, nyaralók, aszályos évek.
+- https://fejersolarclean.hu/teruletek/velence/ — Velence: 1930-as évekbeli parkosított
+  villakertek, szerves szennyeződés, strandváros.
+- https://fejersolarclean.hu/teruletek/martonvasar/ — Martonvásár: agrárkutatási
+  kísérleti szántóföldek, mezőgazdasági por, kastélypark.
+- https://fejersolarclean.hu/teruletek/erd/ — Érd: az ország leggyorsabban növekvő
+  városa, kilenc városrész, lejtős telkek.
+- https://fejersolarclean.hu/teruletek/budaors/ — Budaörs: irodák, üzletek, raktárak —
+  céges ügyfelek több beltéri egységgel.
+- https://fejersolarclean.hu/teruletek/biatorbagy/ — Biatorbágy: friss rendszerek és az
+  M1-bővítés építkezési pora 2028-ig.
+- https://fejersolarclean.hu/teruletek/siofok/ — Siófok: nyáron ötszörös népesség,
+  apartmanok és panziók, szezon előtti tisztítás.
+- https://fejersolarclean.hu/teruletek/balatonfured/ — Balatonfüred: hosszabb szezon,
+  egész évben működő szálláshelyek.
+- https://fejersolarclean.hu/teruletek/tatabanya/ — Tatabánya: egykori bányaváros,
+  mért levegőminőség, finom városi por.
+- https://fejersolarclean.hu/teruletek/veszprem/ — Veszprém: a téli lakossági fűtés
+  lerakódása, ezért a tavaszi tisztítás az ideális.
+
 Jogi:
 - https://fejersolarclean.hu/impresszum/
 - https://fejersolarclean.hu/adatkezeles/

@@ -479,6 +479,19 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .crosslink .arw { color: var(--blue); }
 
+/* Területi linklista (kapcsolat-blokk, szolgáltatás-oldalak) */
+.area-links {
+  list-style: none; padding: 0; margin: 0.7rem 0;
+  display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem;
+}
+.area-links li { margin: 0; }
+.area-links a {
+  display: inline-block; font-size: 0.9rem; font-weight: 600;
+  padding: 0.25rem 0.7rem; border-radius: 999px;
+  border: 1px solid currentColor; text-decoration: none; opacity: 0.9;
+}
+.area-links a:hover { opacity: 1; }
+
 /* Map embed (OpenStreetMap — sütimentes, nem Google Maps) */
 .map-embed {
   margin-top: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius);

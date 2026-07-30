@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, AREAS_SERVED, withBase } from '../consts';
 
-const title = 'Klímatisztítás és fertőtlenítés Székesfehérváron és Fejér megyében | Péter';
+const title = 'Klímatisztítás Székesfehérváron és Fejér megyében | Péter';
 const description =
   'Klímatisztítás és fertőtlenítés zsákos-átmosásos technikával Székesfehérváron és Fejér megyében. Friss levegő, kisebb fogyasztás, ár 15 000 Ft-tól.';
 
@@ -209,6 +209,23 @@ const schema = [
         <strong>Milyen gyakran kell klímát tisztíttatni?</strong><br />
         A legjobb időpontok és a jelek, hogy esedékes a tisztítás. <span class="arw">→</span>
       </a>
+
+      <h2>Hol vállalunk klímatisztítást?</h2>
+      <p>
+        Fejér megye egész területén, a Balatonon és a budapesti agglomerációban —
+        lakossági és céges ügyfeleknek egyaránt. A leggyakoribb helyszínek:
+      </p>
+      <ul class="area-links">
+        <li><a href={withBase('/teruletek/gardony-velencei-to/')}>Gárdony, Velencei-tó</a></li>
+        <li><a href={withBase('/teruletek/velence/')}>Velence</a></li>
+        <li><a href={withBase('/teruletek/budaors/')}>Budaörs (irodák)</a></li>
+        <li><a href={withBase('/teruletek/erd/')}>Érd</a></li>
+        <li><a href={withBase('/teruletek/siofok/')}>Siófok</a></li>
+        <li><a href={withBase('/teruletek/balatonfured/')}>Balatonfüred</a></li>
+        <li><a href={withBase('/teruletek/tatabanya/')}>Tatabánya</a></li>
+        <li><a href={withBase('/teruletek/veszprem/')}>Veszprém</a></li>
+        <li><a href={withBase('/teruletek/')}>összes terület</a></li>
+      </ul>
 
       <div class="cta-band">
         <h2>Kérjen időpontot</h2>

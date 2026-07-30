@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA_PROSE, AREAS_SERVED, withBase } from '../consts';
 
-const title = 'Napelemtisztítás és klímatisztítás Fejér megyében — korrekt árakkal | Péter';
+const title = 'Napelem- és klímatisztítás Fejér megyében | Péter';
 const description =
   'Napelem- és klímatisztítás Fejér megyében, a Velencei-tónál, a Balatonon és a budapesti agglomerációban. 35 000 Ft-tól, előre kalkulálható áron. Hívjon!';
 
@@ -341,16 +341,28 @@ const schema = [
           <div>
             <h3>Hova megyünk ki?</h3>
             <p>
-              Elsősorban Székesfehérvárra és környékére, de Fejér megye egész területén
-              vállalunk munkát: Dunaújváros, Mór, Bicske, Gárdony és a Velencei-tó környéke,
-              Sárbogárd — és a köztük lévő települések is.
+              Fejér megye egész területén dolgozunk, és kiszállunk a szomszédos
+              térségekbe is. A leggyakoribb helyszínek:
+            </p>
+            <ul class="area-links">
+              <li><a href={withBase('/teruletek/gardony-velencei-to/')}>Gárdony, Velencei-tó</a></li>
+              <li><a href={withBase('/teruletek/velence/')}>Velence</a></li>
+              <li><a href={withBase('/teruletek/martonvasar/')}>Martonvásár</a></li>
+              <li><a href={withBase('/teruletek/erd/')}>Érd</a></li>
+              <li><a href={withBase('/teruletek/budaors/')}>Budaörs</a></li>
+              <li><a href={withBase('/teruletek/biatorbagy/')}>Biatorbágy</a></li>
+              <li><a href={withBase('/teruletek/siofok/')}>Siófok</a></li>
+              <li><a href={withBase('/teruletek/balatonfured/')}>Balatonfüred</a></li>
+              <li><a href={withBase('/teruletek/tatabanya/')}>Tatabánya</a></li>
+              <li><a href={withBase('/teruletek/veszprem/')}>Veszprém</a></li>
+            </ul>
+            <p>
+              Dunaújvárosba, Mórra, Bicskére és Sárbogárdra is megyünk. Lakossági és céges
+              ügyfeleket egyaránt kiszolgálunk, számlaképes szolgáltatással — ha nem biztos
+              benne, hogy Önhöz is kimegyünk-e, hívjon, egy perc alatt kiderül.
             </p>
             <p>
-              Lakossági és céges ügyfeleket egyaránt kiszolgálunk, számlaképes szolgáltatással.
-              Ha nem biztos benne, hogy Önhöz is kimegyünk-e: hívjon, egy perc alatt kiderül.
-            </p>
-            <p>
-              <a href={withBase('/teruletek/')}>Kiszolgált települések részletesen →</a>
+              <a href={withBase('/teruletek/')}>Összes kiszolgált település →</a>
             </p>
           </div>
         </div>
