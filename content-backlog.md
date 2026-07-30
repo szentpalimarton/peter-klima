@@ -1,6 +1,6 @@
 # Content backlog — Péter · Napelem- és Klímatisztítás
 
-_Last updated: 2026-07-28_
+_Last updated: 2026-07-29_
 _Built with the `local-business-seo-geo` skill._
 
 ## Positioning reminder
@@ -20,6 +20,13 @@ klíma erős második. Cél: csörögjön a telefon.
 | /teruletek/gardony-velencei-to | napelemtisztítás Gárdony | klímatisztítás Velencei-tó, napelemtisztítás Agárd/Dinnyés | live |
 | /teruletek/velence | napelemtisztítás Velence | klímatisztítás Velence, napelemtisztítás Kápolnásnyék/Sukoró | live |
 | /teruletek/siofok | klímatisztítás Siófok | napelemtisztítás Siófok, apartman/panzió klímatisztítás Balaton | live |
+| /teruletek/erd | napelemtisztítás Érd | klímatisztítás Érd, Parkváros/Érdliget | live |
+| /teruletek/budaors | klímatisztítás Budaörs | irodai klímatisztítás, céges klímatisztítás Budaörs | live |
+| /teruletek/biatorbagy | napelemtisztítás Biatorbágy | klímatisztítás Biatorbágy | live |
+| /teruletek/martonvasar | napelemtisztítás Martonvásár | klímatisztítás Martonvásár | live |
+| /teruletek/balatonfured | klímatisztítás Balatonfüred | napelemtisztítás Balatonfüred, szálláshely klímatisztítás | live |
+| /teruletek/tatabanya | napelemtisztítás Tatabánya | klímatisztítás Tatabánya | live |
+| /teruletek/veszprem | napelemtisztítás Veszprém | klímatisztítás Veszprém | live |
 
 ## Pages to build (priority order)
 - [x] **/napelem-tisztitas** — fő szolgáltatás oldal (Service+FAQPage+BreadcrumbList séma) — 2026-07-23
@@ -166,7 +173,17 @@ Veszprém és Somogy** megyét érinti.
 - [x] /teruletek/siofok — 2026-07-28 (angle: ötszörös nyári népesség, 903e vendégéjszaka;
       84% egyedi a Gárdony-oldalhoz képest)
 
-**Hátralévő** (taskok: #12 Balatonfüred, #13 agglomeráció, #14 Tatabánya/Veszprém).
+- [x] **Mind a 8 új városoldal elkészült — 2026-07-29.** Érd, Budaörs, Biatorbágy,
+      Martonvásár, Balatonfüred, Tatabánya, Veszprém (+ Siófok korábban). Mért páronkénti
+      egyediség a 10 városoldal között: **minimum 75%** (küszöb 40–50%).
+      Angle-ök: Érd = leggyorsabban növő város, 9 városrész, lejtős telkek · Budaörs =
+      BITEP + üzleti parkok → CÉGES ügyfelek, több egység · Biatorbágy = M1-bővítés
+      2028-ig (lakói nézőpontból, hogy ne ütközzön a bicskei oldallal) · Martonvásár =
+      HUN-REN ATK kísérleti szántóföldek + kastélypark · Balatonfüred = gyógyfürdő-város,
+      hosszabb szezon → MÁS időzítés, mint Siófokon · Tatabánya = a bányászat 1987/2004-ben
+      MEGSZŰNT (múlt idő!), élő angle a LIFE-projekt levegőminőség-mérés · Veszprém =
+      a téli lakossági fűtés lerakódása → tavaszi tisztítás.
+- [x] Hub minden városoldalt linkel, régiók szerint. Sitemap: 26 oldal.
 
 **⚠️ MÁRTON TEENDŐJE — enélkül a helyi SEO nem működik az új területeken:**
 A **Google Cégprofilban bővíteni kell a kiszolgált területeket** ugyanezekkel a
