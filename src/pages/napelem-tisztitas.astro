@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, withBase } from '../consts';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, AREAS_SERVED, withBase } from '../consts';
 
 const title = 'Napelemtisztítás Székesfehérváron és Fejér megyében | Péter';
 const description =
@@ -51,10 +51,7 @@ const schema = [
       email: EMAIL,
       url: Astro.site?.toString(),
     },
-    areaServed: [
-      { '@type': 'City', name: 'Székesfehérvár' },
-      { '@type': 'AdministrativeArea', name: AREA },
-    ],
+    areaServed: AREAS_SERVED,
     offers: {
       '@type': 'Offer',
       priceCurrency: 'HUF',
@@ -86,7 +83,7 @@ const schema = [
   <section class="page-hero">
     <div class="wrap">
       <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › Napelemtisztítás</nav>
-      <span class="kicker">Székesfehérvár és környéke · Fejér megye</span>
+      <span class="kicker">Fejér megye · Velencei-tó · Balaton · agglomeráció</span>
       <h1>Napelemtisztítás — hogy a rendszere annyit termeljen, amennyit tud</h1>
       <p class="lead">
         Kíméletes, karcmentes panelmosás szűrt, pH-semleges vízzel. A rárakódott por,

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, withBase } from '../consts';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, AREAS_SERVED, withBase } from '../consts';
 
 const title = 'Napelemtisztítás és klímatisztítás árak — Székesfehérvár, Fejér megye | Péter';
 const description =
@@ -17,10 +17,7 @@ const schema = [
     telephone: PHONE_E164,
     email: EMAIL,
     url: Astro.site?.toString(),
-    areaServed: [
-      { '@type': 'City', name: 'Székesfehérvár' },
-      { '@type': 'AdministrativeArea', name: AREA },
-    ],
+    areaServed: AREAS_SERVED,
     priceRange: '15 000 Ft – 80 000 Ft',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -52,7 +49,7 @@ const schema = [
   <section class="page-hero">
     <div class="wrap">
       <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › Árak</nav>
-      <span class="kicker">Székesfehérvár és környéke · Fejér megye</span>
+      <span class="kicker">Fejér megye · Velencei-tó · Balaton · agglomeráció</span>
       <h1>Áraink — napelem- és klímatisztítás</h1>
       <p class="lead">
         Átlátható, <strong>előre kalkulálható árak</strong>: az árlista nyilvános, és a

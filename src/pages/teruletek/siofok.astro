@@ -1,0 +1,258 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Siófokon és a Balatonnál | Péter';
+const description =
+  'Klímatisztítás és napelemtisztítás Siófokon: apartmanok, panziók és nyaralók szezon előtti felkészítése. Előre kalkulálható ár, számlaképes szolgáltatás.';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/siofok/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Mikor érdemes egy siófoki apartmanban klímát tisztíttatni?',
+    a: 'A szezonnyitás előtt, tavasszal. A nyaralókban és apartmanokban a klíma a szezonon kívül hónapokig áll, a nedves hőcserélőn pedig ilyenkor telepszik meg a gomba és a baktérium — az első bekapcsoláskor ezt fújná a vendégek arcába. Nyáron viszont a készülék gyakorlatilag folyamatosan jár, ezért a szezon előtti tisztítás a leghatékonyabb időzítés.',
+  },
+  {
+    q: 'Több apartmanhoz, panzióhoz is kimennek egyszerre?',
+    a: 'Igen, ez a jellemző munka a Balatonnál. Több beltéri egységnél kedvezőbb az egységár: 2 egység 26 000 Ft, 3 egység 36 000 Ft, 4 egység 48 000 Ft; ennél több egységnél egyedi árat adunk. Lakossági és céges ügyfeleket egyaránt kiszolgálunk, számlaképes szolgáltatással.',
+  },
+  {
+    q: 'Siófokra is kimennek Fejér megyéből?',
+    a: 'Igen, kiszállással dolgozunk a Balatonon is. A bázisunk Nadap, a Velencei-tó mellett — a távolabbi helyszíneknél előfordul, hogy több munkát egy napra szervezünk, ezt az időpont-egyeztetéskor átbeszéljük.',
+  },
+  {
+    q: 'A nyaralóm napelemét mikor érdemes tisztíttatni?',
+    a: 'Évente egyszer, ideálisan tavasszal, a pollenszezon után — így a nyári csúcstermelés idejére tiszta a panel. Egy szezononként használt ingatlannál a panel hónapokig mosatlanul áll, ezért érdemes a tisztítást a szezonnyitáshoz kötni.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Siófokon',
+    description:
+      'Klímatisztítás zsákos-átmosásos technikával és kíméletes napelemtisztítás Siófokon és a Balaton környékén — apartmanoknak, panzióknak és nyaralóknak.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Siófok' },
+      { '@type': 'City', name: 'Balatonfüred' },
+      { '@type': 'City', name: 'Zamárdi' },
+      { '@type': 'City', name: 'Balatonalmádi' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Siófok', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Siófok</nav>
+      <span class="kicker">Siófok · Balaton déli part</span>
+      <h1>Napelem- és klímatisztítás Siófokon</h1>
+      <p class="lead">
+        Apartmanok, panziók és nyaralók <strong>szezon előtti felkészítése</strong>:
+        klímatisztítás fertőtlenítéssel és kíméletes napelemtisztítás. Előre kalkulálható
+        ár, számlaképes szolgáltatás — kiszállással a Balatonra.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-siofok-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Siófokon a szezonalitás mindent felülír</h2>
+      <p>
+        Siófok nem egy átlagos település a klímák szempontjából: a <strong>25 ezres
+        állandó lakosság nyáron az ötszörösére nő</strong>. Ez azt jelenti, hogy ugyanaz a
+        készülékállomány néhány hónapig gyakorlatilag folyamatos terhelés alatt dolgozik,
+        majd hosszú hónapokra leáll.
+      </p>
+      <div class="stat">
+        <span class="big">A Balaton legforgalmasabb települése — országosan a második</span>
+        <p>
+          Siófok <strong>903 000 vendégéjszakával</strong> vezeti a Balaton-régiót a
+          június–augusztusi időszakban (Balatonfüred 592 ezerrel a második). Országos
+          szinten Siófok <strong>Budapest után a második</strong> legtöbb vendégéjszakát
+          fogadó település.
+        </p>
+        <span class="src">Forrás: siofok.hu, hirbalaton.hu (2025-ös szezonértékelés)</span>
+      </div>
+
+      <h2>Mit jelent ez a gyakorlatban?</h2>
+      <ul>
+        <li>
+          <strong>A szezon előtti tisztítás a legfontosabb időzítés.</strong> A hónapokig
+          álló készülék nedves hőcserélőjén megtelepszik a gomba és a baktérium — az első
+          bekapcsoláskor ezt fújja a szobába, pont amikor megérkezik az első vendég.
+        </li>
+        <li>
+          <strong>Nyáron a folyamatos üzem gyorsítja a szennyeződést.</strong> A sok
+          működési óra alatt több por és pára rakódik le, mint egy átlagos háztartásban
+          egész évben.
+        </li>
+        <li>
+          <strong>Egy helyszín, több beltéri egység.</strong> Apartmanházaknál,
+          panzióknál jellemzően több klíma van egy ingatlanban — ilyenkor a többdarabos
+          ársáv él, és egy kiszállással végzünk.
+        </li>
+      </ul>
+
+      <h2>Zsákos-átmosásos technika — a vendég nem vesz észre semmit</h2>
+      <p>
+        Egy kiadó apartmanban nem mindegy, milyen állapotban maradunk hátra. A
+        <strong>zsákos-átmosásos</strong> mélytisztításnál a hőcserélőről és a
+        ventilátorról leoldott szennyeződést és vizet felfogó zsák gyűjti össze, így a
+        lakás tiszta és száraz marad. A tisztítás után fertőtlenítünk, hogy a szag a
+        forrásánál szűnjön meg — és a készülék próbaüzemmel zárul.
+      </p>
+      <a class="crosslink" href={withBase('/tudastar/miert-budos-a-klima/')}>
+        <span class="k">Cikk</span>
+        <strong>Miért büdös a klíma, és mit lehet tenni ellene?</strong><br />
+        A szag oka a nedves hőcserélőn megtelepedő gomba — és miért nem elég a szagosító.
+        <span class="arw">→</span>
+      </a>
+
+      <h2>Napelem a nyaralón</h2>
+      <p>
+        A szezononként használt ingatlanoknál a napelem hónapokig mosatlanul áll, miközben
+        a nyári csúcstermelés idejére lenne a legfontosabb tisztán tartani. Évente egy
+        tisztítás ajánlott, ideálisan tavasszal, a pollenszezon után — így a szezont már
+        tiszta panelekkel kezdi. Kíméletes, karcmentes mosással dolgozunk: lágy kefével és
+        szűrt, pH-semleges vízzel.
+      </p>
+
+      <h2>Hogyan szervezzük a kiszállást?</h2>
+      <p>
+        A bázisunk <strong>Nadap</strong>, a Velencei-tó mellett — Siófok tehát
+        kiszállás, nem szomszédság. Ezt nyíltan megmondjuk: a távolabbi helyszíneknél
+        előfordul, hogy több munkát szervezünk egy napra, hogy az utazás mindenkinek
+        megérje. Az időpontot ennek megfelelően, előre egyeztetjük, és az ár ettől
+        függetlenül az árlista szerinti.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Siófokon és a Balatonnál</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések a balatoni munkákról</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Siófok és a Balaton déli partja</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.00%2C46.87%2C18.15%2C46.95&amp;layer=mapnik"
+          title="Siófok és a Balaton déli partjának térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot a szezon előtt</h2>
+        <p>Mondja meg, hány klímáról vagy panelről van szó — mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-siofok-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-siofok-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={teruletekUrl}>
+        <span class="k">Területek</span>
+        <strong>Hol dolgozunk még?</strong><br />
+        Fejér megye, a Velencei-tó, a budapesti agglomeráció, Tatabánya és Veszprém.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>

@@ -1,9 +1,8 @@
 # Péter · Napelem- és Klímatisztítás
 
 > Napelemtisztítás (fő profil), valamint klímatisztítás és klíma-fertőtlenítés
-> Székesfehérváron és környékén, illetve Fejér megye egész területén (Magyarország),
-> átlátható, előre kalkulálható árakkal. Számlaképes szolgáltatás, lakossági és céges
-> ügyfeleknek. Elsődleges kapcsolat: telefon vagy üzenet.
+> Magyarországon, átlátható, előre kalkulálható árakkal. Számlaképes szolgáltatás,
+> lakossági és céges ügyfeleknek. Elsődleges kapcsolat: telefon vagy üzenet.
 >
 > Szolgáltató: Oroszi Péter egyéni vállalkozó · Weboldal: https://fejersolarclean.hu
 
@@ -37,8 +36,14 @@ külön kerül felszámításra (előre egyeztetve).
 
 ## Terület
 
-Fejér megye egész területe: Székesfehérvár, Dunaújváros, Mór, Bicske,
-Gárdony és a Velencei-tó környéke, Sárbogárd és a környező települések.
+Bázis: Nadap (Velencei-tó mellett, Fejér megye).
+
+- **Fejér megye egész területe** (elsődleges terület): Székesfehérvár, Gárdony,
+  Velence, Kápolnásnyék, Sukoró, Pákozd, Pázmánd, Nadap, Lovasberény, Martonvásár,
+  Dunaújváros, Mór, Bicske, Sárbogárd.
+- **Budapesti agglomeráció** (kiszállással): Érd, Budaörs, Biatorbágy, Martonvásár.
+- **Balaton** (kiszállással): Siófok, Balatonfüred.
+- **Egyéb megyeszékhelyek** (kiszállással): Tatabánya, Veszprém.
 
 ## Kapcsolat
 

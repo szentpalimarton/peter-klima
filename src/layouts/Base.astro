@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../consts';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, AREA_SHORT, withBase } from '../consts';
 
 interface Props {
   title: string;
@@ -65,7 +65,7 @@ const isDemo = import.meta.env.BASE_URL !== '/';
 
     <footer class="site-footer">
       <div class="wrap">
-        <span>© 2026 {BRAND} — Fejér megye</span>
+        <span>© 2026 {BRAND} — {AREA_SHORT}</span>
         <nav>
           <a href={withBase('/tudastar/')}>Tudástár</a>
           <a href={withBase('/teruletek/')}>Területek</a>

@@ -1,15 +1,25 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREAS_SERVED, withBase } from '../../consts';
 
-const title = 'Hol dolgozunk? — Székesfehérvár és Fejér megye | Péter';
+const title = 'Hol dolgozunk? — Fejér megye, Balaton, agglomeráció | Péter';
 const description =
-  'Napelem- és klímatisztítás Székesfehérváron, a Velencei-tó környékén és Fejér megye egész területén. Nézze meg, kimegyünk-e Önhöz — vagy hívjon egy percre.';
+  'Napelem- és klímatisztítás Fejér megyében, a Velencei-tó és a Balaton környékén, valamint a budapesti agglomerációban. Nézze meg, kimegyünk-e Önhöz!';
 
 const homeUrl = withBase('/');
 const pageUrl = new URL(withBase('/teruletek/'), Astro.site).toString();
 
 const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: BRAND,
+    telephone: PHONE_E164,
+    email: EMAIL,
+    url: Astro.site?.toString(),
+    areaServed: AREAS_SERVED,
+    priceRange: '15 000 Ft – 80 000 Ft',
+  },
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -28,9 +38,10 @@ const schema = [
       <span class="kicker">Kiszolgált terület</span>
       <h1>Hol dolgozunk?</h1>
       <p class="lead">
-        Elsősorban Székesfehérváron és a Velencei-tó környékén, de <strong>Fejér megye
-        egész területén</strong> vállalunk munkát. Ha nem biztos benne, hogy Önhöz is
-        kimegyünk-e: hívjon, egy perc alatt kiderül.
+        A bázisunk <strong>Nadap</strong>, a Velencei-tó mellett. Innen <strong>Fejér megye
+        egész területén</strong> dolgozunk, és kiszállunk a szomszédos térségekbe is: a
+        <strong>Balatonra</strong>, a <strong>budapesti agglomerációba</strong>, valamint
+        Tatabányára és Veszprémbe.
       </p>
       <div class="hero-cta">
         <a class="btn btn-call" href={PHONE_TEL} data-cta="call-teruletek-hero">📞 {PHONE_DISPLAY}</a>
@@ -40,47 +51,73 @@ const schema = [
 
   <section class="section">
     <div class="wrap prose">
-      <h2>Településenként</h2>
+      <h2>Velencei-tó és környéke — a hazai terep</h2>
+      <p>
+        Itt lakunk, így ezekre a településekre pár perc alatt kiérünk. A tóparti
+        sajátosságokról (vízimadarak, nyaralók, aszályos évek) külön oldalakon írtunk:
+      </p>
       <a class="crosslink" href={withBase('/teruletek/gardony-velencei-to/')}>
         <span class="k">Terület</span>
-        <strong>Gárdony és a Velencei-tó környéke</strong><br />
-        Miért koszolódnak itt gyorsabban a napelemek — és mire figyeljünk a nyaralók
-        klímáinál. <span class="arw">→</span>
+        <strong>Gárdony és a Velencei-tó</strong><br />
+        Madárrezervátum a szomszédban, nyaralók és szálláshelyek — miért koszolódnak itt
+        gyorsabban a panelek. <span class="arw">→</span>
       </a>
-
       <a class="crosslink" href={withBase('/teruletek/velence/')}>
         <span class="k">Terület</span>
         <strong>Velence</strong><br />
         Régi, parkosított villakertek és strandváros — más jellegű szennyeződés, mint a
         nyílt tóparton. <span class="arw">→</span>
       </a>
-
-      <h2>A tó körül — pár perc a bázisunktól</h2>
       <p>
-        Nadapon lakunk, így a tavat körülölelő településekre gyakorlatilag azonnal
-        kiérünk: <strong>Kápolnásnyék</strong>, <strong>Sukoró</strong>,
-        <strong>Pákozd</strong>, <strong>Pázmánd</strong>, <strong>Nadap</strong>,
-        <strong>Lovasberény</strong>. A tóparti sajátosságokról (vízimadarak, nyaralók,
-        aszályos évek) a <a href={withBase('/teruletek/gardony-velencei-to/')}>Gárdony és a
-        Velencei-tó</a> oldalon írtunk részletesen — ezek ezekre a településekre is
-        érvényesek.
+        Ugyanígy dolgozunk <strong>Kápolnásnyéken</strong>, <strong>Sukorón</strong>,
+        <strong>Pákozdon</strong>, <strong>Pázmándon</strong>, <strong>Nadapon</strong> és
+        <strong>Lovasberényben</strong> is.
       </p>
 
-      <h2>Fejér megye többi része</h2>
+      <h2>Fejér megye</h2>
       <p>
         Rendszeresen dolgozunk <strong>Székesfehérváron</strong>, valamint
-        <strong>Dunaújvárosban</strong>, <strong>Móron</strong>,
-        <strong>Bicskén</strong> és <strong>Sárbogárdon</strong> — és a köztük lévő
+        <strong>Dunaújvárosban</strong>, <strong>Móron</strong>, <strong>Bicskén</strong>,
+        <strong>Martonvásáron</strong> és <strong>Sárbogárdon</strong> — és a köztük lévő
         kisebb településeken is.
       </p>
 
-      <h2>Kimegyünk Önhöz?</h2>
+      <h2>Budapesti agglomeráció</h2>
       <p>
-        Ha a települése nem szerepel a listán, attól még jó eséllyel vállaljuk — Fejér
-        megyén belül szinte mindenhová megyünk. A legegyszerűbb, ha felhív: megmondja,
-        hol van és hány panelről vagy klímáról van szó, mi pedig azonnal mondjuk az árat
-        és egy időpontot.
+        Az M1 és M7 mentén kiszállunk az agglomerációba is: <strong>Érd</strong>,
+        <strong>Budaörs</strong>, <strong>Biatorbágy</strong>, <strong>Martonvásár</strong>.
+        Ezek gyorsan növő, sok új építésű családi házas települések — ahol ma szinte
+        alapfelszerelés a napelem és a split klíma.
       </p>
+
+      <h2>Balaton</h2>
+      <p>
+        A tóparti nyaralók és szálláshelyek tisztításában van a legtöbb tapasztalatunk, és
+        ezt a Balatonon is hasznosítjuk. A hónapokig zárva álló nyaralóknál a szezonnyitás
+        előtti klímatisztítás, a paneleknél pedig a hosszú mosatlan időszak a jellemző
+        kérdés. <strong>Balatonfüredre</strong> is kimegyünk.
+      </p>
+      <a class="crosslink" href={withBase('/teruletek/siofok/')}>
+        <span class="k">Terület</span>
+        <strong>Siófok</strong><br />
+        Nyáron ötszörös népesség, apartmanok és panziók — miért a szezon előtti tisztítás
+        a legjobb időzítés. <span class="arw">→</span>
+      </a>
+
+      <h2>Tatabánya és Veszprém</h2>
+      <p>
+        A két megyeszékhelyre — <strong>Tatabányára</strong> és
+        <strong>Veszprémbe</strong> — szintén vállalunk kiszállást.
+      </p>
+
+      <div class="stat">
+        <span class="big">Nem biztos benne, hogy Önhöz kimegyünk?</span>
+        <p>
+          Hívjon: megmondja, hol van és hány panelről vagy klímáról van szó, mi pedig
+          azonnal mondjuk az árat és egy időpontot. A távolabbi helyszíneknél előfordulhat,
+          hogy több munkát egy napra szervezünk — ezt az egyeztetéskor átbeszéljük.
+        </p>
+      </div>
 
       <a class="crosslink" href={withBase('/napelem-tisztitas/')}>
         <span class="k">Szolgáltatás</span>

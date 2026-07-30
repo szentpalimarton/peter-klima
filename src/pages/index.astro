@@ -1,10 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
-import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA, withBase } from '../consts';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA_PROSE, AREAS_SERVED, withBase } from '../consts';
 
 const title = 'Napelemtisztítás és klímatisztítás Fejér megyében — korrekt árakkal | Péter';
 const description =
-  'Napelemtisztítás Székesfehérváron és Fejér megyében 35 000 Ft-tól. Kíméletes, pH-semleges vizes mosás, akár 15–20% többlet. Klímatisztítás 15 000 Ft-tól.';
+  'Napelem- és klímatisztítás Fejér megyében, a Velencei-tónál, a Balatonon és a budapesti agglomerációban. 35 000 Ft-tól, előre kalkulálható áron. Hívjon!';
 
 const faq = [
   {
@@ -29,7 +29,7 @@ const faq = [
   },
   {
     q: 'Hogyan zajlik az időpont-egyeztetés?',
-    a: 'Hívjon a +36 20 495 4171-es számon, vagy írjon üzenetet — röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni. Székesfehérváron, környékén és Fejér megye egész területén vállalunk munkát.',
+    a: 'Hívjon a +36 20 495 4171-es számon, vagy írjon üzenetet — röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni. Fejér megye egész területén, a Velencei-tó és a Balaton környékén, valamint a budapesti agglomerációban vállalunk munkát.',
   },
 ];
 
@@ -39,15 +39,12 @@ const schema = [
     '@type': 'LocalBusiness',
     name: BRAND,
     description:
-      'Napelemtisztítás, klímatisztítás és klíma-fertőtlenítés Fejér megyében, átlátható árakkal.',
+      `Napelemtisztítás, klímatisztítás és klíma-fertőtlenítés — ${AREA_PROSE} —, átlátható árakkal.`,
     telephone: PHONE_E164,
     email: EMAIL,
     url: Astro.site?.toString(),
     image: new URL(withBase('/images/peter-kabala.jpg'), Astro.site).toString(),
-    areaServed: [
-      { '@type': 'City', name: 'Székesfehérvár' },
-      { '@type': 'AdministrativeArea', name: AREA },
-    ],
+    areaServed: AREAS_SERVED,
     priceRange: '15 000 Ft – 80 000 Ft',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -93,7 +90,7 @@ const schema = [
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="kicker">Székesfehérvár és környéke · Fejér megye</span>
+        <span class="kicker">Fejér megye · Velencei-tó · Balaton · agglomeráció</span>
         <h1>Tiszta napelem, teljes hozam</h1>
         <p class="lead">
           Kíméletes napelemtisztítás szűrt, pH-semleges vízzel, hogy a rendszere annyit
@@ -214,7 +211,7 @@ const schema = [
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <h3>Helyben vagyunk</h3>
-          <p>Fejér megye egész területére megyünk — Székesfehérvártól Dunaújvárosig.</p>
+          <p>Fejér megye, a Velencei-tó, a Balaton és a budapesti agglomeráció — kiszállással.</p>
         </div>
         <div class="why-item">
           <div class="ic" aria-hidden="true">
