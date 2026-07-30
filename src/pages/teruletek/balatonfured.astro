@@ -1,0 +1,240 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Balatonfüreden | Péter';
+const description =
+  'Klímatisztítás és napelemtisztítás Balatonfüreden: szálláshelyek, nyaralók és családi házak. Előre kalkulálható ár, számlaképes szolgáltatás. Hívjon!';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/balatonfured/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Egész évben nyitva tartó szálláshelynél mikor érdemes tisztíttatni?',
+    a: 'Ahol nincs teljes téli leállás, ott a klímát évente kétszer érdemes tisztíttatni: tavasszal a hűtési szezon előtt, és ősszel — különösen, ha a készülék fűtésre optimalizált, mert akkor a hidegebb hónapokban is dolgozik. A folyamatos üzem több működési órát és több lerakódást jelent.',
+  },
+  {
+    q: 'Mi a különbség egy nyaraló és egy egész évben működő szálláshely klímája között?',
+    a: 'A hónapokig zárva álló nyaralónál a fő kockázat az álló, nedves hőcserélőn megtelepedő gomba és a szag — ott a szezonnyitás előtti tisztítás a kulcs. Egy folyamatosan működő szálláshelynél inkább a sok üzemóra miatti lerakódás és a fogyasztásnövekedés a jellemző probléma.',
+  },
+  {
+    q: 'Több apartmanhoz is kimennek egyszerre?',
+    a: 'Igen, ez a jellemző munka a Balatonnál. Több beltéri egységnél kedvezőbb az egységár: 2 egység 26 000 Ft, 3 egység 36 000 Ft, 4 egység 48 000 Ft; ennél többnél egyedi árat adunk. Számlaképes szolgáltatás, céges ügyfeleknek is.',
+  },
+  {
+    q: 'Balatonfüredre is kimennek Fejér megyéből?',
+    a: 'Igen, kiszállással dolgozunk a Balatonon. A bázisunk Nadap, a Velencei-tó mellett — a távolabbi helyszíneknél előfordul, hogy több munkát szervezünk egy napra, ezt az időpont-egyeztetéskor átbeszéljük.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Balatonfüreden',
+    description:
+      'Klímatisztítás zsákos-átmosásos technikával és kíméletes napelemtisztítás Balatonfüreden és a Balaton északi partján.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Balatonfüred' },
+      { '@type': 'City', name: 'Tihany' },
+      { '@type': 'City', name: 'Balatonalmádi' },
+      { '@type': 'City', name: 'Veszprém' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Balatonfüred', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Balatonfüred</nav>
+      <span class="kicker">Balatonfüred · Balaton északi part</span>
+      <h1>Napelem- és klímatisztítás Balatonfüreden</h1>
+      <p class="lead">
+        Szálláshelyek, nyaralók és családi házak klímatisztítása fertőtlenítéssel, valamint
+        kíméletes napelemtisztítás. Előre kalkulálható ár, számlaképes szolgáltatás —
+        kiszállással a Balatonra.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-fured-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Füreden hosszabb a szezon — és ez másképp terheli a klímákat</h2>
+      <p>
+        Balatonfüred a <strong>Balaton második legforgalmasabb települése</strong>:
+        <strong>592 000 vendégéjszaka</strong> a június–augusztusi időszakban, közvetlenül
+        Siófok mögött. Országos szinten is a legtöbb vendégéjszakát fogadó települések közé
+        tartozik — Budapest, Siófok, Hévíz és Hajdúszoboszló mellett.
+      </p>
+      <p>
+        A gyógy- és fürdővárosi jelleg miatt itt a vendégforgalom <strong>nem szűkül
+        néhány nyári hétre</strong> úgy, mint a klasszikus strandtelepüléseken. Ez a
+        klímák szempontjából fontos különbség: ahol a készülék a szezonon kívül is
+        dolgozik, ott <strong>több az üzemóra</strong>, tehát több por és pára rakódik le
+        a hőcserélőn.
+      </p>
+      <div class="stat">
+        <span class="big">Két különböző eset, két különböző időzítés</span>
+        <p>
+          <strong>Hónapokig zárt nyaraló:</strong> a fő kockázat az álló, nedves
+          hőcserélőn megtelepedő gomba és a jellegzetes dohos szag — itt a
+          <em>szezonnyitás előtti</em> tisztítás és fertőtlenítés a kulcs.
+        </p>
+        <p>
+          <strong>Egész évben működő szálláshely:</strong> itt a sok üzemóra miatti
+          lerakódás és a növekvő fogyasztás a jellemző gond — ilyenkor évi két tisztítás
+          indokolt, tavasszal és ősszel.
+        </p>
+      </div>
+
+      <h2>Több egység, egy kiszállás</h2>
+      <p>
+        Az apartmanházaknál és panzióknál jellemzően több beltéri egység van egy
+        helyszínen — ilyenkor a többdarabos ársáv él, és egy kiszállással végzünk az
+        összessel. A <strong>zsákos-átmosásos</strong> mélytisztításnál a leoldott
+        szennyeződést és vizet felfogó zsák gyűjti össze, így a szoba tiszta és száraz
+        marad: a következő vendég nem lát semmit a munkából.
+      </p>
+      <a class="crosslink" href={withBase('/tudastar/miert-budos-a-klima/')}>
+        <span class="k">Cikk</span>
+        <strong>Miért büdös a klíma, és mit lehet tenni ellene?</strong><br />
+        A szag oka a nedves hőcserélőn megtelepedő gomba — és miért nem elég a szagosító.
+        <span class="arw">→</span>
+      </a>
+
+      <h2>Napelem a tóparton</h2>
+      <p>
+        A napelemeknél évente egy tisztítás ajánlott, ideálisan tavasszal, a pollenszezon
+        után — így a nyári csúcstermelés idejére tiszta a panel. Szezononként használt
+        ingatlanoknál különösen érdemes a tisztítást a szezonnyitáshoz kötni, mert addig
+        a panel hónapokig mosatlanul áll. Lágy kefével és <strong>szűrt, pH-semleges
+        vízzel</strong> dolgozunk.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Balatonfüreden</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Több egységnél (panzió, apartmanház) egyedi ár — hívjon.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések füredi ügyfelektől</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Balatonfüred és környéke</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=17.83%2C46.94%2C17.94%2C47.00&amp;layer=mapnik"
+          title="Balatonfüred és a Balaton északi partjának térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot</h2>
+        <p>Mondja meg, hány klímáról vagy panelről van szó — mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-fured-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-fured-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={withBase('/teruletek/siofok/')}>
+        <span class="k">Terület</span>
+        <strong>Siófok és a déli part</strong><br />
+        Nyáron ötszörös népesség — miért a szezon előtti tisztítás a legjobb időzítés.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>

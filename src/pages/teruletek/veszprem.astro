@@ -1,0 +1,235 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Veszprémben | Péter';
+const description =
+  'Napelemtisztítás és klímatisztítás Veszprémben. A téli lakossági fűtés pora is a panelekre rakódik — ezért a tavaszi tisztítás a legjobb időzítés.';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/veszprem/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Miért pont tavasszal érdemes napelemet tisztíttatni?',
+    a: 'Mert a fűtési szezon alatt gyűlik össze a legtöbb lerakódás. Veszprém saját környezetvédelmi programja szerint a város levegőminőségét három tényező határozza meg: az ipari létesítmények, a közlekedés és az energiatermelés — vagyis a lakossági fűtés. A télen kibocsátott részecskék a tetőkön is megülnek, ezért a tavaszi tisztítással indul a legjobban a nyári csúcstermelés.',
+  },
+  {
+    q: 'Dombra épült utcában is elvállalják a munkát?',
+    a: 'Igen, de a hozzáférés befolyásolhatja a munkát. Ha állvány, emelőkosaras gép vagy más speciális megoldás kell, annak költségét külön számítjuk fel — de ezt előre, a telefonos egyeztetéskor tisztázzuk. Ezért kérünk mindig pár részletet: hány panel, hányadik szint, milyen a megközelítés.',
+  },
+  {
+    q: 'Veszprémbe is kimennek Fejér megyéből?',
+    a: 'Igen, kiszállással dolgozunk. A bázisunk Nadap, a Velencei-tó mellett; Veszprém és Balatonfüred környéke egy irányba esik, ezért gyakran egy napra szervezzük az ilyen munkákat. Az időpontot ennek megfelelően egyeztetjük.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Veszprémben',
+    description:
+      'Kíméletes napelemtisztítás és zsákos-átmosásos klímatisztítás Veszprémben és környékén, lakossági és céges ügyfeleknek.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Veszprém' },
+      { '@type': 'City', name: 'Balatonfüred' },
+      { '@type': 'City', name: 'Balatonalmádi' },
+      { '@type': 'City', name: 'Várpalota' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Veszprém', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Veszprém</nav>
+      <span class="kicker">Veszprém · Veszprém vármegye</span>
+      <h1>Napelem- és klímatisztítás Veszprémben</h1>
+      <p class="lead">
+        Kíméletes napelemtisztítás szűrt, pH-semleges vízzel és klímatisztítás
+        fertőtlenítéssel. Előre kalkulálható ár, számlaképes szolgáltatás — Veszprém és
+        Balatonfüred környékét egy irányban járjuk.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-veszprem-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>A tél is meglátszik a paneleken</h2>
+      <p>
+        Veszprém saját <strong>környezetvédelmi programja</strong> szerint a város
+        levegőminőségét három szektor kibocsátása határozza meg: az
+        <strong>ipari létesítmények</strong>, a <strong>közlekedés</strong> és az
+        <strong>energiatermelés — vagyis a lakossági fűtés</strong>.
+      </p>
+      <div class="stat solar">
+        <span class="big">A fűtési szezon alatt gyűlik a legtöbb lerakódás</span>
+        <p>
+          A lakossági fűtésből származó részecskék télen a tetőkön is megülnek — épp abban
+          az időszakban, amikor a napelem amúgy is keveset termel, és amikor senki nem
+          gondol a tisztításra. Tavaszra így egy egész szezonnyi lerakódás gyűlik össze a
+          panelen, pont mielőtt beindulna a nyári csúcstermelés.
+        </p>
+        <span class="src">Forrás: Veszprém MJV Környezetvédelmi Programja</span>
+      </div>
+      <p>
+        Ezért Veszprémben különösen indokolt a <strong>tavaszi</strong> tisztítás: a
+        fűtési szezon után, a pollenszezon lecsengésével együtt — így a rendszer tisztán
+        kezdi a legtöbbet termelő hónapokat.
+      </p>
+
+      <h2>Dombra épült város — a hozzáférés házanként más</h2>
+      <p>
+        Veszprém völgyekre és dombokra épült, ami a gyakorlatban azt jelenti, hogy a
+        tetők megközelítése utcánként, sőt házanként is nagyon eltérő lehet. Ezért kérünk
+        mindig néhány részletet telefonon: hány panel, hányadik szint, milyen a
+        megközelítés.
+      </p>
+      <p>
+        Ha a munkához <strong>állvány vagy emelőkosaras gép</strong> szükséges, annak
+        költségét külön számítjuk fel — de <strong>előre megmondjuk</strong>, nem a
+        helyszínen derül ki. Ez az egyik oka annak, hogy telefonon egyeztetünk, és nem
+        űrlapon.
+      </p>
+
+      <h2>Egy irány: Veszprém és a Balaton északi partja</h2>
+      <p>
+        A bázisunk a Velencei-tó melletti Nadap, és Veszprém, valamint
+        <strong>Balatonfüred</strong> környéke egy irányba esik — ezért ezeket a
+        munkákat gyakran egy napra szervezzük. Ha a szomszédban vagy a családban másnak is
+        esedékes a tisztítás, érdemes együtt egyeztetni.
+      </p>
+      <a class="crosslink" href={withBase('/teruletek/balatonfured/')}>
+        <span class="k">Terület</span>
+        <strong>Balatonfüred</strong><br />
+        Szálláshelyek és nyaralók — mikor melyik időzítés a jó.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Veszprémben</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések veszprémi ügyfelektől</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Veszprém és környéke</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=17.86%2C47.06%2C17.96%2C47.12&amp;layer=mapnik"
+          title="Veszprém és környékének térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot</h2>
+        <p>Mondja meg, hány panelről vagy klímáról van szó — mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-veszprem-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-veszprem-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={teruletekUrl}>
+        <span class="k">Területek</span>
+        <strong>Hol dolgozunk még?</strong><br />
+        Balatonfüred, Siófok, Fejér megye, a Velencei-tó és a budapesti agglomeráció.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,230 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Budaörsön — irodák, cégek | Péter';
+const description =
+  'Klímatisztítás és napelemtisztítás Budaörsön: irodák, üzletek és családi házak. Több beltéri egységnél kedvezőbb ár, számlaképes szolgáltatás. Hívjon!';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/budaors/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Irodaházba, üzlethelyiségbe is jönnek?',
+    a: 'Igen, céges ügyfeleket is kiszolgálunk, számlaképes szolgáltatással. Több beltéri egységnél kedvezőbb az egységár: 2 egység 26 000 Ft, 3 egység 36 000 Ft, 4 egység 48 000 Ft; ennél több egységnél egyedi árat adunk — irodaháznál, üzletsornál ez a jellemző.',
+  },
+  {
+    q: 'Munkaidőn kívül is lehet a tisztítást végezni?',
+    a: 'Az időpontot egyeztetjük. A klímatisztítás zsákos-átmosásos technikával a helyszínen, tisztán elvégezhető — a leoldott szennyeződést és vizet zsák fogja fel —, így az irodai munka nem áll le miatta. A napelemeknél viszont a napszak kötött: tűző napon nem dolgozunk, mert a forró panel a hidegebb víztől megrepedhet.',
+  },
+  {
+    q: 'Mennyi idő egy klíma tisztítása?',
+    a: 'Egy beltéri egység mélytisztítása jellemzően belefér egy órába, de a pontos idő függ a készülék állapotától és hozzáférhetőségétől. Több egységnél egy kiszállással végzünk, így a teljes munka jóval gyorsabb, mint külön alkalmakkor.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Budaörsön',
+    description:
+      'Klímatisztítás zsákos-átmosásos technikával és kíméletes napelemtisztítás Budaörsön — lakossági és céges ügyfeleknek.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Budaörs' },
+      { '@type': 'City', name: 'Törökbálint' },
+      { '@type': 'City', name: 'Biatorbágy' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Budaörs', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Budaörs</nav>
+      <span class="kicker">Budaörs · budapesti agglomeráció</span>
+      <h1>Napelem- és klímatisztítás Budaörsön</h1>
+      <p class="lead">
+        Családi házak és <strong>céges ügyfelek</strong> — irodák, üzlethelyiségek,
+        raktárak — klímatisztítása és napelemtisztítása. Több beltéri egységnél kedvezőbb
+        egységár, számlaképes szolgáltatás.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-budaors-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Budaörs nem csak lakóváros</h2>
+      <p>
+        A közel <strong>30 ezres</strong> Budaörs a főváros egyik legerősebb gazdasági
+        agglomerációs központja. Itt működik a <strong>Budaörsi Ipari és Technológiai
+        Park (BITEP)</strong> — Magyarország első zöldmezős „ipari üzleti parkja", amelyet
+        kifejezetten a kis- és középvállalkozások igényeire terveztek —, és az M1/M7
+        bevezető szakasza mentén sorakoznak az üzleti parkok, irodaházak és raktárbázisok.
+      </p>
+      <div class="stat">
+        <span class="big">Egy irodában ritkán van egyetlen klíma</span>
+        <p>
+          Egy irodaházban, üzletsoron vagy bemutatótermben jellemzően <strong>több beltéri
+          egység</strong> működik ugyanazon a helyszínen. Ilyenkor a többdarabos ársáv lép
+          életbe, és <strong>egy kiszállással</strong> végzünk az összessel — ez érezhetően
+          olcsóbb és gyorsabb, mint készülékenként külön alkalmat szervezni.
+        </p>
+      </div>
+      <p>
+        A munkáról <strong>számlát adunk</strong>, tehát a céges elszámolás rendben van.
+        A <strong>zsákos-átmosásos</strong> technika miatt a tisztítás a helyszínen,
+        tisztán elvégezhető: a hőcserélőről leoldott szennyeződést és vizet felfogó zsák
+        gyűjti össze, így az iroda nem lesz vizes, és a munka nem áll le.
+      </p>
+
+      <h2>Miért koszolódik gyorsabban egy irodai klíma?</h2>
+      <p>
+        Az irodai és üzlethelyiségi készülékek jellemzően <strong>hosszabb napi
+        üzemidővel</strong> dolgoznak, mint egy lakásban — nyitvatartási időben
+        gyakorlatilag folyamatosan. Több működési óra alatt több por és pára rakódik le a
+        hőcserélőn, ami egyszerre rontja a levegő minőségét és növeli a fogyasztást: az
+        US DOE szerint már a koszos szűrő tisztára cserélése is 5–15%-kal csökkentheti a
+        klíma energiafogyasztását.
+      </p>
+      <a class="crosslink" href={withBase('/klimatisztitas/')}>
+        <span class="k">Szolgáltatás</span>
+        <strong>Klímatisztítás és fertőtlenítés</strong> — a módszer és a teljes árlista
+        <span class="arw">→</span>
+      </a>
+
+      <h2>Napelem a tetőn — lakossági és üzemi rendszereken is</h2>
+      <p>
+        A napelemtisztítást ugyanúgy vállaljuk családi házon és céges épületen is:
+        lágy kefével és <strong>szűrt, pH-semleges vízzel</strong> dolgozunk, ami folt- és
+        lerakódásmentesen szárad. Nagyobb, csarnoktetőn lévő rendszereknél a hozzáférés
+        (állvány, emelőkosaras gép) külön költség lehet — ezt előre tisztázzuk.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Budaörsön</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Több egységnél (irodaház, üzletsor) egyedi ár — hívjon.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések budaörsi ügyfelektől</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Budaörs és környéke</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.90%2C47.43%2C19.00%2C47.49&amp;layer=mapnik"
+          title="Budaörs és környékének térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen ajánlatot</h2>
+        <p>Mondja meg, hány beltéri egységről vagy panelről van szó — mondjuk az árat.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-budaors-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-budaors-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={teruletekUrl}>
+        <span class="k">Területek</span>
+        <strong>Hol dolgozunk még?</strong><br />
+        Érd, Biatorbágy, Martonvásár, Fejér megye, a Velencei-tó és a Balaton.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>

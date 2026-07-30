@@ -1,0 +1,231 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Martonvásáron | Péter';
+const description =
+  'Napelemtisztítás és klímatisztítás Martonvásáron és környékén. Mezőgazdasági környezet, kísérleti szántóföldek — itt gyorsabban porosodnak a panelek.';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/martonvasar/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Miért porosodik gyorsabban a napelem mezőgazdasági környezetben?',
+    a: 'A művelt szántóföldeken a talajmunka és a betakarítás jelentős port kavar fel, amit a szél a környező tetőkre és panelekre visz. Ez a por rárakódva csökkenti a fényáteresztést. Ilyen környezetben évente egy tisztítás helyett kettő is indokolt lehet, jellemzően a betakarítás utáni ősszel és tavasszal.',
+  },
+  {
+    q: 'Mikor a legjobb időpont a tisztításra Martonvásáron?',
+    a: 'Tavasszal, a pollenszezon után — így a nyári csúcstermelést tiszta panelekkel kezdi. Ha a ház szántóföldek közelében áll, a nyár végi, betakarítás utáni időszak a második jó alkalom, amikor a felkavart por már leülepedett.',
+  },
+  {
+    q: 'Martonvásárra is kimennek?',
+    a: 'Igen. Martonvásár Fejér megyében, az M7 mellett fekszik — a Velencei-tó melletti bázisunkról ez rövid út, tehát rugalmasan tudunk időpontot egyeztetni.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Martonvásáron',
+    description:
+      'Kíméletes napelemtisztítás és zsákos-átmosásos klímatisztítás Martonvásáron és a környező, mezőgazdasági jellegű településeken.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Martonvásár' },
+      { '@type': 'City', name: 'Ercsi' },
+      { '@type': 'City', name: 'Ráckeresztúr' },
+      { '@type': 'City', name: 'Baracska' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Martonvásár', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Martonvásár</nav>
+      <span class="kicker">Martonvásár · Fejér megye, M7</span>
+      <h1>Napelem- és klímatisztítás Martonvásáron</h1>
+      <p class="lead">
+        Mezőgazdasági környezetben a panelek gyorsabban porosodnak — ezt itt hamar
+        észreveszi az ember a termelésén. Kíméletes tisztítás szűrt, pH-semleges vízzel,
+        előre kalkulálható áron.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-martonvasar-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Egy település, ahol a mezőgazdaság a helyi valóság</h2>
+      <p>
+        Martonvásáron működik a <strong>HUN-REN Agrártudományi Kutatóközpont</strong> — a
+        hazai agrárkutatás egyik vezető intézménye —, amelynek munkája a Brunszvik-kastély
+        és a mintegy <strong>70 hektáros park</strong> épületeiben és a hozzá tartozó
+        területeken zajlik. Az itt folyó búzanemesítés és növénykutatás mögött
+        <strong>kísérleti szántóföldek</strong> állnak.
+      </p>
+      <div class="stat solar">
+        <span class="big">Szántóföldi por: nem elmélet, hanem a helyi mindennapok</span>
+        <p>
+          A művelt táblákon a talajmunka és a betakarítás jelentős port kavar fel, amit a
+          szél a környező tetőkre visz. Ez a por a panelen megülve <strong>csökkenti a
+          fényáteresztést</strong> — és mivel száraz, finom szemcsés szennyeződésről van
+          szó, egy futó eső nem mossa le rendesen, csak elkeni.
+        </p>
+      </div>
+      <p>
+        Ezért érdemes mezőgazdasági környezetben az <strong>évi egy tisztítás helyett
+        kettővel</strong> számolni: tavasszal a pollenszezon után, majd nyár végén,
+        amikor a betakarítás utáni por már leülepedett.
+      </p>
+
+      <h2>A kastélypark másik oldala: szerves szennyeződés</h2>
+      <p>
+        A nagy, beállt fákkal teli park és a hasonló, régi kertek nem csak port
+        jelentenek: a <strong>levél, a pollen és a magvak</strong> ragadósabb, nehezebben
+        leoldódó réteget képeznek, és a lombkorona a madarak kedvelt ülőhelye is. Ilyen
+        szennyeződésnél számít igazán a módszer — lágy kefe és szűrt, pH-semleges víz,
+        ami folt- és lerakódásmentesen szárad.
+      </p>
+
+      <h2>Rövid út a bázisunkról</h2>
+      <p>
+        Martonvásár <strong>Fejér megyében</strong>, az M7 mellett fekszik, a
+        Székesfehérvár–Budapest tengelyen. A bázisunk a Velencei-tó melletti
+        <strong>Nadap</strong>, tehát ez rövid út — rugalmasan tudunk időpontot
+        egyeztetni, akár a hét közepén is.
+      </p>
+
+      <a class="crosslink" href={withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/')}>
+        <span class="k">Cikk</span>
+        <strong>Mennyivel termel többet a tiszta napelem?</strong><br />
+        Mérési adatok és forintos példa — mit visz el a rárakódott por.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Martonvásáron</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések martonvásári ügyfelektől</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Martonvásár és környéke</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.75%2C47.29%2C18.84%2C47.34&amp;layer=mapnik"
+          title="Martonvásár és környékének térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot</h2>
+        <p>Mondja meg, hány panelről vagy klímáról van szó — mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-martonvasar-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-martonvasar-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={teruletekUrl}>
+        <span class="k">Területek</span>
+        <strong>Hol dolgozunk még?</strong><br />
+        Érd, Budaörs, Biatorbágy, Fejér megye, a Velencei-tó és a Balaton.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,241 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Biatorbágyon | Péter';
+const description =
+  'Napelemtisztítás és klímatisztítás Biatorbágyon. Az M1-bővítés évekig porral jár a folyosóban — ilyenkor fontosabb a rendszeres tisztítás. Előre kalkulálható ár.';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/biatorbagy/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Az autópálya-építés miatt gyakrabban kell tisztíttatni a napelemet?',
+    a: 'Az építkezés közelében élőknél érdemes rá figyelni. A földmunka és az anyagmozgatás port kavar, ami a környező tetőkre és panelekre is lerakódik. Ha az M1 közelében lakik, érdemes a saját termelését figyelni: ha hasonlóan napos napokon csökken, az a szennyeződés jele.',
+  },
+  {
+    q: 'Új építésű házunk van — mikor esedékes az első tisztítás?',
+    a: 'Jellemzően a beüzemelés utáni első-második évben, utána évente egyszer. A panel kora nem számít: az számít, mióta nem mosták le. Építkezéssel terhelt környezetben ez akár hamarabb is indokolt lehet.',
+  },
+  {
+    q: 'Biatorbágyra is kimennek Fejér megyéből?',
+    a: 'Igen, az M1 mentén rendszeresen dolgozunk az agglomerációban — Biatorbágy, Budaörs, Érd. A bázisunk Nadap, a Velencei-tó mellett, tehát ez kiszállás; a távolabbi helyszíneknél előfordul, hogy több munkát szervezünk egy napra, ezt az egyeztetéskor átbeszéljük.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Biatorbágyon',
+    description:
+      'Kíméletes napelemtisztítás és zsákos-átmosásos klímatisztítás Biatorbágyon és az M1 menti agglomerációban.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Biatorbágy' },
+      { '@type': 'City', name: 'Budaörs' },
+      { '@type': 'City', name: 'Herceghalom' },
+      { '@type': 'City', name: 'Páty' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Biatorbágy', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Biatorbágy</nav>
+      <span class="kicker">Biatorbágy · M1 menti agglomeráció</span>
+      <h1>Napelem- és klímatisztítás Biatorbágyon</h1>
+      <p class="lead">
+        Kíméletes napelemtisztítás szűrt, pH-semleges vízzel és klímatisztítás
+        fertőtlenítéssel. Előre kalkulálható ár, számlaképes szolgáltatás — az M1 mentén
+        rendszeresen dolgozunk.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-biatorbagy-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Egy gyorsan növő település — friss rendszerekkel</h2>
+      <p>
+        Biatorbágy <strong>15 567 lakosú</strong> (2026. január 1.), és az elmúlt évek
+        egyik <strong>leggyorsabban növekvő</strong> agglomerációs települése — az
+        országos élmezőnyben, Érd után. A gyors beépülés azt jelenti, hogy nagyon sok itt
+        a néhány éves családi ház, amelyeken már alapfelszerelés a napelem és a
+        split klíma.
+      </p>
+      <p>
+        Ezek a rendszerek most érnek abba a korba, amikor összegyűlik rajtuk az első
+        komolyabb szennyeződés — miközben sok tulajdonos még sosem tisztíttatta.
+        Gyakori félreértés, hogy egy új rendszert nem kell tisztítani: a panel kora nem
+        számít, csak az, mióta nem mosták le.
+      </p>
+
+      <h2>Évekig tartó építkezés a szomszédban</h2>
+      <div class="stat solar">
+        <span class="big">Az M1-bővítés 2028-ig tart — és Biatorbágy a szakasz végpontja</span>
+        <p>
+          Az M1 autópálya bővítése 2025 szeptemberében indult, elsőként épp az
+          <strong>M0–Biatorbágy–Bicske</strong> szakaszon: a pálya 2×3 sávosra bővül,
+          a burkolat vastagsága közel 50%-kal nő. A szakasz átadási határideje
+          <strong>2028. augusztus 31.</strong>
+        </p>
+        <p>
+          Ez a gyakorlatban <strong>évekig tartó földmunkát és anyagmozgatást</strong>
+          jelent a folyosóban — az ilyenkor felkavart por pedig a környező tetőkre és a
+          napelemekre is lerakódik. Ez nem az egész várost érinti egyformán: elsősorban a
+          pálya közelében élőknek érdemes gyakrabban ránézniük a termelésükre.
+        </p>
+        <span class="src">Forrás: az M1 bővítés hivatalos ütemterve (2025–2028)</span>
+      </div>
+
+      <h2>Mit tehet a tulajdonos?</h2>
+      <ul>
+        <li>
+          <strong>Figyelje az inverter adatait.</strong> Ha hasonlóan napos napokon
+          fokozatosan csökken a termelés, az szennyeződésre utal — ez a legmegbízhatóbb
+          jelzés, mert a saját rendszerét méri.
+        </li>
+        <li>
+          <strong>Ne halassza a következő tavaszra</strong>, ha látható lerakódás van a
+          panelen: a szennyeződés minden nap visz el a termelésből.
+        </li>
+        <li>
+          <strong>A klímánál a szezon előtti tisztítás</strong> a legjobb időzítés — a
+          nyári hőségben egy eltömődött hőcserélő többet is fogyaszt.
+        </li>
+      </ul>
+
+      <a class="crosslink" href={withBase('/tudastar/aszaly-es-napelem-tisztitas/')}>
+        <span class="k">Cikk</span>
+        <strong>Aszályos évben gyakrabban kell napelemet tisztítani?</strong><br />
+        Kevesebb eső mos át, több a por a levegőben — mit jelent ez a gyakoriságra.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Biatorbágyon</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések biatorbágyi ügyfelektől</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Biatorbágy és környéke</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.78%2C47.45%2C18.88%2C47.51&amp;layer=mapnik"
+          title="Biatorbágy és környékének térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot</h2>
+        <p>Mondja meg, hány panelről vagy klímáról van szó — mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-biatorbagy-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-biatorbagy-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={teruletekUrl}>
+        <span class="k">Területek</span>
+        <strong>Hol dolgozunk még?</strong><br />
+        Érd, Budaörs, Martonvásár, Fejér megye, a Velencei-tó és a Balaton.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>

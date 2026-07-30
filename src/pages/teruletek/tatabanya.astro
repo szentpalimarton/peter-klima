@@ -1,0 +1,233 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, withBase } from '../../consts';
+
+const title = 'Napelem- és klímatisztítás Tatabányán | Péter';
+const description =
+  'Napelemtisztítás és klímatisztítás Tatabányán — lakossági és céges ügyfeleknek. Előre kalkulálható ár, számlaképes szolgáltatás, gyors időpont-egyeztetés.';
+
+const homeUrl = withBase('/');
+const teruletekUrl = withBase('/teruletek/');
+const pageUrl = new URL(withBase('/teruletek/tatabanya/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Városi környezetben gyakrabban kell tisztítani a napelemet?',
+    a: 'Jellemzően igen. A közlekedésből és az ipari tevékenységből származó por a tetőkön lévő paneleken is lerakódik, és ez a szennyeződés finomabb szemcséjű, mint a mezőgazdasági por — egy futó eső nem mossa le rendesen. A legmegbízhatóbb jelzés a saját inverter adata: ha hasonlóan napos napokon fokozatosan csökken a termelés, esedékes a tisztítás.',
+  },
+  {
+    q: 'Társasházban, több lakás klímájához is kijönnek?',
+    a: 'Igen. Több beltéri egységnél kedvezőbb az egységár: 2 egység 26 000 Ft, 3 egység 36 000 Ft, 4 egység 48 000 Ft; ennél többnél egyedi árat adunk. Ha a társasházban több lakó is szeretné, egy kiszállással el tudjuk végezni — érdemes összefogni.',
+  },
+  {
+    q: 'Tatabányára is kimennek Fejér megyéből?',
+    a: 'Igen, kiszállással dolgozunk. A bázisunk Nadap, a Velencei-tó mellett — a távolabbi helyszíneknél előfordul, hogy több munkát szervezünk egy napra, ezt az időpont-egyeztetéskor átbeszéljük. Az ár ettől függetlenül az árlista szerinti.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Napelemtisztítás és klímatisztítás',
+    name: 'Napelem- és klímatisztítás Tatabányán',
+    description:
+      'Kíméletes napelemtisztítás és zsákos-átmosásos klímatisztítás Tatabányán, lakossági és céges ügyfeleknek.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BRAND,
+      telephone: PHONE_E164,
+      email: EMAIL,
+      url: Astro.site?.toString(),
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Tatabánya' },
+      { '@type': 'City', name: 'Tata' },
+      { '@type': 'City', name: 'Oroszlány' },
+      { '@type': 'City', name: 'Bicske' },
+    ],
+    offers: [
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 35000, description: 'Napelemtisztítás, 1–10 panel' },
+      { '@type': 'Offer', priceCurrency: 'HUF', price: 15000, description: 'Klímatisztítás, 1 beltéri egység' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Területek', item: new URL(withBase('/teruletek/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Tatabánya', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={teruletekUrl}>Területek</a> › Tatabánya</nav>
+      <span class="kicker">Tatabánya · Komárom-Esztergom vármegye</span>
+      <h1>Napelem- és klímatisztítás Tatabányán</h1>
+      <p class="lead">
+        Kíméletes napelemtisztítás szűrt, pH-semleges vízzel és klímatisztítás
+        fertőtlenítéssel — lakossági és céges ügyfeleknek. Előre kalkulálható ár,
+        számlaképes szolgáltatás.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-tatabanya-hero">📞 {PHONE_DISPLAY}</a>
+        <a class="btn btn-ghost" href="#arak">Áraink</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Egy város, amely maga mögött hagyta a bányákat</h2>
+      <p>
+        Tatabánya Komárom-Esztergom vármegye székhelye, és a városnak
+        <strong>az 1800-as évekig visszanyúló bányászati és ipari múltja</strong> van.
+        Ez ma már valóban múlt: a város területén működő utolsó bánya
+        <strong>1987-ben</strong>, a tatabányai szénbányászathoz tartozó utolsó akna pedig
+        <strong>2004-ben</strong> zárt be.
+      </p>
+      <p>
+        Ezt azért fontos kimondani, mert könnyű lenne „bányavárosi porról" beszélni —
+        de az már nem a mai valóság. Ami maradt: egy megyeszékhelynyi
+        <strong>városi és közlekedési porterhelés</strong>, valamint egy működő ipari park.
+      </p>
+      <div class="stat">
+        <span class="big">A város méri a levegő minőségét</span>
+        <p>
+          Tatabánya <strong>három mobil mikroszenzoros mérőállomást</strong> telepített egy
+          uniós LIFE integrált projekt keretében, kifejezetten a levegőminőség javítása
+          érdekében. Vagyis a porterhelés itt nem érzés kérdése, hanem mért, nyilvános
+          adat — a helyiek pontosan tudják, miről van szó.
+        </p>
+        <span class="src">Forrás: tatabanya.hu (aktuális levegőminőségi adatok)</span>
+      </div>
+
+      <h2>Mit jelent ez a napelemre?</h2>
+      <p>
+        A városi és közlekedési por <strong>finom szemcséjű</strong>: rárakódva egyenletes,
+        halvány réteget képez a panelen, amit egy futó eső inkább elken, mint lemos. Éppen
+        ezért nehéz szemre észrevenni — a termelés viszont fokozatosan csökken.
+      </p>
+      <p>
+        A legjobb ellenőrzés a saját inverter vagy monitoring alkalmazás: ha hasonlóan
+        napsütéses napokon egyre kevesebbet termel a rendszer, az a szennyeződés jele.
+      </p>
+
+      <h2>Klíma: társasházban érdemes összefogni</h2>
+      <p>
+        A klímatisztítást <strong>zsákos-átmosásos</strong> technikával végezzük, ami a
+        helyszínen, tisztán elvégezhető: a hőcserélőről és a ventilátorról leoldott
+        szennyeződést és vizet felfogó zsák gyűjti össze, így a lakás száraz marad.
+        Társasházban, ha több lakó is szeretné, egy kiszállással el tudjuk végezni —
+        érdemes összebeszélni a szomszédokkal.
+      </p>
+      <a class="crosslink" href={withBase('/klimatisztitas/')}>
+        <span class="k">Szolgáltatás</span>
+        <strong>Klímatisztítás és fertőtlenítés</strong> — a módszer és a teljes árlista
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section tint" id="arak">
+    <div class="wrap">
+      <span class="kicker">Árlista</span>
+      <h2>Áraink Tatabányán</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Napelemtisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1–10 panel</td><td class="ar">35 000 Ft</td></tr>
+              <tr><td>11–15 panel</td><td class="ar">50 000 Ft</td></tr>
+              <tr><td>16–20 panel</td><td class="ar">65 000 Ft</td></tr>
+              <tr><td>21–25 panel</td><td class="ar">80 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">25 panel felett minden további 5 panel: +15 000 Ft.</p>
+          <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
+        </div>
+        <div class="price-card">
+          <h3>Klímatisztítás</h3>
+          <table>
+            <tbody>
+              <tr><td>1 beltéri egység</td><td class="ar">15 000 Ft</td></tr>
+              <tr><td>2 beltéri egység</td><td class="ar">26 000 Ft</td></tr>
+              <tr><td>3 beltéri egység</td><td class="ar">36 000 Ft</td></tr>
+              <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
+        </div>
+      </div>
+      <p class="price-disclaimer">
+        Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
+        emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
+        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Gyakori kérdések</span>
+      <h2>Kérdések tatabányai ügyfelektől</h2>
+      <div class="faq">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="wrap">
+      <span class="kicker">Térkép</span>
+      <h2>Tatabánya és környéke</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.36%2C47.54%2C18.47%2C47.61&amp;layer=mapnik"
+          title="Tatabánya és környékének térképe"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <p class="map-credit">
+        Térkép: <a href="https://www.openstreetmap.org/copyright" rel="nofollow">© OpenStreetMap</a> közreműködők
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <div class="cta-band">
+        <h2>Kérjen időpontot</h2>
+        <p>Mondja meg, hány panelről vagy klímáról van szó — mondjuk az árat és az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-tatabanya-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-tatabanya-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <a class="crosslink" href={teruletekUrl}>
+        <span class="k">Területek</span>
+        <strong>Hol dolgozunk még?</strong><br />
+        Bicske, Biatorbágy, Budaörs, Fejér megye, a Velencei-tó és a Balaton.
+        <span class="arw">→</span>
+      </a>
+    </div>
+  </section>
+</Base>
