@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA_PROSE, AREAS_SERVED, withBase } from '../consts';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, PHONE_E164, EMAIL, AREA_PROSE, AREAS_SERVED, FACEBOOK_URL, withBase } from '../consts';
 
 const title = 'Napelem- és klímatisztítás Fejér megyében | Péter';
 const description =
@@ -45,6 +45,7 @@ const schema = [
     url: Astro.site?.toString(),
     image: new URL(withBase('/images/peter-kabala.jpg'), Astro.site).toString(),
     areaServed: AREAS_SERVED,
+    sameAs: [FACEBOOK_URL],
     priceRange: '15 000 Ft – 80 000 Ft',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

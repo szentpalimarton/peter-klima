@@ -1,0 +1,183 @@
+---
+import Base from '../../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
+
+const title = 'Hőségben többet termel a napelem? | Péter';
+const description =
+  'Nem: a napelem a fényből termel, a forró cella hatásfoka romlik. És most minden kWh számít, mert Paks blokkjai a Duna alacsony vízállása miatt álltak le.';
+
+const homeUrl = withBase('/');
+const tudastarUrl = withBase('/tudastar/');
+const klimaUrl = withBase('/klimatisztitas/');
+const meresekUrl = withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/');
+const tuzonapUrl = withBase('/tudastar/tuzo-napon-napelem-tisztitas/');
+const budosUrl = withBase('/tudastar/miert-budos-a-klima/');
+const pageUrl = new URL(withBase('/tudastar/hosegben-tobbet-termel-a-napelem/'), Astro.site).toString();
+
+const faq = [
+  {
+    q: 'Hőségben többet termel a napelem?',
+    a: 'Nem: a napelem a fényből termel, nem a hőből, és a forró cella hatásfoka romlik. A hosszú nyári nappalok jó termelést hoznak, de a tulajdonos azzal tud a legtöbbet segíteni, ha a panel tiszta, mert a fényből így jut el a legtöbb a cellákig.',
+  },
+  {
+    q: 'Kánikulában is lehet klímát tisztíttatni?',
+    a: 'Igen, a klímatisztítás beltéri munka, a hőség nem akadály. A zsákos-átmosásos technikával a helyszínen, tisztán elvégezhető, és pont a legnagyobb terhelés idején áll helyre a készülék hatásfoka.',
+  },
+  {
+    q: 'Napelemet is lehet nyáron tisztíttatni?',
+    a: 'Igen, de nem tűző napon: a forró üveg a hidegebb víztől elpattanhat. Ezért kánikulában kora reggel, késő délután vagy borult időben dolgozunk.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Hőségben többet termel a napelem?',
+    description,
+    datePublished: '2026-08-16',
+    dateModified: '2026-08-16',
+    inLanguage: 'hu',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND },
+    mainEntityOfPage: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Főoldal', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: 'Tudástár', item: new URL(withBase('/tudastar/'), Astro.site).toString() },
+      { '@type': 'ListItem', position: 3, name: 'Hőségben többet termel a napelem?', item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base {title} {description} {schema} ogType="article">
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb"><a href={homeUrl}>Főoldal</a> › <a href={tudastarUrl}>Tudástár</a> › Hőségben többet termel a napelem?</nav>
+      <span class="kicker">Tudástár</span>
+      <h1>Hőségben többet termel a napelem?</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <p class="lede">
+        Meglepő, de nem: a napelem a <strong>fényből</strong> termel, nem a hőből, és a
+        forró cella hatásfoka kifejezetten romlik. Az amerikai energiaügyi minisztérium
+        (DOE) megfogalmazásában <a href="https://www.energy.gov/eere/solar/solar-performance-and-efficiency" rel="nofollow">a
+        napelemcellák általában alacsony hőmérsékleten működnek a legjobban</a>. A mostani
+        kánikulában ráadásul minden kilowattóra számít: a Duna rekord alacsony vízállása
+        miatt augusztus elején a paksi atomerőmű négy blokkjából hármat le kellett állítani.
+      </p>
+
+      <h2>Miért termel kevesebbet a napelem a hőségben?</h2>
+      <p>
+        Mert a fotovoltaikus cella fizikája ilyen: a magas hőmérséklet a feszültséget
+        csökkenti, és ezzel a leadott teljesítményt is. <a href="https://www.energy.gov/eere/solar/solar-performance-and-efficiency" rel="nofollow">A
+        DOE szerint a hőmérséklet emelkedésével a feszültség jóval nagyobb mértékben esik</a>,
+        mint amennyit az áramerősség kis növekedése visszahoz.
+      </p>
+      <p>
+        A nyári hosszú nappalok összességében persze jó termelést hoznak. A lényeg a
+        különbségtétel: a <strong>sok fény</strong> jó, a <strong>forró panel</strong> nem.
+        A levegő hőmérsékletén a tulajdonos nem tud változtatni. Azon viszont igen, hogy a
+        fényből mennyi jut el a cellákig: a rárakódott por, pollen és madárürülék pont ezt
+        veszi el, <a href={meresekUrl}>számokkal és forrásokkal itt írtunk róla</a>.
+      </p>
+
+      <h2>Mi történt a paksi atomerőművel?</h2>
+      <p>
+        A hőség és az aszály miatt a Duna Paksnál 2026. augusztus elején történelmi
+        mélypontra, mínusz 134 centiméter körüli szintre süllyedt, és a hűtővíz-kiemelés
+        korlátai miatt <a href="https://index.hu/gazdasag/2026/08/01/paksi-atomeromu-leallas-1.-blokk-duna-alacsony-vizallas-hoseg/" rel="nofollow">a
+        négy blokkból hármat fokozatosan le kellett állítani</a>. Ez azért nagy szó, mert
+        <a href="https://www.portfolio.hu/gazdasag/20260804/mit-jelent-a-vizmerce-allasa-paksnal-mi-tortenik-ha-leall-az-atomeromu-853906" rel="nofollow">Paks
+        normál üzemben mintegy 2000 megawattot, a hazai áramtermelés közel felét adja</a>.
+        A mélyponton <a href="https://privatbankar.hu/cikkek/kozerdeku/a-jovo-heten-akar-teljesen-ujraindulhat-paks.html" rel="nofollow">a
+        négy blokk nyolc turbinájából egyetlen 240 megawattos egység maradt üzemben</a>.
+      </p>
+      <p>
+        <em>Frissítve: 2026. augusztus 16.</em> A vízszint augusztus 10-én átmenetileg
+        emelkedett és egy turbina visszakapcsolhatott, de <a href="https://www.portfolio.hu/gazdasag/20260810/most-meg-orulunk-de-par-napon-belul-ujra-nagy-bajban-lehet-paks-a-duna-vizszintje-miatt-855232" rel="nofollow">az
+        előrejelzések napokon belül újra kritikus szintet vártak</a>. A helyzet hullámzik;
+        a rendszer közben importra és tartalékokra támaszkodik. Aki követné, hogy éppen
+        mennyit ad Paks és hol áll a Duna, élőben nézheti a
+        <a href="https://holadelej.hu" rel="nofollow">holadelej.hu</a> oldalon, amely a
+        MAVIR és a vízügy nyilvános adataiból dolgozik.
+      </p>
+      <p>
+        Ilyenkor a háztetőkön termelő napelemeknek nem szimbolikus, hanem gyakorlati
+        szerepük van: helyben termelnek, hűtővíz nélkül. Egy koszos panel viszont a
+        termelése egy részét elhagyja, pont akkor, amikor a legnagyobb szükség lenne rá.
+      </p>
+
+      <h2>Hogyan fogyasszon kevesebbet a klíma a kánikulában?</h2>
+      <p>
+        A leggyorsabb megtakarítás a tiszta szűrő és a tiszta hőcserélő:
+        <a href="https://www.energy.gov/energysaver/air-conditioner-maintenance" rel="nofollow">a
+        DOE szerint a koszos, eltömődött szűrő tisztára cserélése önmagában 5–15
+        százalékkal csökkentheti a klíma fogyasztását</a>. Kánikulában, amikor a készülék
+        szinte folyamatosan jár, ez a különbség minden nap újratermelődik.
+      </p>
+      <p>
+        A DOE ugyanott írja, hogy az eltömődött szűrő mellett a kosz a hőcserélőre jut,
+        és annak hőelnyelő képességét rontja. A szűrőt a tulajdonos maga is tisztán
+        tarthatja; a hőcserélő mélytisztítása szakmunka, <a href={klimaUrl}>ezt
+        zsákos-átmosásos technikával végezzük</a>, a lakás tisztán marad.
+      </p>
+
+      <h2>Mit tehet még ma?</h2>
+      <table>
+        <thead>
+          <tr><th scope="col">Beavatkozás</th><th scope="col">Várható hatás</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Klímaszűrő tisztítása, cseréje</td><td>akár 5–15%-kal kisebb fogyasztás a DOE szerint</td></tr>
+          <tr><td>Klíma-mélytisztítás (hőcserélő, ventilátor)</td><td>a hőelnyelés helyreáll, és <a href={budosUrl}>a dohos szag is a forrásánál szűnik meg</a></td></tr>
+          <tr><td>Napelem-tisztítás</td><td>szennyezettségtől függően akár 15–20% többlettermelés, <a href={meresekUrl}>mérések és forintos példa itt</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Tűző napon lehet napelemet tisztítani?</h2>
+      <p>
+        Nem, és hőségriadó idején ez fokozottan igaz: a forró panelüveg a hidegebb víztől
+        hősokkot kaphat és elpattanhat. Ezért kánikulában kora reggel, késő délután vagy
+        borult időben dolgozunk, <a href={tuzonapUrl}>ennek okait külön cikkben írtuk meg</a>.
+      </p>
+
+      <a class="crosslink" href={klimaUrl}>
+        <span class="k">Szolgáltatás</span>
+        <strong>Klímatisztítás és fertőtlenítés</strong>: módszer, árak, időpont
+        <span class="arw">→</span>
+      </a>
+
+      <div class="cta-band">
+        <h2>Adjon a rendszere annyit, amennyit tud</h2>
+        <p>Kánikulában minden kilowattóra számít. Hívjon, és megbeszéljük az időpontot.</p>
+        <a class="contact-phone" href={PHONE_TEL} data-cta="call-hoseg-cta">{PHONE_DISPLAY}</a><br />
+        <a class="btn btn-call" href={PHONE_TEL} data-cta="call-hoseg-cta-btn">📞 Hívom most</a>
+      </div>
+
+      <div class="sources">
+        <h2>Források</h2>
+        <ol>
+          <li>US DOE: <a href="https://www.energy.gov/eere/solar/solar-performance-and-efficiency" rel="nofollow">Solar Performance and Efficiency, energy.gov</a>.</li>
+          <li>US DOE: <a href="https://www.energy.gov/energysaver/air-conditioner-maintenance" rel="nofollow">Air Conditioner Maintenance, energy.gov</a>.</li>
+          <li>Index (2026. 08. 01.): <a href="https://index.hu/gazdasag/2026/08/01/paksi-atomeromu-leallas-1.-blokk-duna-alacsony-vizallas-hoseg/" rel="nofollow">Szombat hajnalban újabb leállást jelentett be a paksi atomerőmű</a>.</li>
+          <li>Portfolio (2026. 08. 04.): <a href="https://www.portfolio.hu/gazdasag/20260804/mit-jelent-a-vizmerce-allasa-paksnal-mi-tortenik-ha-leall-az-atomeromu-853906" rel="nofollow">Mit jelent a vízmérce állása Paksnál?</a></li>
+          <li>Portfolio (2026. 08. 10.): <a href="https://www.portfolio.hu/gazdasag/20260810/most-meg-orulunk-de-par-napon-belul-ujra-nagy-bajban-lehet-paks-a-duna-vizszintje-miatt-855232" rel="nofollow">Pár napon belül újra nagy bajban lehet Paks</a>.</li>
+          <li>Privátbankár: <a href="https://privatbankar.hu/cikkek/kozerdeku/a-jovo-heten-akar-teljesen-ujraindulhat-paks.html" rel="nofollow">A jövő héten akár teljesen újraindulhat Paks?</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</Base>

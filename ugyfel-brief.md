@@ -46,10 +46,15 @@
 
 ### NAP — entitás-konzisztencia
 
-- **Név:** Péter · Napelem- és Klímatisztítás
-- **Cím:** Nadap ⚠️ ellenőrizd — pontos formátum az impresszumból veendő
+- **Név:** Péter · Napelem- és Klímatisztítás (Cégprofilban és FB-en pont nélkül:
+  „Péter Napelem- és Klímatisztítás")
+- **Cím:** Bodza utca, 8097 Nadap ⚠️ házszám ellenőrizendő — a Facebook-oldalon
+  publikus; a GBP-ben a cím rejtve (területalapú vállalkozás)
 - **Telefon:** +36 20 495 4171
 - **E-mail:** prokontra.oroszi@gmail.com
+- **Facebook:** facebook.com/profile.php?id=61590664083070 („Péter Klíma és Napelem
+  Tisztítás" néven, 2026. jún. óta — ⚠️ névsorrend-egységesítés függőben) — a séma
+  `sameAs` mezőjében bekötve
 
 ### Versenytársak
 

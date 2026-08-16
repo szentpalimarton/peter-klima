@@ -134,7 +134,13 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 
 ## Márton kézi teendői (review 2026-07-24 alapján)
 - [ ] GBP igazolás státuszának ellenőrzése Péterrel (videós verifikáció megjött-e); ha kész: profil feltöltése az útmutató szerint + Márton felvétele kezelőnek
-- [ ] Facebook-oldal létrehozása Péternek (NAP-konzisztens név/telefon) — a helyi ügyfelek jelentős része ott keres; a kabala + munkafotók újrafelhasználhatók
+- [x] Facebook-oldal — KIDERÜLT: Péterék maguktól létrehozták (2026. jún. 10.),
+      45 követő, **4 vélemény**, aktív posztok a kabalával. Séma `sameAs` bekötve — 2026-08-16
+- [ ] FB-oldal névsorrend egységesítése: „Péter Klíma és Napelem Tisztítás" →
+      „Péter Napelem- és Klímatisztítás" (a GBP-vel és a site-tal egyezően)
+- [ ] A 4 FB-vélemény tükrözése az oldalra (Péter + a véleményezők hozzájárulásával) —
+      ez a CRO-02 első valódi bizonyíték-anyaga
+- [ ] FB „Mindig nyitva" → valós nyitvatartásra állítani
 
 ## Local SEO
 - [ ] Google Cégprofil — beállítva 2026-07-14, **igazolásra vár** (videós ellenőrzés)

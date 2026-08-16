@@ -41,6 +41,13 @@ export const AREAS_SERVED = [
 ];
 
 /**
+ * Közösségi profilok – a séma sameAs mezőjébe és a láblécbe.
+ * A Facebook-oldalt Péterék hozták létre (2026. június); 45 követő, 4 vélemény.
+ * TODO ha lesz vanity URL (facebook.com/peternapelem...), ide azt írjuk.
+ */
+export const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61590664083070';
+
+/**
  * Kattintás-mérés (CRO-07) – Umami Cloud, sütimentes, ezért nem kell hozzá
  * cookie-banner, és az adatkezelési tájékoztató állításai igazak maradnak.
  * Ugyanaz a minta, mint az erotikfoto-n (ügynökségi standard: lead-gen → Umami).
