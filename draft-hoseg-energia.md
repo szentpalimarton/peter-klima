@@ -9,7 +9,7 @@ masodlagosak: "klíma fogyasztás csökkentése · Paks leállás · napelem ter
 adatjegyzet: "GSC-ben még nincs ilyen lekérdezés (új téma), DataForSEO felfüggesztve – a kulcsszóválasztás szándék-alapú, volumen nélkül. Nem találtunk ki számokat."
 schema: "Article + FAQPage + BreadcrumbList; datePublished = publikálás napja"
 frissesseg: "A Paks-szakasz DÁTUMOZOTT hírblokk – hetente ránézni, amíg a helyzet él; lezáráskor múlt időbe tenni."
-minoseg: "6/7 – a tapasztalat-jelölő kitöltetlen (Péter válaszára vár)"
+minoseg: "6/7 – külön tapasztalat-szakasz tudatosan nincs (Márton döntése, 2026-08-16); az első kézből való elem a megerősített tűző-napos munkarend"
 ---
 
 ## Szerkesztői összefoglaló
@@ -64,10 +64,16 @@ Ez azért nagy szó, mert [Paks normál üzemben mintegy 2000 megawattot, a haza
 áramtermelés közel felét
 adja](https://www.portfolio.hu/gazdasag/20260804/mit-jelent-a-vizmerce-allasa-paksnal-mi-tortenik-ha-leall-az-atomeromu-853906).
 
-Frissítés (augusztus 10.): a vízszint átmenetileg emelkedett, egy turbina
-visszakapcsolhat, de [az előrejelzések napokon belül újra kritikus szintet
-várnak](https://www.portfolio.hu/gazdasag/20260810/most-meg-orulunk-de-par-napon-belul-ujra-nagy-bajban-lehet-paks-a-duna-vizszintje-miatt-855232).
-A helyzet tehát nem lezárt: a rendszer addig importra és tartalékokra támaszkodik.
+A mélyponton [a négy blokk nyolc turbinájából egyetlen 240 megawattos egység
+maradt üzemben](https://privatbankar.hu/cikkek/kozerdeku/a-jovo-heten-akar-teljesen-ujraindulhat-paks.html).
+Frissítés (augusztus 16.): a vízszint augusztus 10-én átmenetileg emelkedett és
+egy turbina visszakapcsolhatott, de [az OVF előrejelzése augusztus 16-ra újra
+mínusz 135 centiméter körüli, kritikus szintet
+várt](https://www.portfolio.hu/gazdasag/20260810/most-meg-orulunk-de-par-napon-belul-ujra-nagy-bajban-lehet-paks-a-duna-vizszintje-miatt-855232).
+A helyzet tehát hullámzik, és nem lezárt: a rendszer közben importra és
+tartalékokra támaszkodik. Aki követné, hogy éppen mennyit ad Paks és hol áll a
+Duna, élőben nézheti a [holadelej.hu](https://holadelej.hu) oldalon, amely a
+MAVIR és a vízügy nyilvános adataiból dolgozik.
 
 Ilyenkor a háztetőkön termelő napelemeknek nem szimbolikus, hanem gyakorlati
 szerepük van: helyben termelnek, hűtővíz nélkül. Egy koszos panel viszont a
@@ -104,10 +110,11 @@ hidegebb víztől hősokkot kaphat és elpattanhat. Ezért kánikulában kora re
 késő délután vagy borult időben dolgozunk, [ennek okait külön cikkben írtuk
 meg](/tudastar/tuzo-napon-napelem-tisztitas/).
 
-`[IDE JÖN PÉTER TAPASZTALATA – ezt a skill nem találja ki. Kérdés Péternek:
-hőségriadó idején hogyan alakul a munkanap? Hajnali kezdés, délutáni második kör?
-Egy konkrét példa (hánykor kezdtetek a legutóbbi kánikulában) hitelesebb bármilyen
-általánosságnál.]`
+*(Szerkesztői döntés, 2026-08-16: a külön tapasztalat-szakaszt Márton döntése
+alapján elhagyjuk — nem kérdezzük Pétert. A cikk első kézből való eleme így a
+tűző-napos munkarend, ami a tulajdonos megerősített, publikált gyakorlata:
+kora reggel, késő délután vagy borult időben dolgozunk. Kitalált anekdota
+továbbra sem kerül be.)*
 
 **CTA-sáv:** Szeretné, hogy a rendszere a kánikulában is annyit adjon, amennyit
 tud? Hívjon, és megbeszéljük az időpontot: {PHONE}
@@ -148,7 +155,7 @@ kánikulában kora reggel, késő délután vagy borult időben dolgozunk.'
 | 1 | Minden állítás forrása letöltve, ellenőrizve | ✓ (DOE ×2, Portfolio ×2, Index, Telex – 2026-08-10) |
 | 2 | Minden H2 kérdés, alatta kapszula | ✓ |
 | 3 | Pontosan egy táblázat | ✓ |
-| 4 | Tapasztalat embertől | ✗ – jelölő, Péter válaszára vár |
+| 4 | Tapasztalat embertől | ✗ – tudatos kihagyás (Márton, 2026-08-16); részben pótolja a megerősített tűző-napos munkarend |
 | 5 | Title (41) és meta (155) hossz | ✓ |
 | 6 | Séma érvényes | ✓ (Article + FAQPage) |
 | 7 | Elsődleges a H1-ben és az első 100 szóban | ✓ |

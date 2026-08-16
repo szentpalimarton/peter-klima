@@ -20,7 +20,7 @@ linket erőltetni mintázat-szagú lenne.
 
 ### 1. `src/pages/tudastar/milyen-gyakran-kell-klimat-tisztittatni.astro` – MAGAS
 
-- [ ] **Horgony:** `dohos szag`
+- [x] **Horgony:** `dohos szag`
 - **Ebbe a mondatba:** „…a hűtési szezon beindulása előtt, így a nyarat tiszta,
   fertőtlenített készülékkel kezdi." – a mondat után egy fél mondat: *(ha a készülék
   már most dohos szagot fúj, annak külön oka van)* linkkel a cikkre.
@@ -29,7 +29,7 @@ linket erőltetni mintázat-szagú lenne.
 
 ### 2. `src/pages/teruletek/velence.astro` – MAGAS
 
-- [ ] **Horgony:** `megtelepedhet a gomba és a baktérium`
+- [x] **Horgony:** `megtelepedhet a gomba és a baktérium`
 - **Ebbe a mondatba:** „…a klíma hónapokig áll; a nedves hőcserélőn megtelepedhet a
   gomba és a baktérium, ezért a szezonnyitás előtti tisztítás és fertőtlenítés a
   legjobb időzítés."
@@ -38,7 +38,7 @@ linket erőltetni mintázat-szagú lenne.
 
 ### 3. `src/pages/teruletek/gardony-velencei-to.astro` – MAGAS
 
-- [ ] **Horgony:** `megtelepedhet a gomba és a baktérium`
+- [x] **Horgony:** `megtelepedhet a gomba és a baktérium`
 - **Ebbe a mondatba:** „…a klíma állva marad, a nedves hőcserélőn pedig
   megtelepedhet a gomba és a baktérium, ezért érdemes…"
 - **Miért:** ugyanaz a valódi tematikus kapcsolat, a legerősebb települési oldalról
@@ -46,7 +46,7 @@ linket erőltetni mintázat-szagú lenne.
 
 ### 4. `src/pages/teruletek/budaors.astro` – KÖZEPES
 
-- [ ] **Horgony:** `klímaszag`
+- [x] **Horgony:** `klímaszag`
 - **Ebbe a mondatba:** „(irodák, üzlethelyiségek, raktárak) klímatisztítása és
   napelemtisztítása." – kiegészítő fél mondattal: *(irodában a dohos klímaszag
   a kollégákat is zavarja)* linkkel.
@@ -55,7 +55,7 @@ linket erőltetni mintázat-szagú lenne.
 
 ### 5. `src/pages/teruletek/erd.astro` – KÖZEPES
 
-- [ ] **Horgony:** `fertőtlenítéssel`
+- [x] **Horgony:** `fertőtlenítéssel`
 - **Ebbe a mondatba:** „Kíméletes napelemtisztítás szűrt, pH-semleges vízzel és
   klímatisztítás fertőtlenítéssel, Érd mind a kilenc városrészében."
 - **Miért:** a `klímatisztítás érd` lekérdezés 10. helyen áll – a kimenő tematikus
@@ -68,7 +68,7 @@ linket erőltetni mintázat-szagú lenne.
 
 ## 2. Kimenő linkek a céloldalról – 1 új (jelenleg 1 van)
 
-- [ ] → `/tudastar/milyen-gyakran-kell-klimat-tisztittatni/` · horgony:
+- [x] → `/tudastar/milyen-gyakran-kell-klimat-tisztittatni/` · horgony:
   `Évente 1–2 tisztítás` · a 113. sor meglévő szövegén – a pár visszairánya,
   ezzel zárul a bokor. *(Az audit 2. teendőjével azonos.)*
 - meglévő: crosslink → `/klimatisztitas/` (pénzoldal) – marad, nem duplikáljuk.
