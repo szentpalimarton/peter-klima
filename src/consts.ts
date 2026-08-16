@@ -5,7 +5,7 @@ export const PHONE_E164 = '+36204954171';
 export const EMAIL = 'prokontra.oroszi@gmail.com';
 
 /**
- * Elsődleges megye — itt a legerősebb a helyi jelenlét (Péter Nadapon lakik).
+ * Elsődleges megye – itt a legerősebb a helyi jelenlét (Péter Nadapon lakik).
  * A szolgáltatási terület ennél szélesebb, lásd AREA_PROSE / AREAS_SERVED.
  */
 export const AREA = 'Fejér megye';
@@ -18,7 +18,7 @@ export const AREA_PROSE =
   'Fejér megye, a Velencei-tó és a Balaton környéke, valamint a budapesti agglomeráció';
 
 /**
- * schema.org areaServed — minden oldal ezt használja, hogy a keresők és az
+ * schema.org areaServed – minden oldal ezt használja, hogy a keresők és az
  * AI-motorok egységes képet kapjanak a kiszolgált területről.
  * Bővítéskor CSAK olyan települést vegyünk fel, ahova Péter tényleg kimegy.
  */
@@ -39,6 +39,24 @@ export const AREAS_SERVED = [
   { '@type': 'City', name: 'Siófok' },
   { '@type': 'City', name: 'Balatonfüred' },
 ];
+
+/**
+ * Kattintás-mérés (CRO-07) – Umami Cloud, sütimentes, ezért nem kell hozzá
+ * cookie-banner, és az adatkezelési tájékoztató állításai igazak maradnak.
+ * Ugyanaz a minta, mint az erotikfoto-n (ügynökségi standard: lead-gen → Umami).
+ *
+ * AKTIVÁLÁS (Márton, ~2 perc):
+ *   1. https://cloud.umami.is → belépés (a fiók már él)
+ *   2. Add website → Domain: fejersolarclean.hu
+ *   3. A kapott Website ID-t (UUID) másold ide ↓
+ *   4. build + deploy
+ *
+ * Amíg üres, SEMMI nem kerül az oldalba (se szkript, se kérés).
+ * A mérés csak production buildben aktív – a localhost nem szennyezi.
+ * Mért események: oldalletöltés (automatikus) + cta-* kattintások
+ * (a meglévő 63 data-cta attribútumból, pl. cta-call-budos-cta).
+ */
+export const UMAMI_WEBSITE_ID = '22c1c8d7-d32f-4465-bbf6-f85e5db92bdd';
 
 /** Base-path-aware URL a belső linkekhez és assetekhez (GitHub Pages subpath miatt). */
 export const withBase = (path: string): string => {

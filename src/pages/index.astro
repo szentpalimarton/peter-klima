@@ -9,7 +9,7 @@ const description =
 const faq = [
   {
     q: 'Kell-e tisztítani a napelemet? Nem elég az eső?',
-    a: 'Az eső a laposabb dőlésszögű paneleken nem mossa le a rárakódott port, pollent és madárürüléket — sőt, a száradó esővíz koszcsíkokat is hagyhat. A tisztítással a szennyezettségtől függően akár 15–20% teljesítménynövekedés érhető el, ezért évente egy tisztítás ajánlott, ideálisan tavasszal, a pollenszezon után.',
+    a: 'Az eső a laposabb dőlésszögű paneleken nem mossa le a rárakódott port, pollent és madárürüléket, sőt a száradó esővíz koszcsíkokat is hagyhat. A tisztítással a szennyezettségtől függően akár 15–20% teljesítménynövekedés érhető el, ezért évente egy tisztítás ajánlott, ideálisan tavasszal, a pollenszezon után.',
   },
   {
     q: 'Nem sérül a napelem a tisztítás közben?',
@@ -17,7 +17,7 @@ const faq = [
   },
   {
     q: 'Tűző napon is lehet napelemet tisztítani?',
-    a: 'Nem ajánlott: a felforrósodott panel a hidegebb víztől hősokkot kaphat, és az üvege elpattanhat. Ezért a tisztítást kora reggel, késő délután vagy borult időben végezzük — így a panel biztonságban van, és a víz sem szárad rá foltosan.',
+    a: 'Nem ajánlott: a felforrósodott panel a hidegebb víztől hősokkot kaphat, és az üvege elpattanhat. Ezért a tisztítást kora reggel, késő délután vagy borult időben végezzük, így a panel biztonságban van, és a víz sem szárad rá foltosan.',
   },
   {
     q: 'Milyen gyakran kell klímát tisztíttatni?',
@@ -25,11 +25,11 @@ const faq = [
   },
   {
     q: 'Kapok számlát? Cégeknek is dolgoznak?',
-    a: 'Igen, számlaképes szolgáltatás — a munkáról számlát adunk. Lakossági és céges ügyfeleket egyaránt kiszolgálunk.',
+    a: 'Igen, számlaképes szolgáltatás: a munkáról számlát adunk. Lakossági és céges ügyfeleket egyaránt kiszolgálunk.',
   },
   {
     q: 'Hogyan zajlik az időpont-egyeztetés?',
-    a: 'Hívjon a +36 20 495 4171-es számon, vagy írjon üzenetet — röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni. Fejér megye egész területén, a Velencei-tó és a Balaton környékén, valamint a budapesti agglomerációban vállalunk munkát.',
+    a: 'Hívjon a +36 20 495 4171-es számon, vagy írjon üzenetet. Röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni. Fejér megye egész területén, a Velencei-tó és a Balaton környékén, valamint a budapesti agglomerációban vállalunk munkát.',
   },
 ];
 
@@ -39,7 +39,7 @@ const schema = [
     '@type': 'LocalBusiness',
     name: BRAND,
     description:
-      `Napelemtisztítás, klímatisztítás és klíma-fertőtlenítés — ${AREA_PROSE} —, átlátható árakkal.`,
+      `Napelemtisztítás, klímatisztítás és klíma-fertőtlenítés – ${AREA_PROSE} –, átlátható árakkal.`,
     telephone: PHONE_E164,
     email: EMAIL,
     url: Astro.site?.toString(),
@@ -94,7 +94,7 @@ const schema = [
         <h1>Tiszta napelem, teljes hozam</h1>
         <p class="lead">
           Kíméletes napelemtisztítás szűrt, pH-semleges vízzel, hogy a rendszere annyit
-          termeljen, amennyit tud — és klímatisztítás fertőtlenítéssel a friss, egészséges
+          termeljen, amennyit tud, és klímatisztítás fertőtlenítéssel a friss, egészséges
           levegőért. Előre kalkulálható árak, gyors időpont-egyeztetés.
         </p>
         <div class="hero-cta">
@@ -133,19 +133,19 @@ const schema = [
             <li>A panel bevonatát és a gyártói garanciát nem veszélyezteti</li>
           </ul>
           <p>
-            A rárakódott szennyeződés csökkenti a termelést — a laposabb szögben szerelt
+            A rárakódott szennyeződés csökkenti a termelést. A laposabb szögben szerelt
             vagy mezőgazdasági környezetben lévő paneleknél ez különösen érezhető.
             A tisztítással szennyezettségtől függően akár 15–20% teljesítménynövekedés
             érhető el.
           </p>
-          <span class="freq">Évente ajánlott — tavasszal, pollenszezon után a legjobb</span>
+          <span class="freq">Évente ajánlott – tavasszal, pollenszezon után a legjobb</span>
           <a class="more" href={withBase('/napelem-tisztitas/')}>Részletek a napelemtisztításról →</a>
         </article>
         <article class="card">
           <h3>Klímatisztítás és fertőtlenítés</h3>
           <ul>
             <li>Teljes mélytisztítás zsákos-átmosásos technikával: hőcserélő, ventilátor, csepptálca</li>
-            <li>A szennyezett vizet zsák fogja fel — a lakás tiszta marad</li>
+            <li>A szennyezett vizet zsák fogja fel, a lakás tiszta marad</li>
             <li>Fertőtlenítés a gombák, baktériumok és a kellemetlen szagok ellen</li>
             <li>Kondenzvíz-elvezetés ellenőrzése, próbaüzem</li>
           </ul>
@@ -153,7 +153,7 @@ const schema = [
             A tisztítatlan klíma nemcsak büdös: allergén szennyeződéseket fúj a szobába,
             és többet is fogyaszt, mert a koszos hőcserélővel nehezebben dolgozik.
           </p>
-          <span class="freq">Évente 1–2 alkalom — a hűtési szezon előtt, fűtésnél ősszel is</span>
+          <span class="freq">Évente 1–2 alkalom – a hűtési szezon előtt, fűtésnél ősszel is</span>
           <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
         </article>
       </div>
@@ -164,7 +164,7 @@ const schema = [
   <section class="section" id="arak">
     <div class="wrap">
       <span class="kicker">Árlista</span>
-      <h2>Átlátható árak — nincs meglepetés</h2>
+      <h2>Átlátható árak – nincs meglepetés</h2>
       <div class="price-grid">
         <div class="price-card">
           <h3>Napelemtisztítás</h3>
@@ -188,13 +188,13 @@ const schema = [
               <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
             </tbody>
           </table>
-          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <p class="price-note">Ettől eltérő esetben egyedi ár: hívjon, és megbeszéljük.</p>
         </div>
       </div>
       <p class="price-disclaimer">
         Az árak normál körülmények között érvényesek. Ha a munkavégzés magassága állvány,
         emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
-        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        szükségessé, annak költségét külön számítjuk fel. Ezt előre, az egyeztetéskor
         tisztázzuk.
       </p>
     </div>
@@ -211,7 +211,7 @@ const schema = [
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <h3>Helyben vagyunk</h3>
-          <p>Fejér megye, a Velencei-tó, a Balaton és a budapesti agglomeráció — kiszállással.</p>
+          <p>Fejér megye, a Velencei-tó, a Balaton és a budapesti agglomeráció, kiszállással.</p>
         </div>
         <div class="why-item">
           <div class="ic" aria-hidden="true">
@@ -225,7 +225,7 @@ const schema = [
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <h3>Gyors egyeztetés</h3>
-          <p>Egy telefon, és már tudja is az időpontot — nincs e-mail-pingpong.</p>
+          <p>Egy telefon, és már tudja is az időpontot, nincs e-mail-pingpong.</p>
         </div>
         <div class="why-item">
           <div class="ic" aria-hidden="true">
@@ -242,7 +242,7 @@ const schema = [
   <section class="section" id="munkaink">
     <div class="wrap">
       <span class="kicker">Munkáink</span>
-      <h2>Így dolgozunk — képekben</h2>
+      <h2>Így dolgozunk – képekben</h2>
       <div class="gallery">
         <figure>
           <img
@@ -252,7 +252,7 @@ const schema = [
             height="900"
             loading="lazy"
           />
-          <figcaption>Napelemtisztítás munka közben — lágy kefe, szűrt, pH-semleges víz</figcaption>
+          <figcaption>Napelemtisztítás munka közben – lágy kefe, szűrt, pH-semleges víz</figcaption>
         </figure>
         <figure>
           <img
@@ -262,7 +262,7 @@ const schema = [
             height="900"
             loading="lazy"
           />
-          <figcaption>Ez rakódik le a klíma hőcserélőjén — ezt fújná a levegőbe tisztítás nélkül</figcaption>
+          <figcaption>Ez rakódik le a klíma hőcserélőjén – ezt fújná a levegőbe tisztítás nélkül</figcaption>
         </figure>
         <figure>
           <img
@@ -272,7 +272,7 @@ const schema = [
             height="900"
             loading="lazy"
           />
-          <figcaption>Mélytisztítás zsákos-átmosásos technikával — letakart, védett környezetben</figcaption>
+          <figcaption>Mélytisztítás zsákos-átmosásos technikával – letakart, védett környezetben</figcaption>
         </figure>
       </div>
     </div>
@@ -300,8 +300,7 @@ const schema = [
       <span class="kicker">Tudástár</span>
       <h2>Hasznos tudnivalók</h2>
       <p>
-        Forrásokkal alátámasztott cikkek arról, mikor és miért érdemes tisztíttatni —
-        hogy ne csak a szavunkat kelljen adni rá.
+        Forrásokkal alátámasztott cikkek arról, mikor és miért érdemes tisztíttatni, hogy ne csak a szavunkat kelljen adni rá.
       </p>
       <div class="prose">
         <a class="crosslink" href={withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/')}>
@@ -312,7 +311,7 @@ const schema = [
         <a class="crosslink" href={withBase('/tudastar/miert-budos-a-klima/')}>
           <span class="k">Cikk</span>
           <strong>Miért büdös a klíma, és mit lehet tenni ellene?</strong><br />
-          A szag oka a nedves hőcserélőn megtelepedő gomba — így szüntethető meg tartósan. <span class="arw">→</span>
+          A szag oka a nedves hőcserélőn megtelepedő gomba. Így szüntethető meg tartósan. <span class="arw">→</span>
         </a>
         <a class="crosslink" href={withBase('/tudastar/')}>
           <span class="k">Tudástár</span>
@@ -332,7 +331,7 @@ const schema = [
             <span class="kicker">Kapcsolat</span>
             <h2>Hívjon, és megbeszéljük</h2>
             <a class="contact-phone" href={PHONE_TEL} data-cta="call-contact">{PHONE_DISPLAY}</a>
-            <p>Kérjen időpontot telefonon vagy üzenetben — ahogy Önnek kényelmesebb.</p>
+            <p>Kérjen időpontot telefonon vagy üzenetben, ahogy Önnek kényelmesebb.</p>
             <p>
               E-mail: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </p>
@@ -358,7 +357,7 @@ const schema = [
             </ul>
             <p>
               Dunaújvárosba, Mórra, Bicskére és Sárbogárdra is megyünk. Lakossági és céges
-              ügyfeleket egyaránt kiszolgálunk, számlaképes szolgáltatással — ha nem biztos
+              ügyfeleket egyaránt kiszolgálunk, számlaképes szolgáltatással. Ha nem biztos
               benne, hogy Önhöz is kimegyünk-e, hívjon, egy perc alatt kiderül.
             </p>
             <p>

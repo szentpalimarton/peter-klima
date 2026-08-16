@@ -13,7 +13,7 @@ const pageUrl = new URL(withBase('/teruletek/siofok/'), Astro.site).toString();
 const faq = [
   {
     q: 'Mikor érdemes egy siófoki apartmanban klímát tisztíttatni?',
-    a: 'A szezonnyitás előtt, tavasszal. A nyaralókban és apartmanokban a klíma a szezonon kívül hónapokig áll, a nedves hőcserélőn pedig ilyenkor telepszik meg a gomba és a baktérium — az első bekapcsoláskor ezt fújná a vendégek arcába. Nyáron viszont a készülék gyakorlatilag folyamatosan jár, ezért a szezon előtti tisztítás a leghatékonyabb időzítés.',
+    a: 'A szezonnyitás előtt, tavasszal. A nyaralókban és apartmanokban a klíma a szezonon kívül hónapokig áll, a nedves hőcserélőn pedig ilyenkor telepszik meg a gomba és a baktérium, az első bekapcsoláskor ezt fújná a vendégek arcába. Nyáron viszont a készülék gyakorlatilag folyamatosan jár, ezért a szezon előtti tisztítás a leghatékonyabb időzítés.',
   },
   {
     q: 'Több apartmanhoz, panzióhoz is kimennek egyszerre?',
@@ -21,11 +21,11 @@ const faq = [
   },
   {
     q: 'Siófokra is kimennek Fejér megyéből?',
-    a: 'Igen, kiszállással dolgozunk a Balatonon is. A bázisunk Nadap, a Velencei-tó mellett — a távolabbi helyszíneknél előfordul, hogy több munkát egy napra szervezünk, ezt az időpont-egyeztetéskor átbeszéljük.',
+    a: 'Igen, kiszállással dolgozunk a Balatonon is. A bázisunk Nadap, a Velencei-tó mellett. A távolabbi helyszíneknél előfordul, hogy több munkát egy napra szervezünk, ezt az időpont-egyeztetéskor átbeszéljük.',
   },
   {
     q: 'A nyaralóm napelemét mikor érdemes tisztíttatni?',
-    a: 'Évente egyszer, ideálisan tavasszal, a pollenszezon után — így a nyári csúcstermelés idejére tiszta a panel. Egy szezononként használt ingatlannál a panel hónapokig mosatlanul áll, ezért érdemes a tisztítást a szezonnyitáshoz kötni.',
+    a: 'Évente egyszer, ideálisan tavasszal, a pollenszezon után, így a nyári csúcstermelés idejére tiszta a panel. Egy szezononként használt ingatlannál a panel hónapokig mosatlanul áll, ezért érdemes a tisztítást a szezonnyitáshoz kötni.',
   },
 ];
 
@@ -36,7 +36,7 @@ const schema = [
     serviceType: 'Napelemtisztítás és klímatisztítás',
     name: 'Napelem- és klímatisztítás Siófokon',
     description:
-      'Klímatisztítás zsákos-átmosásos technikával és kíméletes napelemtisztítás Siófokon és a Balaton környékén — apartmanoknak, panzióknak és nyaralóknak.',
+      'Klímatisztítás zsákos-átmosásos technikával és kíméletes napelemtisztítás Siófokon és a Balaton környékén – apartmanoknak, panzióknak és nyaralóknak.',
     provider: {
       '@type': 'LocalBusiness',
       name: BRAND,
@@ -81,7 +81,7 @@ const schema = [
       <p class="lead">
         Apartmanok, panziók és nyaralók <strong>szezon előtti felkészítése</strong>:
         klímatisztítás fertőtlenítéssel és kíméletes napelemtisztítás. Előre kalkulálható
-        ár, számlaképes szolgáltatás — kiszállással a Balatonra.
+        ár, számlaképes , kiszállással a Balatonra.
       </p>
       <div class="hero-cta">
         <a class="btn btn-call" href={PHONE_TEL} data-cta="call-siofok-hero">📞 {PHONE_DISPLAY}</a>
@@ -100,7 +100,7 @@ const schema = [
         majd hosszú hónapokra leáll.
       </p>
       <div class="stat">
-        <span class="big">A Balaton legforgalmasabb települése — országosan a második</span>
+        <span class="big">A Balaton legforgalmasabb települése – országosan a második</span>
         <p>
           Siófok <strong>903 000 vendégéjszakával</strong> vezeti a Balaton-régiót a
           június–augusztusi időszakban (Balatonfüred 592 ezerrel a második). Országos
@@ -114,7 +114,7 @@ const schema = [
       <ul>
         <li>
           <strong>A szezon előtti tisztítás a legfontosabb időzítés.</strong> A hónapokig
-          álló készülék nedves hőcserélőjén megtelepszik a gomba és a baktérium — az első
+          álló készülék nedves hőcserélőjén megtelepszik a gomba és a baktérium – az első
           bekapcsoláskor ezt fújja a szobába, pont amikor megérkezik az első vendég.
         </li>
         <li>
@@ -124,23 +124,23 @@ const schema = [
         </li>
         <li>
           <strong>Egy helyszín, több beltéri egység.</strong> Apartmanházaknál,
-          panzióknál jellemzően több klíma van egy ingatlanban — ilyenkor a többdarabos
+          panzióknál jellemzően több klíma van egy ingatlanban, ilyenkor a többdarabos
           ársáv él, és egy kiszállással végzünk.
         </li>
       </ul>
 
-      <h2>Zsákos-átmosásos technika — a vendég nem vesz észre semmit</h2>
+      <h2>Zsákos-átmosásos technika – a vendég nem vesz észre semmit</h2>
       <p>
         Egy kiadó apartmanban nem mindegy, milyen állapotban maradunk hátra. A
         <strong>zsákos-átmosásos</strong> mélytisztításnál a hőcserélőről és a
         ventilátorról leoldott szennyeződést és vizet felfogó zsák gyűjti össze, így a
         lakás tiszta és száraz marad. A tisztítás után fertőtlenítünk, hogy a szag a
-        forrásánál szűnjön meg — és a készülék próbaüzemmel zárul.
+        forrásánál szűnjön meg, és a készülék próbaüzemmel zárul.
       </p>
       <a class="crosslink" href={withBase('/tudastar/miert-budos-a-klima/')}>
         <span class="k">Cikk</span>
         <strong>Miért büdös a klíma, és mit lehet tenni ellene?</strong><br />
-        A szag oka a nedves hőcserélőn megtelepedő gomba — és miért nem elég a szagosító.
+        A szag oka a nedves hőcserélőn megtelepedő gomba, és miért nem elég a szagosító.
         <span class="arw">→</span>
       </a>
 
@@ -148,14 +148,14 @@ const schema = [
       <p>
         A szezononként használt ingatlanoknál a napelem hónapokig mosatlanul áll, miközben
         a nyári csúcstermelés idejére lenne a legfontosabb tisztán tartani. Évente egy
-        tisztítás ajánlott, ideálisan tavasszal, a pollenszezon után — így a szezont már
+        tisztítás ajánlott, ideálisan tavasszal, a pollenszezon után, így a szezont már
         tiszta panelekkel kezdi. Kíméletes, karcmentes mosással dolgozunk: lágy kefével és
         szűrt, pH-semleges vízzel.
       </p>
 
       <h2>Hogyan szervezzük a kiszállást?</h2>
       <p>
-        A bázisunk <strong>Nadap</strong>, a Velencei-tó mellett — Siófok tehát
+        A bázisunk <strong>Nadap</strong>, a Velencei-tó mellett, Siófok tehát
         kiszállás, nem szomszédság. Ezt nyíltan megmondjuk: a távolabbi helyszíneknél
         előfordul, hogy több munkát szervezünk egy napra, hogy az utazás mindenkinek
         megérje. Az időpontot ennek megfelelően, előre egyeztetjük, és az ár ettől
@@ -179,7 +179,7 @@ const schema = [
               <tr><td>4 beltéri egység</td><td class="ar">48 000 Ft</td></tr>
             </tbody>
           </table>
-          <p class="price-note">Ettől eltérő esetben egyedi ár — hívjon, és megbeszéljük.</p>
+          <p class="price-note">Ettől eltérő esetben egyedi ár: hívjon, és megbeszéljük.</p>
           <a class="more" href={withBase('/klimatisztitas/')}>Részletek a klímatisztításról →</a>
         </div>
         <div class="price-card">
@@ -199,7 +199,7 @@ const schema = [
       <p class="price-disclaimer">
         Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány,
         emelőkosaras gép vagy más speciális hozzáférési megoldás használatát teszi
-        szükségessé, annak költségét külön számítjuk fel — ezt előre, az egyeztetéskor
+        szükségessé, annak költségét külön számítjuk fel. Ezt előre, az egyeztetéskor
         tisztázzuk. A szolgáltatás számlaképes, lakossági és céges ügyfeleknek egyaránt.
       </p>
     </div>
@@ -242,7 +242,7 @@ const schema = [
     <div class="wrap prose">
       <div class="cta-band">
         <h2>Kérjen időpontot a szezon előtt</h2>
-        <p>Mondja meg, hány klímáról vagy panelről van szó — mondjuk az árat és az időpontot.</p>
+        <p>Mondja meg, hány klímáról vagy panelről van szó, mi mondjuk az árat és az időpontot.</p>
         <a class="contact-phone" href={PHONE_TEL} data-cta="call-siofok-cta">{PHONE_DISPLAY}</a><br />
         <a class="btn btn-call" href={PHONE_TEL} data-cta="call-siofok-cta-btn">📞 Hívom most</a>
       </div>

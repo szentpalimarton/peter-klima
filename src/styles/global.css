@@ -492,7 +492,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .area-links a:hover { opacity: 1; }
 
-/* Map embed (OpenStreetMap — sütimentes, nem Google Maps) */
+/* Map embed (OpenStreetMap – sütimentes, nem Google Maps) */
 .map-embed {
   margin-top: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius);
   overflow: hidden; background: var(--mist); aspect-ratio: 16 / 9;

@@ -8,7 +8,7 @@
 
 ## Szolgáltatások és árak (2026)
 
-### Napelemtisztítás (kíméletes mosás szűrt, pH-semleges vízzel — fő szolgáltatás)
+### Napelemtisztítás (kíméletes mosás szűrt, pH-semleges vízzel – fő szolgáltatás)
 - 1–10 panel: 35 000 Ft
 - 11–15 panel: 50 000 Ft
 - 16–20 panel: 65 000 Ft
@@ -16,7 +16,7 @@
 - 25 panel felett minden további 5 panel: +15 000 Ft
 - Ajánlott gyakoriság: évente, ideálisan tavasszal, pollenszezon után.
 - A tisztítással szennyezettségtől függően akár 15–20% teljesítménynövekedés érhető el.
-- Tűző napon nem tisztítunk: a forró panel üvege a hidegebb víztől elpattanhat —
+- Tűző napon nem tisztítunk: a forró panel üvege a hidegebb víztől elpattanhat –
   kora reggel, késő délután vagy borult időben dolgozunk.
 
 ### Klímatisztítás és fertőtlenítés (split klíma, beltéri egység)
@@ -27,7 +27,7 @@
 - 3 beltéri egység: 36 000 Ft
 - 4 beltéri egység: 48 000 Ft
 - Ettől eltérő esetben egyedi ár.
-- Ajánlott gyakoriság: évente 1–2 alkalommal — a hűtési szezon előtt, fűtésre optimalizált készüléknél ősszel is.
+- Ajánlott gyakoriság: évente 1–2 alkalommal – a hűtési szezon előtt, fűtésre optimalizált készüléknél ősszel is.
 
 ### Árakra vonatkozó megjegyzés
 Az árak normál körülmények között érvényesek. Ha a munkavégzés állvány, emelőkosaras
@@ -53,53 +53,53 @@ Bázis: Nadap (Velencei-tó mellett, Fejér megye).
 ## Oldalak
 
 Szolgáltatások:
-- https://fejersolarclean.hu/napelem-tisztitas/ — Napelemtisztítás: miért fontos, hogyan
+- https://fejersolarclean.hu/napelem-tisztitas/ – Napelemtisztítás: miért fontos, hogyan
   végezzük (szűrt, pH-semleges víz), gyakoriság, árak, gyakori kérdések.
-- https://fejersolarclean.hu/klimatisztitas/ — Klímatisztítás és fertőtlenítés:
+- https://fejersolarclean.hu/klimatisztitas/ – Klímatisztítás és fertőtlenítés:
   zsákos-átmosásos mélytisztítás, egészségügyi és energiafogyasztási háttér, árak.
-- https://fejersolarclean.hu/arak/ — Teljes árlista mindkét szolgáltatásra.
-- https://fejersolarclean.hu/gyik/ — Gyakori kérdések (napelem, klíma, általános).
+- https://fejersolarclean.hu/arak/ – Teljes árlista mindkét szolgáltatásra.
+- https://fejersolarclean.hu/gyik/ – Gyakori kérdések (napelem, klíma, általános).
 
 Tudástár (forrásokkal alátámasztott cikkek):
-- https://fejersolarclean.hu/tudastar/ — Tudástár főoldal.
-- https://fejersolarclean.hu/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/ —
+- https://fejersolarclean.hu/tudastar/ – Tudástár főoldal.
+- https://fejersolarclean.hu/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/ –
   Mennyivel termel többet a tiszta napelem? Számok, források (Google 2009-es mérése,
   NREL soiling-kutatás) és forintos megtérülési példa.
-- https://fejersolarclean.hu/tudastar/miert-budos-a-klima/ — Miért büdös a klíma?
+- https://fejersolarclean.hu/tudastar/miert-budos-a-klima/ – Miért büdös a klíma?
   A szag oka a nedves hőcserélőn megtelepedő gomba és baktérium; megszüntetés, megelőzés.
-- https://fejersolarclean.hu/tudastar/napelem-tisztitas-hazilag/ — Napelem tisztítás
+- https://fejersolarclean.hu/tudastar/napelem-tisztitas-hazilag/ – Napelem tisztítás
   házilag: mikor fér bele, és mikor veszélyes (hősokk, nagynyomású mosó, mosószer).
-- https://fejersolarclean.hu/tudastar/milyen-gyakran-kell-klimat-tisztittatni/ —
+- https://fejersolarclean.hu/tudastar/milyen-gyakran-kell-klimat-tisztittatni/ –
   Milyen gyakran kell klímát tisztíttatni? Időpontok és a tisztításra utaló jelek.
 
-- https://fejersolarclean.hu/tudastar/napelem-tisztitas-arak-2026/ — Napelem tisztítás
+- https://fejersolarclean.hu/tudastar/napelem-tisztitas-arak-2026/ – Napelem tisztítás
   árak 2026-ban: mitől függ az ár, teljes árlista, megtérülési számítás.
-- https://fejersolarclean.hu/tudastar/tuzo-napon-napelem-tisztitas/ — Miért nem szabad
+- https://fejersolarclean.hu/tudastar/tuzo-napon-napelem-tisztitas/ – Miért nem szabad
   tűző napon napelemet tisztítani? Hősokk, foltos száradás, a helyes napszakok.
-- https://fejersolarclean.hu/tudastar/aszaly-es-napelem-tisztitas/ — Aszályos évben
+- https://fejersolarclean.hu/tudastar/aszaly-es-napelem-tisztitas/ – Aszályos évben
   gyakrabban kell tisztítani? Kevesebb eső = kevesebb átmosás, több légköri por.
 
 Területek (városonkénti oldalak, helyi sajátosságokkal):
-- https://fejersolarclean.hu/teruletek/ — Kiszolgált terület, régiónként.
-- https://fejersolarclean.hu/teruletek/gardony-velencei-to/ — Gárdony és a Velencei-tó:
+- https://fejersolarclean.hu/teruletek/ – Kiszolgált terület, régiónként.
+- https://fejersolarclean.hu/teruletek/gardony-velencei-to/ – Gárdony és a Velencei-tó:
   madárrezervátum a szomszédban, nyaralók, aszályos évek.
-- https://fejersolarclean.hu/teruletek/velence/ — Velence: 1930-as évekbeli parkosított
+- https://fejersolarclean.hu/teruletek/velence/ – Velence: 1930-as évekbeli parkosított
   villakertek, szerves szennyeződés, strandváros.
-- https://fejersolarclean.hu/teruletek/martonvasar/ — Martonvásár: agrárkutatási
+- https://fejersolarclean.hu/teruletek/martonvasar/ – Martonvásár: agrárkutatási
   kísérleti szántóföldek, mezőgazdasági por, kastélypark.
-- https://fejersolarclean.hu/teruletek/erd/ — Érd: az ország leggyorsabban növekvő
+- https://fejersolarclean.hu/teruletek/erd/ – Érd: az ország leggyorsabban növekvő
   városa, kilenc városrész, lejtős telkek.
-- https://fejersolarclean.hu/teruletek/budaors/ — Budaörs: irodák, üzletek, raktárak —
+- https://fejersolarclean.hu/teruletek/budaors/ – Budaörs: irodák, üzletek, raktárak –
   céges ügyfelek több beltéri egységgel.
-- https://fejersolarclean.hu/teruletek/biatorbagy/ — Biatorbágy: friss rendszerek és az
+- https://fejersolarclean.hu/teruletek/biatorbagy/ – Biatorbágy: friss rendszerek és az
   M1-bővítés építkezési pora 2028-ig.
-- https://fejersolarclean.hu/teruletek/siofok/ — Siófok: nyáron ötszörös népesség,
+- https://fejersolarclean.hu/teruletek/siofok/ – Siófok: nyáron ötszörös népesség,
   apartmanok és panziók, szezon előtti tisztítás.
-- https://fejersolarclean.hu/teruletek/balatonfured/ — Balatonfüred: hosszabb szezon,
+- https://fejersolarclean.hu/teruletek/balatonfured/ – Balatonfüred: hosszabb szezon,
   egész évben működő szálláshelyek.
-- https://fejersolarclean.hu/teruletek/tatabanya/ — Tatabánya: egykori bányaváros,
+- https://fejersolarclean.hu/teruletek/tatabanya/ – Tatabánya: egykori bányaváros,
   mért levegőminőség, finom városi por.
-- https://fejersolarclean.hu/teruletek/veszprem/ — Veszprém: a téli lakossági fűtés
+- https://fejersolarclean.hu/teruletek/veszprem/ – Veszprém: a téli lakossági fűtés
   lerakódása, ezért a tavaszi tisztítás az ideális.
 
 Jogi:

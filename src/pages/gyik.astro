@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { PHONE_DISPLAY, PHONE_TEL, withBase } from '../consts';
 
-const title = 'Gyakori kérdések — napelem- és klímatisztítás | Péter';
+const title = 'Gyakori kérdések – napelem- és klímatisztítás | Péter';
 const description =
   'Gyakori kérdések a napelem- és klímatisztításról: árak, gyakoriság, módszer, biztonság, számla. Válaszok Péter napelem- és klímatisztítójától Fejér megyében.';
 
@@ -13,11 +13,11 @@ const groups = [
   {
     title: 'Napelemtisztítás',
     items: [
-      { q: 'Kell-e tisztítani a napelemet? Nem elég az eső?', a: 'Az eső a laposabb dőlésszögű paneleken nem mossa le a rárakódott port, pollent és madárürüléket — sőt, a száradó esővíz koszcsíkokat is hagyhat. A Google 2009-es mérésén a csak eső által tisztított panelek 12%-kal kevesebbet termeltek, mint a szakszerűen tisztítottak. Ezért évente egy tisztítás ajánlott.' },
+      { q: 'Kell-e tisztítani a napelemet? Nem elég az eső?', a: 'Az eső a laposabb dőlésszögű paneleken nem mossa le a rárakódott port, pollent és madárürüléket, sőt a száradó esővíz koszcsíkokat is hagyhat. A Google 2009-es mérésén a csak eső által tisztított panelek 12%-kal kevesebbet termeltek, mint a szakszerűen tisztítottak. Ezért évente egy tisztítás ajánlott.' },
       { q: 'Mennyivel termel többet a tiszta napelem?', a: 'A szennyezettségtől és a panelek szögétől függően jellemzően néhány százaléktól akár 15–20%-ig, erősen szennyezett vagy lapos elrendezésnél még többel. Az NREL mérései szerint az éves szennyeződési veszteség tipikusan 5% körüli, de a helytől függően ennél lényegesen nagyobb is lehet.', more: { href: withBase('/tudastar/mennyivel-termel-tobbet-a-tiszta-napelem/'), label: 'Számok, források és forintos példa' } },
       { q: 'Nem sérül a napelem a tisztítás közben?', a: 'Szakszerű tisztításnál nem: lágy kefével és szűrt, pH-semleges vízzel dolgozunk, így a panel felülete és bevonata nem sérül, és a gyártói garanciát sem veszélyezteti. Éppen a házilagos, nagynyomású vagy mosószeres tisztítás az, ami kárt tud okozni.' },
       { q: 'Tisztíthatom-e magam a napelemet?', a: 'Nem javasoljuk. A nem megfelelő víz, a nagynyomású mosó vagy a mosószer megkárosíthatja a panel bevonatát és a garanciát; a tetőn végzett munka pedig balesetveszélyes. A szakszerű, szűrt vizes, kefés tisztítás kíméletes és biztonságos.', more: { href: withBase('/tudastar/napelem-tisztitas-hazilag/'), label: 'Mikor fér bele a házi tisztítás, és mikor veszélyes?' } },
-      { q: 'Tűző napon is lehet napelemet tisztítani?', a: 'Nem ajánlott: a felforrósodott panel a hidegebb víztől hősokkot kaphat, és az üvege elpattanhat. Ezért a tisztítást kora reggel, késő délután vagy borult időben végezzük — így a panel biztonságban van, és a víz sem szárad rá foltosan.' },
+      { q: 'Tűző napon is lehet napelemet tisztítani?', a: 'Nem ajánlott: a felforrósodott panel a hidegebb víztől hősokkot kaphat, és az üvege elpattanhat. Ezért a tisztítást kora reggel, késő délután vagy borult időben végezzük, így a panel biztonságban van, és a víz sem szárad rá foltosan.' },
       { q: 'Milyen gyakran érdemes napelemet tisztíttatni?', a: 'A legtöbb rendszernél évente egy tisztítás elég, ideálisan tavasszal, a pollenszezon után. Laposabb szögű, mezőgazdasági környezetben lévő vagy madárjárta paneleknél évente kettő is indokolt lehet.' },
     ],
   },
@@ -25,7 +25,7 @@ const groups = [
     title: 'Klímatisztítás',
     items: [
       { q: 'Miért büdös a klíma?', a: 'A kellemetlen szagot szinte mindig a beltéri egység nedves hőcserélőjén és csepptálcájában megtelepedő gombák és baktériumok okozzák. Az alapos tisztítás és fertőtlenítés a szagot a forrásánál szünteti meg.', more: { href: withBase('/tudastar/miert-budos-a-klima/'), label: 'Részletesen: a szag oka és a megelőzés' } },
-      { q: 'Mi történik, ha nem tisztíttatom a klímát?', a: 'A tisztítatlan klíma allergén szennyeződéseket, gomba- és baktériumspórákat fúj a szobába, ami hozzájárulhat a kellemetlen szaghoz és a légúti panaszokhoz. Ráadásul a koszos hőcserélővel nehezebben dolgozik, így többet is fogyaszt — az US DOE szerint a koszos szűrő tisztára cserélése 5–15%-kal csökkentheti a fogyasztást.' },
+      { q: 'Mi történik, ha nem tisztíttatom a klímát?', a: 'A tisztítatlan klíma allergén szennyeződéseket, gomba- és baktériumspórákat fúj a szobába, ami hozzájárulhat a kellemetlen szaghoz és a légúti panaszokhoz. Ráadásul a koszos hőcserélővel nehezebben dolgozik, így többet is fogyaszt: az US DOE szerint a koszos szűrő tisztára cserélése 5–15%-kal csökkentheti a fogyasztást.' },
       { q: 'Mit jelent a zsákos-átmosásos tisztítás?', a: 'A beltéri egységet a helyszínen, egy felfogó zsák segítségével mossuk át: a hőcserélőről és a ventilátorról leoldott szennyeződést és vizet a zsák fogja fel, így a lakás tiszta és száraz marad a művelet közben.' },
       { q: 'Milyen gyakran kell klímát tisztíttatni?', a: 'Évente 1–2 alkalommal ajánlott: mindenképp a nyári hűtési szezon előtt, fűtésre optimalizált készüléknél pedig ősszel is. Allergiásoknál különösen fontos a rendszeres tisztítás.', more: { href: withBase('/tudastar/milyen-gyakran-kell-klimat-tisztittatni/'), label: 'A legjobb időpontok és a jelek' } },
       { q: 'Mennyibe kerül a klímatisztítás?', a: '1 beltéri egység 15 000 Ft, 2 egység 26 000 Ft, 3 egység 36 000 Ft, 4 egység 48 000 Ft. Ettől eltérő esetben egyedi ár.' },
@@ -34,9 +34,9 @@ const groups = [
   {
     title: 'Általános',
     items: [
-      { q: 'Hova mentek ki?', a: 'Fejér megye egész területén dolgozunk (Székesfehérvár, Gárdony és a Velencei-tó, Dunaújváros, Mór, Bicske, Martonvásár), és kiszállunk a szomszédos térségekbe is: a budapesti agglomerációba (Érd, Budaörs, Biatorbágy), a Balatonra (Siófok, Balatonfüred), valamint Tatabányára és Veszprémbe. Ha nem biztos benne, hogy Önhöz kimegyünk-e, hívjon — egy perc alatt kiderül.', more: { href: withBase('/teruletek/'), label: 'Kiszolgált települések részletesen' } },
-      { q: 'Hogyan zajlik az időpont-egyeztetés?', a: 'Hívjon a +36 20 495 4171-es számon, vagy írjon üzenetet — röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni.' },
-      { q: 'Kapok számlát? Cégeknek is dolgoznak?', a: 'Igen, számlaképes szolgáltatás — a munkáról számlát adunk. Lakossági és céges ügyfeleket egyaránt kiszolgálunk.' },
+      { q: 'Hova mentek ki?', a: 'Fejér megye egész területén dolgozunk (Székesfehérvár, Gárdony és a Velencei-tó, Dunaújváros, Mór, Bicske, Martonvásár), és kiszállunk a szomszédos térségekbe is: a budapesti agglomerációba (Érd, Budaörs, Biatorbágy), a Balatonra (Siófok, Balatonfüred), valamint Tatabányára és Veszprémbe. Ha nem biztos benne, hogy Önhöz kimegyünk-e, hívjon, egy perc alatt kiderül.', more: { href: withBase('/teruletek/'), label: 'Kiszolgált települések részletesen' } },
+      { q: 'Hogyan zajlik az időpont-egyeztetés?', a: 'Hívjon a +36 20 495 4171-es számon, vagy írjon üzenetet. Röviden átbeszéljük, hány panelről vagy készülékről van szó, és máris tudunk időpontot egyeztetni.' },
+      { q: 'Kapok számlát? Cégeknek is dolgoznak?', a: 'Igen, számlaképes szolgáltatás: a munkáról számlát adunk. Lakossági és céges ügyfeleket egyaránt kiszolgálunk.' },
     ],
   },
 ];
@@ -71,7 +71,7 @@ const schema = [
       <span class="kicker">Gyakori kérdések</span>
       <h1>Gyakori kérdések</h1>
       <p class="lead">
-        A napelem- és klímatisztítással kapcsolatos leggyakoribb kérdések — árak,
+        A napelem- és klímatisztítással kapcsolatos leggyakoribb kérdések – árak,
         gyakoriság, módszer, biztonság. Ha nem találja a választ, hívjon bizalommal.
       </p>
     </div>
