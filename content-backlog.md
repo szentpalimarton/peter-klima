@@ -46,6 +46,11 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] „Tűző napon miért nem szabad napelemet tisztítani?” — 2026-07-25
 - [x] „Aszályos évben gyakrabban kell napelemet tisztítani?” — 2026-07-26 (Velencei-tó
       2022-es rekord vízszintje mint helyi illusztráció; megyei érvényű tartalom)
+- [ ] „Hőségben többet termel a napelem?” — DRAFT KÉSZ (draft-hoseg-energia.md,
+      2026-08-10): Paks-leállás aktualitás-horog + DOE-forrású evergreen mag
+      (hő rontja a hatásfokot; klímaszűrő 5–15%). Publikálás előtt: Péter
+      tapasztalat-jelölője. ⚠️ A Paks-hírblokk dátumozott — hetente frissíteni,
+      amíg a helyzet él; lezárás után múlt időbe tenni.
 
 ## Sourced statistics bank (verify each at primary source before use)
 | Claim | Source (named — VERIFY) | Use on |
