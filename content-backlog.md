@@ -34,13 +34,11 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] /tudastar — Tudástár hub — 2026-07-23
 - [x] /klimatisztitas — klíma szolgáltatás oldal (EPA+DOE forrásokkal) — 2026-07-24
 - [x] fejerklimaclean.hu (+www) átirányítva → /klimatisztitas — 2026-07-25
-- [ ] ⚠️ 2026-09-06 mérés: a fejerklimaclean.hu átirányítás CSAK http-n él; a
-      **https://fejerklimaclean.hu és https://www.… 521-et ad** (Cloudflare nem ér
-      el origint). Ok: NINCS Cloudflare-redirect, a 301-et a régi tárhely
-      (79.172.252.205) adja, https-en nincs origin. Javítás: Redirect Rule a
-      fejerklimaclean.hu zónában (Marton-fiók). 2026-09-06: API-ból nem ment —
-      a mentett token csak olvas, a wrangler a loomiosa-fiókba van belépve.
-      Dashboardból 1 perc, vagy „Zone · Dynamic Redirect · Edit" token kell.
+- [x] fejerklimaclean.hu https-redirect JAVÍTVA — 2026-09-06. Ok volt: nem létezett
+      Cloudflare-redirect, a 301-et a régi tárhely adta http-n, https-en 521. Most
+      Cloudflare Redirect Rule (All incoming requests → 301
+      https://fejersolarclean.hu/klimatisztitas/), mind a 4 host/séma-változat
+      egy ugrással a célon landol, query string eldobva. Ellenőrizve curl-lel.
 - [x] /arak — kombinált árlista oldal (OfferCatalog séma) — 2026-07-24
 - [x] /gyik — teljes GYIK (14 kérdés, csoportosítva) — 2026-07-24
 

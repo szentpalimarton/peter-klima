@@ -6,7 +6,7 @@ only conversion**. Positioning is solar-first — solar leads the hero, card ord
 price tables, FAQ order, metadata, and keyword targeting; klíma is a strong second.
 
 **Live:** https://fejersolarclean.hu
-`fejerklimaclean.hu` (+ its `www`) 301-redirects to `/klimatisztitas/`.
+`fejerklimaclean.hu` (+ its `www`) 301-redirects to `/klimatisztitas/` via a Cloudflare Redirect Rule on that zone (both http and https).
 
 Built with the `local-business-seo-geo` skill. Content planning lives in
 [`content-backlog.md`](content-backlog.md) — read that before adding pages.
