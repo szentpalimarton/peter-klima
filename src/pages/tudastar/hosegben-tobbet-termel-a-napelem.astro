@@ -4,7 +4,7 @@ import { BRAND, PHONE_DISPLAY, PHONE_TEL, withBase } from '../../consts';
 
 const title = 'Hőségben többet termel a napelem? | Péter';
 const description =
-  'Nem: a napelem a fényből termel, a forró cella hatásfoka romlik. És most minden kWh számít, mert Paks blokkjai a Duna alacsony vízállása miatt álltak le.';
+  'Nem: a napelem a fényből termel, a forró cella hatásfoka romlik. Mit tehet a tulajdonos kánikulában, hogy a napelem és a klíma a legtöbbet hozza ki magából?';
 
 const homeUrl = withBase('/');
 const tudastarUrl = withBase('/tudastar/');
@@ -36,7 +36,7 @@ const schema = [
     headline: 'Hőségben többet termel a napelem?',
     description,
     datePublished: '2026-08-16',
-    dateModified: '2026-08-16',
+    dateModified: '2026-09-06',
     inLanguage: 'hu',
     author: { '@type': 'Organization', name: BRAND },
     publisher: { '@type': 'Organization', name: BRAND },
@@ -74,9 +74,9 @@ const schema = [
         Meglepő, de nem: a napelem a <strong>fényből</strong> termel, nem a hőből, és a
         forró cella hatásfoka kifejezetten romlik. Az amerikai energiaügyi minisztérium
         (DOE) megfogalmazásában <a href="https://www.energy.gov/eere/solar/solar-performance-and-efficiency" rel="nofollow">a
-        napelemcellák általában alacsony hőmérsékleten működnek a legjobban</a>. A mostani
-        kánikulában ráadásul minden kilowattóra számít: a Duna rekord alacsony vízállása
-        miatt augusztus elején a paksi atomerőmű négy blokkjából hármat le kellett állítani.
+        napelemcellák általában alacsony hőmérsékleten működnek a legjobban</a>. Kánikulában
+        ráadásul minden kilowattóra számít: a klíma szinte folyamatosan jár, a háztetőn
+        termelő napelem pedig pont ilyenkor tudná a legtöbbet levenni a számláról.
       </p>
 
       <h2>Miért termel kevesebbet a napelem a hőségben?</h2>
@@ -92,32 +92,6 @@ const schema = [
         A levegő hőmérsékletén a tulajdonos nem tud változtatni. Azon viszont igen, hogy a
         fényből mennyi jut el a cellákig: a rárakódott por, pollen és madárürülék pont ezt
         veszi el, <a href={meresekUrl}>számokkal és forrásokkal itt írtunk róla</a>.
-      </p>
-
-      <h2>Mi történt a paksi atomerőművel?</h2>
-      <p>
-        A hőség és az aszály miatt a Duna Paksnál 2026. augusztus elején történelmi
-        mélypontra, mínusz 134 centiméter körüli szintre süllyedt, és a hűtővíz-kiemelés
-        korlátai miatt <a href="https://index.hu/gazdasag/2026/08/01/paksi-atomeromu-leallas-1.-blokk-duna-alacsony-vizallas-hoseg/" rel="nofollow">a
-        négy blokkból hármat fokozatosan le kellett állítani</a>. Ez azért nagy szó, mert
-        <a href="https://www.portfolio.hu/gazdasag/20260804/mit-jelent-a-vizmerce-allasa-paksnal-mi-tortenik-ha-leall-az-atomeromu-853906" rel="nofollow">Paks
-        normál üzemben mintegy 2000 megawattot, a hazai áramtermelés közel felét adja</a>.
-        A mélyponton <a href="https://privatbankar.hu/cikkek/kozerdeku/a-jovo-heten-akar-teljesen-ujraindulhat-paks.html" rel="nofollow">a
-        négy blokk nyolc turbinájából egyetlen 240 megawattos egység maradt üzemben</a>.
-      </p>
-      <p>
-        <em>Frissítve: 2026. augusztus 16.</em> A vízszint augusztus 10-én átmenetileg
-        emelkedett és egy turbina visszakapcsolhatott, de <a href="https://www.portfolio.hu/gazdasag/20260810/most-meg-orulunk-de-par-napon-belul-ujra-nagy-bajban-lehet-paks-a-duna-vizszintje-miatt-855232" rel="nofollow">az
-        előrejelzések napokon belül újra kritikus szintet vártak</a>. A helyzet hullámzik;
-        a rendszer közben importra és tartalékokra támaszkodik. Aki követné, hogy éppen
-        mennyit ad Paks és hol áll a Duna, élőben nézheti a
-        <a href="https://holadelej.hu" rel="nofollow">holadelej.hu</a> oldalon, amely a
-        MAVIR és a vízügy nyilvános adataiból dolgozik.
-      </p>
-      <p>
-        Ilyenkor a háztetőkön termelő napelemeknek nem szimbolikus, hanem gyakorlati
-        szerepük van: helyben termelnek, hűtővíz nélkül. Egy koszos panel viszont a
-        termelése egy részét elhagyja, pont akkor, amikor a legnagyobb szükség lenne rá.
       </p>
 
       <h2>Hogyan fogyasszon kevesebbet a klíma a kánikulában?</h2>
@@ -172,10 +146,6 @@ const schema = [
         <ol>
           <li>US DOE: <a href="https://www.energy.gov/eere/solar/solar-performance-and-efficiency" rel="nofollow">Solar Performance and Efficiency, energy.gov</a>.</li>
           <li>US DOE: <a href="https://www.energy.gov/energysaver/air-conditioner-maintenance" rel="nofollow">Air Conditioner Maintenance, energy.gov</a>.</li>
-          <li>Index (2026. 08. 01.): <a href="https://index.hu/gazdasag/2026/08/01/paksi-atomeromu-leallas-1.-blokk-duna-alacsony-vizallas-hoseg/" rel="nofollow">Szombat hajnalban újabb leállást jelentett be a paksi atomerőmű</a>.</li>
-          <li>Portfolio (2026. 08. 04.): <a href="https://www.portfolio.hu/gazdasag/20260804/mit-jelent-a-vizmerce-allasa-paksnal-mi-tortenik-ha-leall-az-atomeromu-853906" rel="nofollow">Mit jelent a vízmérce állása Paksnál?</a></li>
-          <li>Portfolio (2026. 08. 10.): <a href="https://www.portfolio.hu/gazdasag/20260810/most-meg-orulunk-de-par-napon-belul-ujra-nagy-bajban-lehet-paks-a-duna-vizszintje-miatt-855232" rel="nofollow">Pár napon belül újra nagy bajban lehet Paks</a>.</li>
-          <li>Privátbankár: <a href="https://privatbankar.hu/cikkek/kozerdeku/a-jovo-heten-akar-teljesen-ujraindulhat-paks.html" rel="nofollow">A jövő héten akár teljesen újraindulhat Paks?</a></li>
         </ol>
       </div>
     </div>

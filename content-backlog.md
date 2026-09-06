@@ -46,11 +46,10 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] „Tűző napon miért nem szabad napelemet tisztítani?” — 2026-07-25
 - [x] „Aszályos évben gyakrabban kell napelemet tisztítani?” — 2026-07-26 (Velencei-tó
       2022-es rekord vízszintje mint helyi illusztráció; megyei érvényű tartalom)
-- [ ] „Hőségben többet termel a napelem?” — DRAFT KÉSZ (draft-hoseg-energia.md,
-      2026-08-10): Paks-leállás aktualitás-horog + DOE-forrású evergreen mag
-      (hő rontja a hatásfokot; klímaszűrő 5–15%). Publikálás előtt: Péter
-      tapasztalat-jelölője. ⚠️ A Paks-hírblokk dátumozott — hetente frissíteni,
-      amíg a helyzet él; lezárás után múlt időbe tenni.
+- [x] „Hőségben többet termel a napelem?” — publikálva 2026-08-16 (DOE-forrású
+      evergreen mag: hő rontja a hatásfokot; klímaszűrő 5–15%). A Paks-leállás
+      hírblokkját 2026-09-06-án LEVETTÜK (Márton döntése: nem múlt idő, hanem
+      törlés) — a cikk mostantól tisztán evergreen, meta + hub-teaser átírva.
 
 ## Sourced statistics bank (verify each at primary source before use)
 | Claim | Source (named — VERIFY) | Use on |
@@ -153,6 +152,14 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 - Egyoldalas MVP + élesítés fejersolarclean.hu-n, HTTPS-sel — 2026-07-13
 - Search Console verifikáció + sitemap beküldés — 2026-07-14
 - Impresszum/adatkezelés valós adatokkal — 2026-07-14
+
+## Székesfehérvár a hubon (döntés, 2026-08-16)
+
+Márton jelezte, hogy a megyeszékhely láthatatlan volt a Területek alatt. Megoldás:
+**kiemelt blokk a hubon** két crosslink-kártyával a szolgáltatás-oldalakra
+(cél-kulcsszavas horgonnyal) — külön városoldal továbbra sem készül
+(kannibalizáció-védelem). Újranyitás feltétele: ha a GSC székesfehérvári
+lekérdezéseket kezd mutatni, adatból döntünk — addig a kérdés zárva.
 
 ## Tóparti kisfalvak — miért NINCS külön oldaluk (döntés, 2026-07-26)
 Kápolnásnyék, Sukoró, Pákozd, Pázmánd, Lovasberény: a **szolgáltatás szempontjából
