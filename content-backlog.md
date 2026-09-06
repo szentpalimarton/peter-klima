@@ -36,7 +36,11 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] fejerklimaclean.hu (+www) átirányítva → /klimatisztitas — 2026-07-25
 - [ ] ⚠️ 2026-09-06 mérés: a fejerklimaclean.hu átirányítás CSAK http-n él; a
       **https://fejerklimaclean.hu és https://www.… 521-et ad** (Cloudflare nem ér
-      el origint — a redirect-szabály nem fut https-en). Cloudflare-ben javítandó.
+      el origint). Ok: NINCS Cloudflare-redirect, a 301-et a régi tárhely
+      (79.172.252.205) adja, https-en nincs origin. Javítás: Redirect Rule a
+      fejerklimaclean.hu zónában (Marton-fiók). 2026-09-06: API-ból nem ment —
+      a mentett token csak olvas, a wrangler a loomiosa-fiókba van belépve.
+      Dashboardból 1 perc, vagy „Zone · Dynamic Redirect · Edit" token kell.
 - [x] /arak — kombinált árlista oldal (OfferCatalog séma) — 2026-07-24
 - [x] /gyik — teljes GYIK (14 kérdés, csoportosítva) — 2026-07-24
 
@@ -155,8 +159,9 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
       cid 7424532218163484891, kategória „Tisztítás", weboldal a halott
       fejérklimaclaer.hu. Ha a saját fiókban van: összevonás/eltávolítás; ha nem:
       „Duplikátum jelentése". Amíg él, a NAP-jel kettéoszlik.
-- [ ] GBP elsődleges kategória: legyen **Napelem-karbantartás** (solar-first), a
-      Klíma- és fűtésszerelő másodlagos; szolgáltatáslista = a site szolgáltatásai
+- [x] GBP elsődleges kategória: **Klíma- és fűtésszerelő** marad (Márton döntése,
+      2026-09-06: most a klíma-karbantartás a cél), Napelem-karbantartás másodlagos.
+      Nyitott: szolgáltatáslista = a site szolgáltatásai (név szerint egyezzen)
 - [ ] GBP fotók: 3 db — legalább 10 valódi munkafotó (előtte/utána, kabala, Péter)
 - [ ] Vélemény-rutin: minden munka után SMS-ben a Google-értékelő link
       (2026-09-06: **1 db** 5★ Google-vélemény; a FB-en 4)
