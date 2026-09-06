@@ -1,6 +1,6 @@
 # Content backlog — Péter · Napelem- és Klímatisztítás
 
-_Last updated: 2026-07-29_
+_Last updated: 2026-09-06_
 _Built with the `local-business-seo-geo` skill._
 
 ## Positioning reminder
@@ -34,6 +34,9 @@ klíma erős második. Cél: csörögjön a telefon.
 - [x] /tudastar — Tudástár hub — 2026-07-23
 - [x] /klimatisztitas — klíma szolgáltatás oldal (EPA+DOE forrásokkal) — 2026-07-24
 - [x] fejerklimaclean.hu (+www) átirányítva → /klimatisztitas — 2026-07-25
+- [ ] ⚠️ 2026-09-06 mérés: a fejerklimaclean.hu átirányítás CSAK http-n él; a
+      **https://fejerklimaclean.hu és https://www.… 521-et ad** (Cloudflare nem ér
+      el origint — a redirect-szabály nem fut https-en). Cloudflare-ben javítandó.
 - [x] /arak — kombinált árlista oldal (OfferCatalog séma) — 2026-07-24
 - [x] /gyik — teljes GYIK (14 kérdés, csoportosítva) — 2026-07-24
 
@@ -130,9 +133,12 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 - [x] Strukturált adat minden oldalon (LocalBusiness/Service/FAQPage/Article/BreadcrumbList)
 - [x] Search Console: minden oldal beküldve; 7 oldal már indexelve (2026-07-25)
 - [ ] „…árak 2026” évenkénti frissítés
+- [x] CTA-mérés ellenőrizve élőben (2026-09-06): az Umami betölt, a data-cta
+      kattintás `cta-call-header` eseményt küld — a mérés MŰKÖDIK. A 30 napos
+      nulla esemény tehát valódi: 28 látogató, 0 CTA-kattintás.
 
 ## Márton kézi teendői (review 2026-07-24 alapján)
-- [ ] GBP igazolás státuszának ellenőrzése Péterrel (videós verifikáció megjött-e); ha kész: profil feltöltése az útmutató szerint + Márton felvétele kezelőnek
+- [x] GBP igazolás — kész (Márton, 2026-09). Nyitott: név, duplikátum, kategória, fotók — lásd Local SEO
 - [x] Facebook-oldal — KIDERÜLT: Péterék maguktól létrehozták (2026. jún. 10.),
       45 követő, **4 vélemény**, aktív posztok a kabalával. Séma `sameAs` bekötve — 2026-08-16
 - [ ] FB-oldal névsorrend egységesítése: „Péter Klíma és Napelem Tisztítás" →
@@ -142,11 +148,25 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 - [ ] FB „Mindig nyitva" → valós nyitvatartásra állítani
 
 ## Local SEO
-- [ ] Google Cégprofil — beállítva 2026-07-14, **igazolásra vár** (videós ellenőrzés)
+- [x] Google Cégprofil — igazolva és claimelve, területek beállítva (Márton, 2026-09)
+- [ ] **GBP név egységesítése** — most „Oroszi Péter egyéni vállalkozó, Fejér megye";
+      cél „Péter Napelem- és Klímatisztítás" (a site-tal és a séma `name`-mel egyezően)
+- [ ] **Duplikált GBP-listing megszüntetése** — „Oroszi Péter Egyéni Válalkozó",
+      cid 7424532218163484891, kategória „Tisztítás", weboldal a halott
+      fejérklimaclaer.hu. Ha a saját fiókban van: összevonás/eltávolítás; ha nem:
+      „Duplikátum jelentése". Amíg él, a NAP-jel kettéoszlik.
+- [ ] GBP elsődleges kategória: legyen **Napelem-karbantartás** (solar-first), a
+      Klíma- és fűtésszerelő másodlagos; szolgáltatáslista = a site szolgáltatásai
+- [ ] GBP fotók: 3 db — legalább 10 valódi munkafotó (előtte/utána, kabala, Péter)
 - [ ] Vélemény-rutin: minden munka után SMS-ben a Google-értékelő link
+      (2026-09-06: **1 db** 5★ Google-vélemény; a FB-en 4)
 - [ ] Katalógus-idézetek: Cylex, Aranyoldalak, joszaki.hu, qjob.hu — NAP-konzisztensen
 - [ ] Google-vélemények kirakása az oldalra (badge), amint van néhány
 - [x] Bing Webmaster Tools: importálva a Search Console-ból — 2026-07-25 (ChatGPT/Copilot ebből táplálkozik)
+- Térképes helyzet 2026-09-06 (Székesfehérvár környéki Maps-keresés): „napelem
+  tisztítás" → **8. hely** (előtte telepítők és egy balatonvilágosi tisztító 47
+  véleménnyel); „klímatisztítás" → **nincs a top 20-ban** (7 székesfehérvári
+  klímás cég 4–180 véleménnyel). A térképes rangsort most a vélemények száma dönti.
 
 ## Done
 - Egyoldalas MVP + élesítés fejersolarclean.hu-n, HTTPS-sel — 2026-07-13

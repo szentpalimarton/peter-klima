@@ -46,8 +46,10 @@
 
 ### NAP — entitás-konzisztencia
 
-- **Név:** Péter · Napelem- és Klímatisztítás (Cégprofilban és FB-en pont nélkül:
-  „Péter Napelem- és Klímatisztítás")
+- **Név:** Péter · Napelem- és Klímatisztítás (cél: Cégprofilban és FB-en pont nélkül
+  „Péter Napelem- és Klímatisztítás"). ⚠️ MÉRT ÁLLAPOT 2026-09-06 (DataForSEO Maps):
+  a GBP neve „Oroszi Péter egyéni vállalkozó, Fejér megye", a FB-oldalé
+  „Péter Klíma és Napelem Tisztítás" — három különböző név, egyik sem egyezik a site-tal.
 - **Cím:** 8097 Nadap, Bodza utca 5. — a saját impresszum/adatkezelés oldalon
   publikus (házszám megerősítve onnan, 2026-08-16); a GBP-ben a cím rejtve
   (területalapú vállalkozás)
@@ -159,7 +161,7 @@ tényszerű · közvetlen · megnyugtató
 | HTTPS | rendben | GitHub Pages + saját domain |
 | Google Search Console | rendben | domain property; a service account bekötve |
 | Bing Webmaster Tools | ⚠️ ellenőrizd | importálva 07-25, de a mérés szerint az index-státusz kérdéses — `site:` ellenőrzés nyitott |
-| Google Cégprofil | ⚠️ függőben | beállítva 07-14, videós igazolásra vár; az 5 megyés területbővítés NINCS átvezetve |
+| Google Cégprofil | ⚠️ él, de rendezetlen | igazolt + claimelt (Márton, 2026-09); területek átvezetve. 2026-09-06 mérés: név „Oroszi Péter egyéni vállalkozó, Fejér megye", 1 db 5★ vélemény, 3 fotó, H–Szo 8–17, kategóriák: Klíma- és fűtésszerelő + Napelem-karbantartás + Service establishment, site bekötve. **Duplikált második listing** él: „Oroszi Péter Egyéni Válalkozó" (cid 7424532218163484891), ugyanaz a telefon, kategória „Tisztítás", weboldal a nem létező fejérklimaclaer.hu |
 
 - **Oldalak száma (indexelhető):** 26
 - **Domain kora / mióta él:** élesítés 2026-07-13 — nagyon fiatal domain
