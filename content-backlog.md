@@ -136,8 +136,12 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 - [x] Search Console: minden oldal beküldve; 7 oldal már indexelve (2026-07-25)
 - [ ] „…árak 2026” évenkénti frissítés
 - [x] CTA-mérés ellenőrizve élőben (2026-09-06): az Umami betölt, a data-cta
-      kattintás `cta-call-header` eseményt küld — a mérés MŰKÖDIK. A 30 napos
-      nulla esemény tehát valódi: 28 látogató, 0 CTA-kattintás.
+      kattintás `cta-call-header` eseményt küld — de az a teszt csak a
+      kattintás→track() bekötést igazolta (a track() ki volt cserélve, nem ment
+      ki kérés). **2026-09-13 végponttól végpontig igazolva:** egy címkézett
+      `teszt-marton-0913` esemény az élő oldalról átment, az Umami API-ban
+      látszik (session 2a24089e…, ES/Ciutadella — ez a Browser pane, nem ügyfél;
+      a riportból kiszűrendő). A nulla `cta-*` esemény tehát VALÓDI nulla.
 
 ## Márton kézi teendői (review 2026-07-24 alapján)
 - [x] GBP igazolás — kész (Márton, 2026-09). Nyitott: név, duplikátum, kategória, fotók — lásd Local SEO
@@ -151,8 +155,8 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
 
 ## Local SEO
 - [x] Google Cégprofil — igazolva és claimelve, területek beállítva (Márton, 2026-09)
-- [ ] **GBP név egységesítése** — most „Oroszi Péter egyéni vállalkozó, Fejér megye";
-      cél „Péter Napelem- és Klímatisztítás" (a site-tal és a séma `name`-mel egyezően)
+- [x] **GBP név egységesítve** — 2026-09-13 Maps-mérés: „Péter Napelem- és
+      Klímatisztítás" él a kártyán (Márton írta át 09-06 után)
 - [ ] **Duplikált GBP-listing megszüntetése** — „Oroszi Péter Egyéni Válalkozó",
       cid 7424532218163484891, kategória „Tisztítás", weboldal a halott
       fejérklimaclaer.hu. Ha a saját fiókban van: összevonás/eltávolítás; ha nem:
