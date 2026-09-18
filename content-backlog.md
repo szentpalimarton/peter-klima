@@ -170,7 +170,9 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
       a title-ban volt; most a H1 („Klímatisztítás Székesfehérváron – …"), a lead első
       mondata, a kicker és a területi lista első eleme is tartalmazza. Title/meta/séma
       érintetlen; a /napelem-tisztitas/ H1-je szándékosan NEM változott (kontroll-oldal).
-      Márton teendője: újraindexelés-kérés a GSC-ben (utolsó crawl 09-15). Mérés 2–4 hét.
+      Élesítve és deployolva 09-18 (commit b83551a), az élő H1 ellenőrizve. Újraindexelés
+      kérve a GSC-ben 2026-09-18 (Márton, a perjeles kanonikus URL-re; előző crawl 09-15).
+      Mérés innen 2–4 hét: „klímatisztítás székesfehérvár" pozíció, cél top 5 + első kattintás.
 - [ ] Vélemény-rutin: minden munka után SMS-ben a Google-értékelő link
       (2026-09-06: **1 db** 5★ Google-vélemény; a FB-en 4)
 - [ ] Katalógus-idézetek: Cylex, Aranyoldalak, joszaki.hu, qjob.hu — NAP-konzisztensen
