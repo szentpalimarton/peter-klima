@@ -165,6 +165,12 @@ Rollout: kutatás → 1 oldal → indexelés-visszajelzés → többi.
       2026-09-06: most a klíma-karbantartás a cél), Napelem-karbantartás másodlagos.
       Nyitott: szolgáltatáslista = a site szolgáltatásai (név szerint egyezzen)
 - [ ] GBP fotók: 3 db — legalább 10 valódi munkafotó (előtte/utána, kabala, Péter)
+- [x] **/klimatisztitas/ H1 + lead + „Hol vállalunk" Székesfehérvárral** — 2026-09-18.
+      A „klímatisztítás székesfehérvár" 33→23→7. helyre jött fel úgy, hogy a város csak
+      a title-ban volt; most a H1 („Klímatisztítás Székesfehérváron – …"), a lead első
+      mondata, a kicker és a területi lista első eleme is tartalmazza. Title/meta/séma
+      érintetlen; a /napelem-tisztitas/ H1-je szándékosan NEM változott (kontroll-oldal).
+      Márton teendője: újraindexelés-kérés a GSC-ben (utolsó crawl 09-15). Mérés 2–4 hét.
 - [ ] Vélemény-rutin: minden munka után SMS-ben a Google-értékelő link
       (2026-09-06: **1 db** 5★ Google-vélemény; a FB-en 4)
 - [ ] Katalógus-idézetek: Cylex, Aranyoldalak, joszaki.hu, qjob.hu — NAP-konzisztensen

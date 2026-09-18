@@ -55,8 +55,9 @@ Bázis: Nadap (Velencei-tó mellett, Fejér megye).
 Szolgáltatások:
 - https://fejersolarclean.hu/napelem-tisztitas/ – Napelemtisztítás: miért fontos, hogyan
   végezzük (szűrt, pH-semleges víz), gyakoriság, árak, gyakori kérdések.
-- https://fejersolarclean.hu/klimatisztitas/ – Klímatisztítás és fertőtlenítés:
-  zsákos-átmosásos mélytisztítás, egészségügyi és energiafogyasztási háttér, árak.
+- https://fejersolarclean.hu/klimatisztitas/ – Klímatisztítás és fertőtlenítés
+  Székesfehérváron és Fejér megyében: zsákos-átmosásos mélytisztítás, egészségügyi és
+  energiafogyasztási háttér, árak.
 - https://fejersolarclean.hu/arak/ – Teljes árlista mindkét szolgáltatásra.
 - https://fejersolarclean.hu/gyik/ – Gyakori kérdések (napelem, klíma, általános).
 
