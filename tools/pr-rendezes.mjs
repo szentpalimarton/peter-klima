@@ -12,10 +12,12 @@ const proba = process.argv.includes('--proba');
 const temaSorUt = path.join(ROOT, 'src/data/tema-sor.json');
 const temaSor = JSON.parse(fs.readFileSync(temaSorUt, 'utf8'));
 
-const gh = JSON.parse(execFileSync('gh', ['pr', 'list', '--label', 'cikk-kor', '--state', 'all', '--limit', '30', '--json', 'number,state,headRefName,createdAt,comments'], { cwd: ROOT, encoding: 'utf8' }));
+const gh = JSON.parse(execFileSync('gh', ['pr', 'list', '--label', 'cikk-kor', '--state', 'all', '--limit', '30', '--json', 'number,state,headRefName,createdAt,closedAt,mergedAt,comments'], { cwd: ROOT, encoding: 'utf8' }));
 // A záró komment a legutolsó, ami nem a kör saját emlékeztetője.
 const zaro = (comments = []) => comments.map((c) => c.body?.trim()).filter((b) => b && !b.startsWith('Emlékeztető:')).at(-1) ?? null;
-const prs = gh.map((p) => ({ number: p.number, state: p.state, headRefName: p.headRefName, createdAt: p.createdAt, zaroKomment: zaro(p.comments) }));
+// A gh a nem lezárt PR-nál üres vagy 0001-es dátumot adhat: azt hiányzónak vesszük.
+const ido = (s) => (typeof s === 'string' && s && !s.startsWith('0001-') ? s : null);
+const prs = gh.map((p) => ({ number: p.number, state: p.state, headRefName: p.headRefName, createdAt: p.createdAt, closedAt: ido(p.closedAt), mergedAt: ido(p.mergedAt), zaroKomment: zaro(p.comments) }));
 const agak = execFileSync('git', ['ls-remote', '--heads', 'origin', 'refs/heads/cikk/*'], { cwd: ROOT, encoding: 'utf8' })
   .split('\n').filter(Boolean).map((s) => s.split('refs/heads/')[1]);
 

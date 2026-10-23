@@ -1,6 +1,9 @@
 // A rész (spec 3.A): PR-állapotok → téma-sor állapotok + teendők. Fájlt nem ír, hálózatot nem hív.
 const iso = (d) => d.toISOString().slice(0, 10);
 const slugOf = (ag) => (ag.startsWith('cikk/') ? ag.slice(5) : null);
+// A dátum a PR-ból jön (closedAt / mergedAt), hogy két futás ugyanarra a bemenetre ugyanazt írja;
+// a futás napja csak akkor, ha a mező hiányzik.
+const prNap = (ido, ma) => (typeof ido === 'string' && ido ? ido.slice(0, 10) : iso(ma));
 
 export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyitott = 2, emlekeztetoNap = 21 }) {
   const items = temaSor.items.map((t) => ({ ...t }));
@@ -36,7 +39,7 @@ export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyi
       let torles = false;
       if (temaSorAg) torles = true;
       else if (t && (t.allapot === 'draft' || t.allapot === 'topic')) {
-        if (eloRendben[slug]) { t.allapot = 'live'; t.allapotDatum = iso(ma); torles = true; erdemiValtozas = true; }
+        if (eloRendben[slug]) { t.allapot = 'live'; t.allapotDatum = prNap(p.mergedAt, ma); torles = true; erdemiValtozas = true; }
         else teendok.push({ tipus: 'ujra-nez', slug });
       }
       if (torles && agVan.has(p.headRefName)) teendok.push({ tipus: 'ag-torles', slug });
@@ -45,7 +48,7 @@ export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyi
       const marKizarva = t && t.allapot === 'topic' && t.kizarva;
       if (t && t.allapot !== 'live' && !marKizarva) {
         t.allapot = 'topic'; t.allapotDatum = null;
-        t.kizarva = { datum: iso(ma), ok: p.zaroKomment || 'bezárva indoklás nélkül' };
+        t.kizarva = { datum: prNap(p.closedAt, ma), ok: p.zaroKomment || 'bezárva indoklás nélkül' };
         erdemiValtozas = true;
       }
       if (agVan.has(p.headRefName)) teendok.push({ tipus: 'ag-torles', slug });
@@ -55,5 +58,7 @@ export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyi
     const slug = slugOf(ag);
     if (slug && !slug.startsWith('tema-sor-') && !prAgak.has(ag)) teendok.push({ tipus: 'felbemaradt', slug });
   }
+  // Ha egy téma-sor PR már nyitva vár, újat nem nyitunk: a merge-e utáni futás újra számol.
+  if (prs.some((p) => p.state === 'OPEN' && slugOf(p.headRefName)?.startsWith('tema-sor-'))) erdemiValtozas = false;
   return { temaSor: { ...temaSor, items }, teendok, nyitott, irhat: nyitott < maxNyitott, erdemiValtozas };
 }

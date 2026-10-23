@@ -123,7 +123,7 @@ Kimenet: `{ "pass": true|false, "failures": ["…"] }`, kilépési kód 1, ha bu
 
 ## 3. Egy futás lépései
 
-**0. Zár és előfeltételek.** Ha `riportok/cikk-kor/<ma>.md` létezik → kilép (egy napon egy futás). A fő checkout a `main` ágon áll, a saját útvonalakon (`src/content/tudastar`, `src/data/tema-sor.json`, `public/llms.txt`, a belső linkek miatt `src/pages/**`) nincs mentetlen módosítás; a `riportok/` mentetlen fájljai nem számítanak. `git fetch origin main`.
+**0. Zár és előfeltételek.** Ha `riportok/cikk-kor/<ma>.md` létezik → kilép (egy napon egy futás). A fő checkout a `main` ágon áll, a saját útvonalakon (`src/content/tudastar`, `src/data/tema-sor.json`, a belső linkek miatt `src/pages/**`) nincs mentetlen módosítás; a `riportok/` mentetlen fájljai nem számítanak. `git fetch origin main`.
 
 **A. Rendezés.** `gh pr list --label cikk-kor --state all` az utolsó 30 napra.
 - Merge-elt PR, a téma `draft`: `curl -sI` az élő URL-re (200), és a `https://fejersolarclean.hu/sitemap-0.xml` tartalmazza. Ha igen: a téma `live`. Ha nem: a napló jelzi, a következő futás újra nézi. A rendezés minden téma-sor-változása (a `live` és a `kizarva` beírása) a futás PR-jába kerül: az aznapi cikk-PR-ba, vagy ha nincs, a C rész kis téma-sor PR-jába (a C rész akkor is nyit ilyet, ha csak a rendezés változtatott a fájlon).

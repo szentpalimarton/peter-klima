@@ -6,7 +6,7 @@
 
 - A `main`-re a kör soha nem ír: minden változás egy `cikk/<slug>` ágon, pull requestben megy, a merge Márton igene. A GitHub Actions a merge után kiad.
 - Márton egyszeri teendője: GitHub branch protection a `main` ágra („require a pull request before merging”), mert az engedélylista nem biztonsági határ.
-- A `public/llms.txt` nem kézi fájl: a build a `src/data/llms-base.txt` alapból és a Tudástár-kollekcióból állítja elő (`src/pages/llms.txt.ts`), ezért az új cikk sora magától bekerül; a kör nem nyúl hozzá.
+- Az `/llms.txt` a buildben készül (`src/data/llms-base.txt` + a kollekció), nem kézi fájl: a `src/pages/llms.txt.ts` állítja elő, ezért az új cikk sora magától bekerül; a kör nem nyúl hozzá.
 - A fő checkout a `riportok/` mappában mentetlen fájlokat tart; ez nem akadály, mert a kör a fő checkout fájljait nem olvassa és nem írja: minden munka a `.worktrees/cikk-<ma>` worktree-ben megy, a fő checkoutba csak a napló (`riportok/cikk-kor/`) kerül.
 - Tiltott és helyes megfogalmazások: `tools/tiltott-kifejezesek.json` és a `content-backlog.md` „Trust signals confirmed by owner” szakasza. Szám csak letöltéssel ellenőrzött elsődleges forrással.
 - Ha egy parancsot az engedélykezelés megállít: ne kerüld meg, írd a naplóba, melyik, és állj meg.
@@ -53,7 +53,7 @@ Minden lépés után egy sor a naplóba (`<repó>/riportok/cikk-kor/<ma>.md`, pr
 **0. Zár és előfeltételek**
 1. Ha `<repó>/riportok/cikk-kor/<ma>.md` (próba módban `proba-<ma>.md`) létezik → írd ki, hogy ma már futott, és állj meg. A mappát `mkdir -p "/Users/martonszentpali/claude code projects/peter-klima/riportok/cikk-kor"` hozza létre, ha nincs. Ezután takarítás (egy korábbi, félbeszakadt futás vagy egy próba maradéka); minden eltakarított tétel egy sor a naplóba (`- takarítás: <worktree vagy ág>`):
    - `git -C "/Users/martonszentpali/claude code projects/peter-klima" worktree prune`;
-   - `git -C "/Users/martonszentpali/claude code projects/peter-klima" worktree list` alapján minden `<repó>/.worktrees/` alatti worktree, amely nem a mai (`cikk-<ma>`, `proba-<ma>`): `git -C "/Users/martonszentpali/claude code projects/peter-klima" worktree remove --force "<az útvonal>"`; ha ott olyan mappa van, amely nem worktree, azt ne töröld, csak írd a naplóba;
+   - `git -C "/Users/martonszentpali/claude code projects/peter-klima" worktree list` alapján kizárólag a kör saját worktree-i: a `<repó>/.worktrees/` alatti, `cikk-` vagy `proba-` kezdetű nevű mappák, amelyek nem a maiak (`cikk-<ma>`, `proba-<ma>`): `git -C "/Users/martonszentpali/claude code projects/peter-klima" worktree remove --force "<az útvonal>"`. Minden más worktree-hez (más néven, más mappában, például `.claude/worktrees/` alatt) a kör nem nyúl. Ha a `.worktrees/` alatt olyan mappa van, amely nem worktree, azt ne töröld, csak írd a naplóba;
    - `git -C "/Users/martonszentpali/claude code projects/peter-klima" branch --list "cikk/*"` alapján minden helyi `cikk/*` ág, amelyet egyetlen worktree sem használ (a `worktree list` kimenetében nem szerepel): `git -C "/Users/martonszentpali/claude code projects/peter-klima" branch -D cikk/<név>`. A távoli ágakhoz ez nem nyúl.
 2. `git -C "/Users/martonszentpali/claude code projects/peter-klima" rev-parse --abbrev-ref HEAD` legyen `main` (csak ellenőrzés: a fő checkout fájljait nem nézzük és nem módosítjuk). Ha nem: napló `hiba`, állj meg.
 3. `git -C "/Users/martonszentpali/claude code projects/peter-klima" fetch origin main`.
