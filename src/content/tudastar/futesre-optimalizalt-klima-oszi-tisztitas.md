@@ -1,6 +1,6 @@
 ---
 title: "Fűtésre optimalizált klímát ősszel is kell tisztíttatni?"
-description: "Igen: a fűtésre optimalizált klímát ősszel is érdemes tisztíttatni, mert a nyári por és nedvesség a fűtési szezonban is ugyanazon a szűrőn és hőcserélőn kering."
+description: "Ősszel is érdemes tisztíttatni a fűtésre optimalizált klímát: a nyári lerakódás bent marad, télen pedig ugyanazon a szűrőn és hőcserélőn áramlik a levegő."
 elsodleges: "klíma tisztítás ősszel"
 bokor: klima
 datePublished: 2026-10-23
@@ -38,7 +38,7 @@ A koszos szűrő és a lerakódás rontja a levegő minőségét és a készül�
 
 Nyáron a hőcserélőn pára csapódik le, és ez a porral keveredve nedves réteget képez. <a href="https://www.bosch-homecomfort.com/hu/hu/residential/tudas/klima/kellemetlen-szagot-araszt-a-legkondicionalo-lehetseges-okok-megoldasok-es-tippek/" rel="nofollow">A Bosch tájékoztatója szerint ebben a rétegben a baktériumok és a gombák könnyen megtelepedhetnek és elszaporodhatnak</a>, a csepptálcában megálló víz pedig a penésznek kedvez. Ha a fűtési szezon ezzel a lerakódással indul, a készülék ezt fújja tovább a szobába.
 
-A hatásfok is romlik. <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">Az ENERGY STAR szerint a légáramlási problémák akár 15 százalékkal ronthatják a rendszer hatásfokát</a>, a koszos szűrő pedig növelheti az energiaköltséget, és idő előtti meghibásodáshoz vezethet.
+A hatásfok is romlik. Az ENERGY STAR karbantartási listája szerint <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">a koszos szűrő növelheti az energiaköltséget, és károsíthatja a berendezést, ami idő előtti meghibásodáshoz vezethet</a>. Ugyanez a lista a hűtési karbantartás részében azt is kiemeli, hogy <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">a légáramlási problémák akár 15 százalékkal ronthatják a rendszer hatásfokát</a>. A fűtési üzemre külön számot nem ad, de a szűrő és a hőcserélő télen is ugyanazt a légáramot vezeti, ezért a tiszta szűrő a fűtési szezonban is számít.
 
 Ha a klíma bekapcsoláskor dohos szagot áraszt, az is jelzi, hogy tisztításra szorul. Erről a [Miért büdös a klíma?](/tudastar/miert-budos-a-klima/) cikkben írtunk bővebben.
 
@@ -72,4 +72,4 @@ Zsákos-átmosásos technikával dolgozunk: a szennyvizet zsák fogja fel, így 
 
 Az ár előre kalkulálható, a telefonban megbeszélt ár a helyszínen nem változik. Az aktuális díjakat az [árak oldalon](/arak/) találja. Ha a helyszín vagy a készülék ettől eltér, egyedi árat adunk: hívjon, és megbeszéljük. Számlát adunk, lakossági és céges ügyfeleknek egyaránt dolgozunk.
 
-Ha a készüléke fűtésre optimalizált, és a nyári tisztítás óta egész szezonban hűtött, ősszel érdemes jelentkeznie. Hívjon, és egyeztetünk egy időpontot, mielőtt a fűtési szezon beindul.
+Az őszi időpontot érdemes akkor egyeztetni, amikor a nyári hűtés már véget ért, de a fűtést még nem kapcsolta be: így a készülék tiszta szűrővel és fertőtlenített beltéri egységgel kezdi a telet. Ha a készüléke fűtésre optimalizált, és a nyári tisztítás óta egész szezonban hűtött, ősszel érdemes jelentkeznie. Hívjon, és egyeztetünk egy időpontot, mielőtt a fűtési szezon beindul.
