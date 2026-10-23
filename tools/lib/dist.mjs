@@ -13,9 +13,11 @@ export function distEllenorzes({ dist, slug, siteUrl }) {
     try { tipusok.push(JSON.parse(m[1])['@type']); } catch { hibak.push('érvénytelen JSON-LD blokk'); }
   }
   for (const t of ['Article', 'FAQPage', 'BreadcrumbList']) if (!tipusok.includes(t)) hibak.push(`hiányzó séma: ${t}`);
-  const hub = fs.readFileSync(path.join(dist, 'tudastar/index.html'), 'utf8');
-  if (!hub.includes(`href="/tudastar/${slug}/"`)) hibak.push('a hub nem linkeli az új cikket');
-  const sitemap = fs.readFileSync(path.join(dist, 'sitemap-0.xml'), 'utf8');
-  if (!sitemap.includes(`${siteUrl}/tudastar/${slug}/`)) hibak.push('a sitemap nem tartalmazza az új cikket');
+  const hubFajl = path.join(dist, 'tudastar/index.html');
+  if (!fs.existsSync(hubFajl)) hibak.push('a hub oldal hiányzik a buildben (tudastar/index.html)');
+  else if (!fs.readFileSync(hubFajl, 'utf8').includes(`href="/tudastar/${slug}/"`)) hibak.push('a hub nem linkeli az új cikket');
+  const sitemapFajl = path.join(dist, 'sitemap-0.xml');
+  if (!fs.existsSync(sitemapFajl)) hibak.push('a sitemap hiányzik a buildben (sitemap-0.xml)');
+  else if (!fs.readFileSync(sitemapFajl, 'utf8').includes(`${siteUrl}/tudastar/${slug}/`)) hibak.push('a sitemap nem tartalmazza az új cikket');
   return { rendben: hibak.length === 0, hibak };
 }

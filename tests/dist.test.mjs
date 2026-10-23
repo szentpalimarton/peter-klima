@@ -32,3 +32,21 @@ test('hiányzó oldal, hub-link, sitemap és séma külön hibák', () => {
   const r4 = distEllenorzes(opts(hamisDist({ sema: ['Article'] })));
   assert.ok(r4.hibak.some((h) => /FAQPage/.test(h)));
 });
+
+test('hiányzó hub-fájl strukturált hiba, nem kivétel', () => {
+  const d = hamisDist();
+  fs.rmSync(path.join(d, 'tudastar/index.html'));
+  let r;
+  assert.doesNotThrow(() => { r = distEllenorzes(opts(d)); });
+  assert.equal(r.rendben, false);
+  assert.ok(r.hibak.includes('a hub oldal hiányzik a buildben (tudastar/index.html)'));
+});
+
+test('hiányzó sitemap-fájl strukturált hiba, nem kivétel', () => {
+  const d = hamisDist();
+  fs.rmSync(path.join(d, 'sitemap-0.xml'));
+  let r;
+  assert.doesNotThrow(() => { r = distEllenorzes(opts(d)); });
+  assert.equal(r.rendben, false);
+  assert.ok(r.hibak.includes('a sitemap hiányzik a buildben (sitemap-0.xml)'));
+});
