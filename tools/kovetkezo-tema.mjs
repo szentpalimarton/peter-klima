@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+// node tools/kovetkezo-tema.mjs [--datum ÉÉÉÉ-HH-NN] [--tema-sor <fájl>]
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { kovetkezoTema } from './lib/valaszto.mjs';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const arg = (nev, alap) => { const i = process.argv.indexOf(nev); return i > -1 ? process.argv[i + 1] : alap; };
+const temaSor = JSON.parse(fs.readFileSync(arg('--tema-sor', path.join(ROOT, 'src/data/tema-sor.json')), 'utf8'));
+const ma = arg('--datum') ? new Date(arg('--datum')) : new Date();
+process.stdout.write(`${JSON.stringify(kovetkezoTema(temaSor, { ma }), null, 2)}\n`);
