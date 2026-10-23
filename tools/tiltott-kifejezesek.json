@@ -1,0 +1,19 @@
+{
+  "_megjegyzes": "content-backlog.md „Trust signals confirmed by owner” szerint. Bővítéskor oda is írd be az okot.",
+  "tiltott": [
+    { "kifejezes": "vegyszermentes", "ok": "Péter használ tisztítószert (2026-07-27)" },
+    { "kifejezes": "vegyszer nélkül", "ok": "Péter használ tisztítószert (2026-07-27)" },
+    { "kifejezes": "garancia", "ok": "nem megerősített" },
+    { "kifejezes": "garantál", "ok": "nem megerősített" },
+    { "kifejezes": "biztosítás", "ok": "nem megerősített" },
+    { "kifejezes": "biztosított", "ok": "nem megerősített" },
+    { "kifejezes": "éve dolgoz", "ok": "évek száma nem megerősített" },
+    { "kifejezes": "éves tapasztalat", "ok": "évek száma nem megerősített" },
+    { "kifejezes": "év tapasztalat", "ok": "évek száma nem megerősített" },
+    { "kifejezes": "megtérül", "ok": "ellentmond az évi rendszeres tisztításnak; helyette: a veszteség évente újratermelődik" },
+    { "kifejezes": "hőszivattyús", "ok": "helyette: fűtésre optimalizált készülék" },
+    { "kifejezes": "fűtésre is használt", "ok": "helyette: fűtésre optimalizált készülék" },
+    { "kifejezes": "kimondott ár", "ok": "helyette: előre kalkulálható ár" }
+  ],
+  "hirszavak": ["ma ", "tegnap", "a héten", "idén nyáron", "idén télen", "jelenleg", "a napokban", "friss hír"]
+}
