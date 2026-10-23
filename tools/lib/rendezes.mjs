@@ -1,0 +1,38 @@
+// A rész (spec 3.A): PR-állapotok → téma-sor állapotok + teendők. Fájlt nem ír, hálózatot nem hív.
+const iso = (d) => d.toISOString().slice(0, 10);
+const slugOf = (ag) => (ag.startsWith('cikk/') ? ag.slice(5) : null);
+
+export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyitott = 2, emlekeztetoNap = 21 }) {
+  const items = temaSor.items.map((t) => ({ ...t }));
+  const byId = Object.fromEntries(items.map((t) => [t.id, t]));
+  const teendok = [];
+  const prAgak = new Set(prs.map((p) => p.headRefName));
+  let nyitott = 0;
+
+  for (const p of prs) {
+    const slug = slugOf(p.headRefName);
+    if (!slug) continue;
+    const t = byId[slug];
+    if (p.state === 'OPEN') {
+      nyitott++;
+      const kor = (ma - new Date(p.createdAt)) / 86_400_000;
+      if (kor > emlekeztetoNap) teendok.push({ tipus: 'emlekezteto', number: p.number, slug });
+    } else if (p.state === 'MERGED') {
+      if (t && t.allapot === 'draft') {
+        if (eloRendben[slug]) { t.allapot = 'live'; t.allapotDatum = iso(ma); teendok.push({ tipus: 'ag-torles', slug }); }
+        else teendok.push({ tipus: 'ujra-nez', slug });
+      }
+    } else if (p.state === 'CLOSED') {
+      if (t && t.allapot === 'draft') {
+        t.allapot = 'topic'; t.allapotDatum = null;
+        t.kizarva = { datum: iso(ma), ok: p.zaroKomment || 'bezárva indoklás nélkül' };
+      }
+      teendok.push({ tipus: 'ag-torles', slug });
+    }
+  }
+  for (const ag of agak) {
+    const slug = slugOf(ag);
+    if (slug && !prAgak.has(ag)) teendok.push({ tipus: 'felbemaradt', slug });
+  }
+  return { temaSor: { ...temaSor, items }, teendok, nyitott, irhat: nyitott < maxNyitott };
+}
