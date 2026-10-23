@@ -3,7 +3,7 @@ import { szetszed } from './frontmatter.mjs';
 const BOKROK = ['napelem', 'klima', 'terulet'];
 const BELSO = /(?:\]\(|href=")(\/[a-z0-9-]+(?:\/[a-z0-9-]+)*\/)/g;
 const KULSO = /https?:\/\/[^\s)"'>]+/;
-const SZAM = /\d\s?%|\d[\d\s.]*\s?Ft\b/;
+const SZAM = /\d[\d\s.,–-]*\s?%|\d[\d\s.,]*\s?(?:ezer|millió)?\s?(?:Ft\b|forint)|\d[\d\s.,–-]*\s?százalék/i;
 
 const kisbetu = (s) => s.toLowerCase();
 const to = (szo) => kisbetu(szo).slice(0, 5);
@@ -38,16 +38,22 @@ export function kapu(szoveg, { slug, letezik, tiltott, hirszavak }) {
   for (const p of belso) if (!letezik(p)) failures.push(`belső link célja nem létezik: ${p}`);
 
   // 5. szám forrás nélkül
-  const bekezdesek = torzs.split(/\n\s*\n/);
-  for (const b of bekezdesek) {
-    if (b.trim().startsWith('#')) continue;
-    for (const mondat of b.split(/(?<=[.!?])\s+/)) {
+  // a blokk elejéről lehántjuk a címsor-sorokat; ami marad, azt vizsgáljuk (ha nincs, kihagyjuk)
+  const blokkok = torzs.split(/\n\s*\n/).map((b) => {
+    const sorok = b.split('\n');
+    while (sorok.length && (sorok[0].trim() === '' || sorok[0].trim().startsWith('#'))) sorok.shift();
+    return sorok.join('\n');
+  }).filter((b) => b.trim());
+  for (const b of blokkok) {
+    // rövidítések és sorszámok pontja nem mondatvég
+    const vedett = b.replace(/(^|[\s(])(kb|pl|stb|db|ill|ún|ti|ld|vö)\./gi, '$1$2\u0001').replace(/(^|\s)(\d+)\.(?=\s)/g, '$1$2\u0001');
+    for (const mondat of vedett.split(/(?<=[.!?])\s+/).map((m) => m.replaceAll('\u0001', '.'))) {
       if (SZAM.test(mondat) && !KULSO.test(b) && !/tapasztalat/i.test(mondat)) failures.push(`szám forráslink nélkül: „${mondat.trim().slice(0, 60)}…”`);
     }
   }
 
   // 6. elsődleges kulcsszó a címben vagy a ledében (szótövek első 5 karaktere)
-  const lede = bekezdesek.find((b) => b.trim() && !b.trim().startsWith('#')) ?? '';
+  const lede = blokkok[0] ?? '';
   const mezo = kisbetu(`${f.title ?? ''} ${lede}`);
   const szavak = String(f.elsodleges ?? '').split(/\s+/).filter((s) => s.length >= 4);
   if (szavak.length && !szavak.every((sz) => mezo.includes(to(sz)))) failures.push(`az elsődleges kulcsszó („${f.elsodleges}”) nincs a címben vagy az első bekezdésben`);

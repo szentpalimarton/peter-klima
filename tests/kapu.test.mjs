@@ -79,3 +79,20 @@ test('hírszó csak figyelmeztetés', () => {
   assert.equal(r.pass, true);
   assert.ok(r.warnings.some((w) => /a héten/.test(w)));
 });
+
+test('címsorhoz tapadt bekezdés számát is ellenőrzi', () => {
+  const r = kapu(`${jo}\n\n## Hozam\nA tisztítás 20%-kal többet hoz.\n`, opts);
+  assert.ok(r.failures.some((f) => /szám forráslink nélkül/.test(f)));
+});
+
+test('magyar szám-alakok forráslink nélkül buknak', () => {
+  for (const mondat of ['A munka 35 ezer Ft.', 'Az ár 1,5 millió Ft.', 'Az ár 35 000 forint.', 'A fogyasztás 20 százalékkal csökken.', 'A többlet 15–20%.']) {
+    const r = kapu(`${jo}\n\n${mondat}\n`, opts);
+    assert.ok(r.failures.some((f) => /szám forráslink nélkül/.test(f)), mondat);
+  }
+});
+
+test('rövidítés nem töri meg a mondatot, a tapasztalat-kivétel marad', () => {
+  const r = kapu(`${jo}\n\nPéter tapasztalata szerint kb. 20% a többlet.\n`, opts);
+  assert.deepEqual(r.failures, []);
+});
