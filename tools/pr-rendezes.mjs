@@ -31,6 +31,8 @@ const eloRendben = {};
 for (const p of prs) if (p.state === 'MERGED') { const slug = p.headRefName.slice(5); eloRendben[slug] = await el(slug); }
 
 const r = rendez(temaSor, { prs, agak, eloRendben, ma: new Date() });
+// A fájl minden változáskor íródik (a draft-jelöléssel együtt), de a temaSorValtozott csak az
+// érdemi változást (élő vagy kizárt téma) jelzi: a draft-jelölés magában nem nyit téma-sor PR-t.
 const valtozott = JSON.stringify(r.temaSor.items) !== JSON.stringify(temaSor.items);
 if (valtozott && !proba) fs.writeFileSync(temaSorUt, `${JSON.stringify(r.temaSor, null, 2)}\n`);
-process.stdout.write(`${JSON.stringify({ nyitott: r.nyitott, irhat: r.irhat, temaSorValtozott: valtozott, teendok: r.teendok, proba }, null, 2)}\n`);
+process.stdout.write(`${JSON.stringify({ nyitott: r.nyitott, irhat: r.irhat, temaSorValtozott: r.erdemiValtozas, teendok: r.teendok, proba }, null, 2)}\n`);

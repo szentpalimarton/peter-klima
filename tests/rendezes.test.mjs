@@ -108,6 +108,22 @@ test('már kizárt topic témán a bezárt PR nem írja újra a kizárást', () 
   assert.deepEqual(r.temaSor.items[0], kizart);
 });
 
+test('nyitott PR draft-jelölése nem érdemi változás, a bezárás igen', () => {
+  const nyitott = rendez({ items: [topicTema('a')] }, { prs: [pr(1, 'OPEN', 'a')], agak: ['cikk/a'], eloRendben: {}, ma });
+  assert.equal(nyitott.temaSor.items[0].allapot, 'draft');
+  assert.equal(nyitott.erdemiValtozas, false);
+  const zart = rendez({ items: [topicTema('a')] }, { prs: [pr(1, 'CLOSED', 'a')], agak: [], eloRendben: {}, ma });
+  assert.equal(zart.erdemiValtozas, true);
+});
+
+test('élővé válás érdemi változás; változatlan kizárás nem', () => {
+  const elo = rendez({ items: [topicTema('a')] }, { prs: [pr(1, 'MERGED', 'a')], agak: [], eloRendben: { a: true }, ma });
+  assert.equal(elo.erdemiValtozas, true);
+  const kizart = { ...topicTema('a'), kizarva: { datum: '2026-10-19', ok: 'régi ok' } };
+  const marad = rendez({ items: [kizart] }, { prs: [pr(1, 'CLOSED', 'a')], agak: [], eloRendben: {}, ma });
+  assert.equal(marad.erdemiValtozas, false);
+});
+
 test('élő témán a bezárt PR nem ír kizárást', () => {
   const r = rendez({ items: [tema('a', 'live')] }, { prs: [pr(1, 'CLOSED', 'a')], agak: [], eloRendben: {}, ma });
   assert.equal(r.temaSor.items[0].allapot, 'live');

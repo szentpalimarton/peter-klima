@@ -8,6 +8,9 @@ export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyi
   const teendok = [];
   const prAgak = new Set(prs.map((p) => p.headRefName));
   let nyitott = 0;
+  // Érdemi változás: élővé vált vagy kizárt téma. A nyitott PR draft-jelölése csak könyvelés,
+  // az a fájlba bekerül, de magában nem ok téma-sor PR-ra.
+  let erdemiValtozas = false;
 
   // Slugonként a legújabb PR (legnagyobb number) dönt; a régebbiek figyelmen kívül maradnak.
   const legujabb = new Map();
@@ -33,7 +36,7 @@ export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyi
       let torles = false;
       if (temaSorAg) torles = true;
       else if (t && (t.allapot === 'draft' || t.allapot === 'topic')) {
-        if (eloRendben[slug]) { t.allapot = 'live'; t.allapotDatum = iso(ma); torles = true; }
+        if (eloRendben[slug]) { t.allapot = 'live'; t.allapotDatum = iso(ma); torles = true; erdemiValtozas = true; }
         else teendok.push({ tipus: 'ujra-nez', slug });
       }
       if (torles && agVan.has(p.headRefName)) teendok.push({ tipus: 'ag-torles', slug });
@@ -43,6 +46,7 @@ export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyi
       if (t && t.allapot !== 'live' && !marKizarva) {
         t.allapot = 'topic'; t.allapotDatum = null;
         t.kizarva = { datum: iso(ma), ok: p.zaroKomment || 'bezárva indoklás nélkül' };
+        erdemiValtozas = true;
       }
       if (agVan.has(p.headRefName)) teendok.push({ tipus: 'ag-torles', slug });
     }
@@ -51,5 +55,5 @@ export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyi
     const slug = slugOf(ag);
     if (slug && !slug.startsWith('tema-sor-') && !prAgak.has(ag)) teendok.push({ tipus: 'felbemaradt', slug });
   }
-  return { temaSor: { ...temaSor, items }, teendok, nyitott, irhat: nyitott < maxNyitott };
+  return { temaSor: { ...temaSor, items }, teendok, nyitott, irhat: nyitott < maxNyitott, erdemiValtozas };
 }
