@@ -52,7 +52,7 @@ cta: "call-<slug>"          # a data-cta érték a telefonos gombon
 - A cikk állapota **nem** a fejlécben él: a fájl csak merge után kerül a `main`-re, tehát ami a kollekcióban van, az élő. Az állapotot a téma-sor viszi.
 - Törzs: Markdown, válasz-először (az első bekezdés válaszol a címbeli kérdésre). Belső linkek a `/…/` gyökér-útvonalakkal (`/klimatisztitas/`), a sablon nem alakítja át őket; a site gyökéren fut, `withBase` csak a `.astro` oldalakon kell. Külső forráslink `rel="nofollow"`-val a sablon utólag nem tud jelölni, ezért a Markdownban HTML-horgony áll a forrásokon (`<a href="…" rel="nofollow">`), ahogy a meglévő cikkekben.
 - Sablon: `src/pages/tudastar/[slug].astro` a `getStaticPaths`-szal a kollekcióból; a meglévő cikkek kinézete (`page-hero`, `prose`, `crosslink`, `cta-band`), és ugyanaz a séma-hármas: `Article` (szerző és kiadó: `BRAND`), `FAQPage` a `faq` tömbből, `BreadcrumbList`. `ogType="article"`. A telefonos gomb `data-cta` értéke a fejléc `cta` mezője.
-- A **8 meglévő `.astro` cikk marad**. A `src/pages/tudastar/index.astro` a kézi lista mellé a kollekció cikkeit `datePublished` szerint csökkenő sorrendben listázza (új cikk elöl). A sitemap integráció magától felveszi az új oldalakat; a `public/llms.txt` listáját a kör a PR-ban egy sorral bővíti.
+- A **8 meglévő `.astro` cikk marad**. A `src/pages/tudastar/index.astro` a kézi lista mellé a kollekció cikkeit `datePublished` szerint csökkenő sorrendben listázza (új cikk elöl). A sitemap integráció magától felveszi az új oldalakat. Az `llms.txt` a build idején készül (`src/pages/llms.txt.ts`) a `src/data/llms-base.txt` alapból és a kollekcióból; a kör nem szerkeszti.
 
 ### 2.2 Téma-sor
 
@@ -123,7 +123,7 @@ Kimenet: `{ "pass": true|false, "failures": ["…"] }`, kilépési kód 1, ha bu
 
 ## 3. Egy futás lépései
 
-**0. Zár és előfeltételek.** Ha `riportok/cikk-kor/<ma>.md` létezik → kilép (egy napon egy futás). A fő checkout a `main` ágon áll, a saját útvonalakon (`src/content/tudastar`, `src/data/tema-sor.json`, `public/llms.txt`, a belső linkek miatt `src/pages/**`) nincs mentetlen módosítás; a `riportok/` mentetlen fájljai nem számítanak. `git fetch origin main`.
+**0. Zár és előfeltételek.** Ha `riportok/cikk-kor/<ma>.md` létezik → kilép (egy napon egy futás). A fő checkout a `main` ágon áll, a saját útvonalakon (`src/content/tudastar`, `src/data/tema-sor.json`, a belső linkek miatt `src/pages/**`) nincs mentetlen módosítás; a `riportok/` mentetlen fájljai nem számítanak. `git fetch origin main`.
 
 **A. Rendezés.** `gh pr list --label cikk-kor --state all` az utolsó 30 napra.
 - Merge-elt PR, a téma `draft`: `curl -sI` az élő URL-re (200), és a `https://fejersolarclean.hu/sitemap-0.xml` tartalmazza. Ha igen: a téma `live`. Ha nem: a napló jelzi, a következő futás újra nézi. A rendezés minden téma-sor-változása (a `live` és a `kizarva` beírása) a futás PR-jába kerül: az aznapi cikk-PR-ba, vagy ha nincs, a C rész kis téma-sor PR-jába (a C rész akkor is nyit ilyet, ha csak a rendezés változtatott a fájlon).
@@ -138,7 +138,7 @@ Kimenet: `{ "pass": true|false, "failures": ["…"] }`, kilépési kód 1, ha bu
 4. Cikk megírása a `docs/cikk-kor/iras-utasitas.md` szerint a `seo-tartalom` skill módszerével, az `ugyfel-brief.md` hangnemével. A forrásokat a kör `WebFetch`-csel megnyitja, és csak azt idézi, ami a letöltött szövegben áll.
 5. `humanizer` audit (magyar modul), a leletek javítása; tényhez, számhoz, forráshoz nem nyúl.
 6. `node tools/cikk-kapu.mjs src/content/tudastar/<slug>.md`. Piros → a worktree és az ág törlése, napló, futás vége cikk nélkül (a téma visszaáll `topic`-ra, mert a worktree-vel a módosítás is eldobódik).
-7. Belső linkek a `belso-linkterv` szerint (2.5). A `public/llms.txt` új sora.
+7. Belső linkek a `belso-linkterv` szerint (2.5).
 8. `npm run build`, majd `node tools/dist-ellenorzes.mjs <slug>`: a `dist/tudastar/<slug>/index.html` létezik, a hub HTML-je linkeli, a `dist/sitemap-0.xml` tartalmazza, a három JSON-LD blokk érvényes JSON és a típusok stimmelnek. Piros → mint a 6. pont.
 9. Commit az ágon (`cikk-kor: <slug>` előtaggal, csak a saját útvonalak fájljai), `git push -u origin cikk/<slug>`, `gh pr create --label cikk-kor` a 2.6 sablonjával. A címke egyszer, kézzel jön létre (`gh label create cikk-kor`), a megvalósítás része.
 10. Worktree eltávolítása (`git worktree remove`), az ág a távoli tárolóban marad.
@@ -172,4 +172,5 @@ Külső backlinkek, FB-poszt és katalógus-megkeresések; fordítás; helyi át
 - **Tény-szabály LLM-oldalon.** A kapu csak azt látja, hogy van-e forráslink a szám mellett; hogy a forrás tényleg azt mondja, a kör WebFetch-ellenőrzése és Márton olvasása fedi. Ezért marad a PR-kapu.
 - **Belső link `.astro` fájlba.** Egy mondat beszúrása kézi szerkesztés a kör részéről; a build és a `dist`-ellenőrzés fogja a szintaktikai hibát, a PR-diff a tartalmit.
 - **`datePublished`.** A PR nyitásának napja; ha a merge hetekkel később jön, a dátum régebbi a valós kiadásnál. Elfogadott egyszerűsítés.
+- **A `draft` csak a PR-ágon él.** A main-en a nyitott PR témája még `topic`, ezért a rendezés a nyitott PR-ok témáit a worktree-ben `draft`-ra jelöli (a PR nyitásának dátumával), hogy a választó kihagyja őket. Ez könyvelés: a jelölés csak egy amúgy is nyíló PR-ral megy a main-re, magában nem nyit téma-sor PR-t; ahhoz élővé vált vagy kizárt téma, vagy új GSC-javaslat kell.
 - **Engedélyek.** A `git push` és a `gh pr create` felügyelet nélkül fut; a `main`-re push és a merge nincs engedélyezve, így a kiadás Márton kezében marad.

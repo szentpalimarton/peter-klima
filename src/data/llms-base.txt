@@ -79,6 +79,7 @@ Tudástár (forrásokkal alátámasztott cikkek):
   tűző napon napelemet tisztítani? Hősokk, foltos száradás, a helyes napszakok.
 - https://fejersolarclean.hu/tudastar/aszaly-es-napelem-tisztitas/ – Aszályos évben
   gyakrabban kell tisztítani? Kevesebb eső = kevesebb átmosás, több légköri por.
+{{TUDASTAR_KOLLEKCIO}}
 
 Területek (városonkénti oldalak, helyi sajátosságokkal):
 - https://fejersolarclean.hu/teruletek/ – Kiszolgált terület, régiónként.

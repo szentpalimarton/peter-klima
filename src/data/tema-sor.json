@@ -1,0 +1,240 @@
+{
+  "_megjegyzes": "Heti cikk-kör téma-sora (spec 2.2). allapot: topic → draft (PR nyitva) → live (merge-elve). forras: szezon | gsc | ugyfel. szezon: hónapok, amikor a kérdés aktuális. A választó: tools/kovetkezo-tema.mjs.",
+  "frissitve": "2026-10-23",
+  "items": [
+    {
+      "id": "futesre-optimalizalt-klima-oszi-tisztitas",
+      "kerdes": "Fűtésre optimalizált klímát ősszel is kell tisztíttatni?",
+      "elsodleges": "klíma tisztítás ősszel",
+      "bokor": "klima",
+      "szezon": [
+        9,
+        10,
+        11
+      ],
+      "forras": "szezon",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "lomb-pollen-madarurulek-napelemen-osszel",
+      "kerdes": "Lehullott lomb és madárürülék a napelemen: mit tegyen ősszel?",
+      "elsodleges": "napelem tisztítás ősszel",
+      "bokor": "napelem",
+      "szezon": [
+        9,
+        10,
+        11
+      ],
+      "forras": "szezon",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "mi-tortenik-ha-nem-tisztittatom-a-klimat",
+      "kerdes": "Mi történik, ha nem tisztíttatom a klímát?",
+      "elsodleges": "klíma tisztítás elmaradása",
+      "bokor": "klima",
+      "szezon": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "forras": "ugyfel",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "ho-es-jeg-a-napelemen",
+      "kerdes": "Hó és jég a napelemen: le kell takarítani?",
+      "elsodleges": "napelem hó eltávolítás",
+      "bokor": "napelem",
+      "szezon": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "forras": "szezon",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "klima-futes-kozben-dohos-szag",
+      "kerdes": "Fűtés közben dohos szagú a klíma: mi az oka?",
+      "elsodleges": "klíma dohos szag fűtés",
+      "bokor": "klima",
+      "szezon": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "forras": "szezon",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "tavaszi-pollen-a-napelemen",
+      "kerdes": "Tavaszi pollen a napelemen: mennyit vesz el a termelésből?",
+      "elsodleges": "napelem pollen",
+      "bokor": "napelem",
+      "szezon": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "forras": "szezon",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "klimatisztitas-hutesi-szezon-elott-mikor",
+      "kerdes": "Klímatisztítás a hűtési szezon előtt: mikor érdemes időpontot foglalni?",
+      "elsodleges": "klímatisztítás tavasszal",
+      "bokor": "klima",
+      "szezon": [
+        3,
+        4,
+        5
+      ],
+      "forras": "szezon",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "serul-a-napelem-tisztitas-kozben",
+      "kerdes": "Sérülhet a napelem tisztítás közben?",
+      "elsodleges": "napelem tisztítás sérülés",
+      "bokor": "napelem",
+      "szezon": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "forras": "ugyfel",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "klima-csopog-vagy-gyengen-hut",
+      "kerdes": "Csöpög vagy gyengén hűt a klíma: mikor a kosz az ok?",
+      "elsodleges": "klíma gyengén hűt",
+      "bokor": "klima",
+      "szezon": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "forras": "szezon",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "nyaralo-apartman-klima-szezon-elott",
+      "kerdes": "Nyaraló és apartman klímája: mikor tisztíttassa a szezon előtt?",
+      "elsodleges": "apartman klímatisztítás",
+      "bokor": "terulet",
+      "szezon": [
+        4,
+        5,
+        6
+      ],
+      "forras": "szezon",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "szamla-es-ceges-ugyfelek",
+      "kerdes": "Kapok számlát? Cégeknek is dolgoznak?",
+      "elsodleges": "napelemtisztítás számlával",
+      "bokor": "napelem",
+      "szezon": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "forras": "ugyfel",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    },
+    {
+      "id": "hogyan-zajlik-az-idopont-es-a-munka",
+      "kerdes": "Hogyan zajlik az időpont-egyeztetés és maga a munka?",
+      "elsodleges": "napelemtisztítás menete",
+      "bokor": "napelem",
+      "szezon": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "forras": "ugyfel",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": null,
+      "kizarva": null
+    }
+  ]
+}

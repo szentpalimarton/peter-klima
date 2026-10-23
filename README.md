@@ -18,6 +18,7 @@ npm install      # first time
 npm run dev      # http://localhost:4321
 npm run build    # static output to dist/
 npm run preview
+npm test        # a cikk-kör szkriptjeinek tesztjei (node --test)
 ```
 
 ## Deploy
@@ -39,7 +40,9 @@ No manual step. `public/CNAME` pins the custom domain; HTTPS is enforced.
 ```
 
 Every page carries JSON-LD: `LocalBusiness` / `Service` / `FAQPage` /
-`BreadcrumbList` / `Article`. `public/llms.txt` lists all URLs for AI crawlers.
+`BreadcrumbList` / `Article`. `/llms.txt` lists all URLs for AI crawlers; it is
+generated at build time (`src/pages/llms.txt.ts`) from `src/data/llms-base.txt` plus
+the Tudástár collection, so new articles appear in it automatically.
 
 ## Status
 
@@ -49,6 +52,7 @@ Every page carries JSON-LD: `LocalBusiness` / `Service` / `FAQPage` /
 - 🟡 Google Business Profile created 2026-07-14, **awaiting verification** (video)
 - ⬜ Analytics not yet installed (planned: cookieless + `data-cta` call-click events)
 - ⬜ Bing Webmaster Tools not yet submitted (feeds ChatGPT/Copilot)
+- 🟡 Heti cikk-kör (hétfő 09:00): Markdown-cikk PR-ban, merge = kiadás (a próbafutás és az első PR után élesedik) — lásd cikk-kor.md
 
 ## Content rules (important)
 

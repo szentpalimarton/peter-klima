@@ -246,3 +246,7 @@ amelyek a GBP-ben szerepelnek — a weboldal önmagában ezt nem pótolja.
 **Nyitott stratégiai kérdés:** a domain `fejersolarclean.hu`, miközben már öt megyét
 szolgálunk ki. Nem sürgős (a domain nem korlátoz), de ha valaha újramárkázás merül fel,
 ez az érv mellette. Domaint NE cseréljünk — az indexelt oldalak elvesznének.
+
+## Heti cikk-kör (2026-10-23)
+
+A Tudástár új cikkei a heti cikk-körből jönnek: `src/data/tema-sor.json` a téma-sor, `cikk-kor.md` a futás, a PR-merge a kiadás. Szezon-témák és Search Console-rések; hírhorog nincs. Új tiltott vagy helyes megfogalmazás ide ÉS a `tools/tiltott-kifejezesek.json`-ba.

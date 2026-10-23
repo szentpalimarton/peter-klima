@@ -1,6 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { withBase } from '../../consts';
+import { getCollection } from 'astro:content';
+
+const kollekcio = (await getCollection('tudastar'))
+  .sort((a, b) => b.data.datePublished.getTime() - a.data.datePublished.getTime())
+  .map((c) => ({ href: withBase(`/tudastar/${c.id}/`), title: c.data.title, excerpt: c.data.description }));
 
 const title = 'Tudástár – napelem- és klímatisztítás | Péter';
 const description =
@@ -9,6 +14,7 @@ const description =
 const homeUrl = withBase('/');
 
 const articles = [
+  ...kollekcio,
   {
     href: withBase('/tudastar/hosegben-tobbet-termel-a-napelem/'),
     title: 'Hőségben többet termel a napelem?',
