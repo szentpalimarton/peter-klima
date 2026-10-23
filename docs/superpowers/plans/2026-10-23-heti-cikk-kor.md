@@ -944,7 +944,8 @@ test('megjelenés ≥ 5, kattintás 0, nincs rá oldal → javaslat', () => {
 
 test('ami már a téma-sorban van, nem jön újra; legfeljebb max', () => {
   const sorok = ['a klíma b', 'c klíma d', 'e klíma f', 'g klíma h'].map((q, i) => ({ query: q, page: '/', impressions: 10 + i, clicks: 0, position: 9 }));
-  const r = javaslatok(sorok, { temaSor: { items: [{ id: 'a-klima-b', adat: { lekerdezes: 'a klíma b' } }] }, oldalak, ma, max: 2 });
+  // oldalak üres: a lefedettség-szűrőt az előző teszt nézi; itt a dupla-kizárás és a max
+  const r = javaslatok(sorok, { temaSor: { items: [{ id: 'a-klima-b', adat: { lekerdezes: 'a klíma b' } }] }, oldalak: [], ma, max: 2 });
   assert.deepEqual(r.map((x) => x.id), ['g-klima-h', 'e-klima-f']);
 });
 ```
