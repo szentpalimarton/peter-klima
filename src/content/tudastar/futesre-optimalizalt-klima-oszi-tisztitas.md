@@ -40,6 +40,14 @@ Nyáron a hőcserélőn pára csapódik le, és ez a porral keveredve nedves ré
 
 A hatásfok is romlik. Az ENERGY STAR karbantartási listája szerint <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">a koszos szűrő növelheti az energiaköltséget, és károsíthatja a berendezést, ami idő előtti meghibásodáshoz vezethet</a>. Ugyanez a lista a hűtési karbantartás részében azt is kiemeli, hogy <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">a légáramlási problémák akár 15 százalékkal ronthatják a rendszer hatásfokát</a>. A fűtési üzemre külön számot nem ad, de a szűrő és a hőcserélő télen is ugyanazt a légáramot vezeti, ezért a tiszta szűrő a fűtési szezonban is számít.
 
+Mit hoz az egyes beavatkozás, a források szerint:
+
+| Beavatkozás | Várható hatás | Forrás |
+|-------------|---------------|--------|
+| Szűrő tisztítása vagy cseréje | kisebb energiaköltség, kisebb az idő előtti meghibásodás kockázata | <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">ENERGY STAR</a> |
+| A légáramlás rendbetétele (hűtési karbantartás) | akár 15 százalékkal jobb hatásfok; ez a forrás hűtésre vonatkozó adata | <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">ENERGY STAR</a> |
+| A beltéri egység belsejének tisztítása, fertőtlenítése | eltűnik a nedves rétegben megtelepedett baktérium és gomba | <a href="https://www.bosch-homecomfort.com/hu/hu/residential/tudas/klima/kellemetlen-szagot-araszt-a-legkondicionalo-lehetseges-okok-megoldasok-es-tippek/" rel="nofollow">Bosch</a> |
+
 Ha a klíma bekapcsoláskor dohos szagot áraszt, az is jelzi, hogy tisztításra szorul. Erről a [Miért büdös a klíma?](/tudastar/miert-budos-a-klima/) cikkben írtunk bővebben.
 
 ## Mit tehet maga a szűrővel?
