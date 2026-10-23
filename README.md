@@ -18,6 +18,7 @@ npm install      # first time
 npm run dev      # http://localhost:4321
 npm run build    # static output to dist/
 npm run preview
+npm test        # a cikk-kör szkriptjeinek tesztjei (node --test)
 ```
 
 ## Deploy
@@ -49,6 +50,7 @@ Every page carries JSON-LD: `LocalBusiness` / `Service` / `FAQPage` /
 - 🟡 Google Business Profile created 2026-07-14, **awaiting verification** (video)
 - ⬜ Analytics not yet installed (planned: cookieless + `data-cta` call-click events)
 - ⬜ Bing Webmaster Tools not yet submitted (feeds ChatGPT/Copilot)
+- 🟡 Heti cikk-kör (hétfő 09:00): Markdown-cikk PR-ban, merge = kiadás — lásd cikk-kor.md
 
 ## Content rules (important)
 
