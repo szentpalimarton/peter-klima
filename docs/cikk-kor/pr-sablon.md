@@ -21,6 +21,16 @@ Ez a megjegyzés a kitöltött példányba nem kerül bele. -->
 - Humanizer-leletek: <n>, javítva: <n>
 - Build + tesztek + dist-ellenőrzés: zöld
 
+## Codex-review (1 kör)
+
+**Verdikt:** <MEHET | JAVÍTANDÓ | ÚJRAÍRANDÓ – a review indoklása> · vagy: nem futott: <ok>
+
+| # | Pont | Döntés | Indoklás | Mi változott |
+|---|---|---|---|---|
+| <P1-1> | <röviden> | <Elfogadva / Elutasítva / Márton dönt> | <forrásidézet vagy utasítás-sor> | <a javítás helye> |
+
+A review és a válasz fájlja: `riportok/cikk-kor/reviews/<ma>-<slug>-codex-1.md`, `…-valasz-1.md` (helyben, nincs a gitben).
+
 ## Új témajavaslatok (Search Console)
 
 <nincs | sorok: „<lekérdezés>” – <megjelenés> megjelenés, <pozíció>. hely>
