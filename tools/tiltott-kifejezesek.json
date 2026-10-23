@@ -15,5 +15,5 @@
     { "kifejezes": "fűtésre is használt", "ok": "helyette: fűtésre optimalizált készülék" },
     { "kifejezes": "kimondott ár", "ok": "helyette: előre kalkulálható ár" }
   ],
-  "hirszavak": ["ma ", "tegnap", "a héten", "idén nyáron", "idén télen", "jelenleg", "a napokban", "friss hír"]
+  "hirszavak": [" ma ", "tegnap", "a héten", "idén nyáron", "idén télen", "jelenleg", "a napokban", "friss hír"]
 }
