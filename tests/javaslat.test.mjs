@@ -31,3 +31,8 @@ test('ami már a téma-sorban van, nem jön újra; legfeljebb max', () => {
   const r = javaslatok(sorok, { temaSor: { items: [{ id: 'a-klima-b', adat: { lekerdezes: 'a klíma b' } }] }, oldalak: [], ma, max: 2 });
   assert.deepEqual(r.map((x) => x.id), ['g-klima-h', 'e-klima-f']);
 });
+
+test('ékezet nélküli lekérdezés is lefedett, ha van rá oldal', () => {
+  const r = javaslatok([{ query: 'budos klima', page: '/z/', impressions: 20, clicks: 0, position: 8 }], { temaSor, oldalak, ma });
+  assert.equal(r.length, 0);
+});

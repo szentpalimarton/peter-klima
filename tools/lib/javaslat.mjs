@@ -1,5 +1,6 @@
 // C rész (spec 3.C): GSC lekérdezés × oldal sorokból új témák.
-export const slugosit = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+export const ekezetlen = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+export const slugosit = (s) => ekezetlen(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const to = (szo) => szo.toLowerCase().slice(0, 5);
 const szavak = (q) => q.split(/\s+/).filter((s) => s.length >= 4);
 const bokor = (q) => (/klím|klim/i.test(q) ? 'klima' : /napelem/i.test(q) ? 'napelem' : 'terulet');
@@ -14,7 +15,7 @@ export function javaslatok(sorok, { temaSor, oldalak, ma = new Date(), max = 3, 
   }
   const megvan = new Set(temaSor.items.map((t) => t.adat?.lekerdezes).filter(Boolean));
   const ids = new Set(temaSor.items.map((t) => t.id));
-  const lefedett = (q) => oldalak.some((o) => { const m = `${o.cim} ${o.elsodleges ?? ''}`.toLowerCase(); return szavak(q).every((sz) => m.includes(to(sz))); });
+  const lefedett = (q) => oldalak.some((o) => { const m = ekezetlen(`${o.cim} ${o.elsodleges ?? ''}`).toLowerCase(); return szavak(ekezetlen(q)).every((sz) => m.includes(to(sz))); });
   return [...osszes.values()]
     .filter((e) => e.megjelenes >= minMegjelenes && e.kattintas === 0 && !megvan.has(e.lekerdezes) && !ids.has(slugosit(e.lekerdezes)) && !lefedett(e.lekerdezes))
     .sort((a, b) => b.megjelenes - a.megjelenes)

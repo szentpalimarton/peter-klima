@@ -7,7 +7,7 @@ const pr = (number, state, slug, extra = {}) => ({ number, state, headRefName: `
 const ma = new Date('2026-10-26');
 
 test('merge-elt és élő → live', () => {
-  const r = rendez({ items: [tema('a')] }, { prs: [pr(1, 'MERGED', 'a')], agak: [], eloRendben: { a: true }, ma });
+  const r = rendez({ items: [tema('a')] }, { prs: [pr(1, 'MERGED', 'a')], agak: ['cikk/a'], eloRendben: { a: true }, ma });
   assert.equal(r.temaSor.items[0].allapot, 'live');
   assert.equal(r.temaSor.items[0].allapotDatum, '2026-10-26');
   assert.ok(r.teendok.some((t) => t.tipus === 'ag-torles' && t.slug === 'a'));
@@ -37,4 +37,43 @@ test('ág PR nélkül → félbemaradt', () => {
   const r = rendez({ items: [tema('c')] }, { prs: [], agak: ['cikk/c'], eloRendben: {}, ma });
   assert.ok(r.teendok.some((t) => t.tipus === 'felbemaradt' && t.slug === 'c'));
   assert.equal(r.irhat, true);
+});
+
+test('régebbi bezárt PR nem írja felül az újabb nyitott újrapróbát', () => {
+  const r = rendez({ items: [tema('a')] }, { prs: [pr(2, 'OPEN', 'a'), pr(1, 'CLOSED', 'a', { zaroKomment: 'régi' })], agak: ['cikk/a'], eloRendben: {}, ma });
+  assert.equal(r.temaSor.items[0].allapot, 'draft');
+  assert.equal(r.temaSor.items[0].kizarva, null);
+  assert.ok(!r.teendok.some((t) => t.tipus === 'ag-torles' && t.slug === 'a'));
+  assert.equal(r.nyitott, 1);
+});
+
+test('ág-törlés csak létező ágra: bezárt PR, ág már nincs', () => {
+  const r = rendez({ items: [tema('a')] }, { prs: [pr(1, 'CLOSED', 'a', { zaroKomment: 'nem időszerű' })], agak: [], eloRendben: {}, ma });
+  assert.equal(r.temaSor.items[0].allapot, 'topic');
+  assert.ok(!r.teendok.some((t) => t.tipus === 'ag-torles'));
+});
+
+test('ág-törlés csak létező ágra: merge-elt és élő, ág már nincs', () => {
+  const r = rendez({ items: [tema('a')] }, { prs: [pr(1, 'MERGED', 'a')], agak: [], eloRendben: { a: true }, ma });
+  assert.equal(r.temaSor.items[0].allapot, 'live');
+  assert.ok(!r.teendok.some((t) => t.tipus === 'ag-torles'));
+});
+
+test('tema-sor ág: nem számít nyitottnak, nem félbemaradt', () => {
+  const r = rendez({ items: [tema('a')] }, { prs: [pr(5, 'OPEN', 'tema-sor-2026-10-26')], agak: ['cikk/tema-sor-2026-10-26'], eloRendben: {}, ma });
+  assert.equal(r.nyitott, 0);
+  assert.equal(r.irhat, true);
+  assert.ok(!r.teendok.some((t) => t.tipus === 'felbemaradt'));
+});
+
+test('tema-sor ág PR nélkül sem félbemaradt', () => {
+  const r = rendez({ items: [tema('a')] }, { prs: [], agak: ['cikk/tema-sor-2026-10-26'], eloRendben: {}, ma });
+  assert.ok(!r.teendok.some((t) => t.tipus === 'felbemaradt'));
+});
+
+test('tema-sor ág: merge-elt vagy bezárt → ág-törlés csak ha az ág még megvan', () => {
+  const van = rendez({ items: [tema('a')] }, { prs: [pr(5, 'MERGED', 'tema-sor-2026-10-26')], agak: ['cikk/tema-sor-2026-10-26'], eloRendben: {}, ma });
+  assert.ok(van.teendok.some((t) => t.tipus === 'ag-torles' && t.slug === 'tema-sor-2026-10-26'));
+  const nincs = rendez({ items: [tema('a')] }, { prs: [pr(5, 'CLOSED', 'tema-sor-2026-10-26')], agak: [], eloRendben: {}, ma });
+  assert.ok(!nincs.teendok.some((t) => t.tipus === 'ag-torles'));
 });

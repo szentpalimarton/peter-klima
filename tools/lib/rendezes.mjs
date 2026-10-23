@@ -9,30 +9,42 @@ export function rendez(temaSor, { prs, agak, eloRendben, ma = new Date(), maxNyi
   const prAgak = new Set(prs.map((p) => p.headRefName));
   let nyitott = 0;
 
+  // Slugonként a legújabb PR (legnagyobb number) dönt; a régebbiek figyelmen kívül maradnak.
+  const legujabb = new Map();
   for (const p of prs) {
     const slug = slugOf(p.headRefName);
     if (!slug) continue;
-    const t = byId[slug];
+    const elozo = legujabb.get(slug);
+    if (!elozo || p.number > elozo.number) legujabb.set(slug, p);
+  }
+  const agVan = new Set(agak);
+
+  for (const [slug, p] of legujabb) {
+    const temaSorAg = slug.startsWith('tema-sor-'); // a C-rész PR-ja: csak a téma-sort viszi, témája nincs
+    const t = temaSorAg ? undefined : byId[slug];
     if (p.state === 'OPEN') {
-      nyitott++;
+      if (!temaSorAg) nyitott++;
       const kor = (ma - new Date(p.createdAt)) / 86_400_000;
       if (kor > emlekeztetoNap) teendok.push({ tipus: 'emlekezteto', number: p.number, slug });
     } else if (p.state === 'MERGED') {
-      if (t && t.allapot === 'draft') {
-        if (eloRendben[slug]) { t.allapot = 'live'; t.allapotDatum = iso(ma); teendok.push({ tipus: 'ag-torles', slug }); }
+      let torles = false;
+      if (temaSorAg) torles = true;
+      else if (t && t.allapot === 'draft') {
+        if (eloRendben[slug]) { t.allapot = 'live'; t.allapotDatum = iso(ma); torles = true; }
         else teendok.push({ tipus: 'ujra-nez', slug });
       }
+      if (torles && agVan.has(p.headRefName)) teendok.push({ tipus: 'ag-torles', slug });
     } else if (p.state === 'CLOSED') {
       if (t && t.allapot === 'draft') {
         t.allapot = 'topic'; t.allapotDatum = null;
         t.kizarva = { datum: iso(ma), ok: p.zaroKomment || 'bezárva indoklás nélkül' };
       }
-      teendok.push({ tipus: 'ag-torles', slug });
+      if (agVan.has(p.headRefName)) teendok.push({ tipus: 'ag-torles', slug });
     }
   }
   for (const ag of agak) {
     const slug = slugOf(ag);
-    if (slug && !prAgak.has(ag)) teendok.push({ tipus: 'felbemaradt', slug });
+    if (slug && !slug.startsWith('tema-sor-') && !prAgak.has(ag)) teendok.push({ tipus: 'felbemaradt', slug });
   }
   return { temaSor: { ...temaSor, items }, teendok, nyitott, irhat: nyitott < maxNyitott };
 }
