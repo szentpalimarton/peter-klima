@@ -17,7 +17,7 @@ export function javaslatok(sorok, { temaSor, oldalak, ma = new Date(), max = 3, 
   const ids = new Set(temaSor.items.map((t) => t.id));
   const lefedett = (q) => oldalak.some((o) => { const m = ekezetlen(`${o.cim} ${o.elsodleges ?? ''}`).toLowerCase(); return szavak(ekezetlen(q)).every((sz) => m.includes(to(sz))); });
   return [...osszes.values()]
-    .filter((e) => e.megjelenes >= minMegjelenes && e.kattintas === 0 && !megvan.has(e.lekerdezes) && !ids.has(slugosit(e.lekerdezes)) && !lefedett(e.lekerdezes))
+    .filter((e) => slugosit(e.lekerdezes).length >= 3 && e.megjelenes >= minMegjelenes && e.kattintas === 0 && !megvan.has(e.lekerdezes) && !ids.has(slugosit(e.lekerdezes)) && !lefedett(e.lekerdezes))
     .sort((a, b) => b.megjelenes - a.megjelenes)
     .slice(0, max)
     .map((e) => ({

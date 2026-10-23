@@ -77,3 +77,39 @@ test('tema-sor ág: merge-elt vagy bezárt → ág-törlés csak ha az ág még 
   const nincs = rendez({ items: [tema('a')] }, { prs: [pr(5, 'CLOSED', 'tema-sor-2026-10-26')], agak: [], eloRendben: {}, ma });
   assert.ok(!nincs.teendok.some((t) => t.tipus === 'ag-torles'));
 });
+
+// A main-en a draft állapot nem látszik (csak a PR-ágon van): a PR állapota dönt a topic témán is.
+const topicTema = (id) => ({ ...tema(id, 'topic'), allapotDatum: null });
+
+test('main-en még topic, nyitott PR → draft a PR dátumával', () => {
+  const r = rendez({ items: [topicTema('a')] }, { prs: [pr(1, 'OPEN', 'a', { createdAt: '2026-10-20T09:00:00Z' })], agak: ['cikk/a'], eloRendben: {}, ma });
+  assert.equal(r.temaSor.items[0].allapot, 'draft');
+  assert.equal(r.temaSor.items[0].allapotDatum, '2026-10-20');
+  assert.equal(r.nyitott, 1);
+});
+
+test('main-en még topic, bezárt PR → kizárva', () => {
+  const r = rendez({ items: [topicTema('a')] }, { prs: [pr(1, 'CLOSED', 'a', { zaroKomment: 'nem kell' })], agak: [], eloRendben: {}, ma });
+  assert.equal(r.temaSor.items[0].allapot, 'topic');
+  assert.equal(r.temaSor.items[0].allapotDatum, null);
+  assert.deepEqual(r.temaSor.items[0].kizarva, { datum: '2026-10-26', ok: 'nem kell' });
+});
+
+test('main-en még topic, merge-elt és élő → live', () => {
+  const r = rendez({ items: [topicTema('a')] }, { prs: [pr(1, 'MERGED', 'a')], agak: ['cikk/a'], eloRendben: { a: true }, ma });
+  assert.equal(r.temaSor.items[0].allapot, 'live');
+  assert.equal(r.temaSor.items[0].allapotDatum, '2026-10-26');
+  assert.ok(r.teendok.some((t) => t.tipus === 'ag-torles' && t.slug === 'a'));
+});
+
+test('már kizárt topic témán a bezárt PR nem írja újra a kizárást', () => {
+  const kizart = { ...topicTema('a'), kizarva: { datum: '2026-10-19', ok: 'régi ok' } };
+  const r = rendez({ items: [kizart] }, { prs: [pr(1, 'CLOSED', 'a', { zaroKomment: 'régi ok' })], agak: [], eloRendben: {}, ma });
+  assert.deepEqual(r.temaSor.items[0], kizart);
+});
+
+test('élő témán a bezárt PR nem ír kizárást', () => {
+  const r = rendez({ items: [tema('a', 'live')] }, { prs: [pr(1, 'CLOSED', 'a')], agak: [], eloRendben: {}, ma });
+  assert.equal(r.temaSor.items[0].allapot, 'live');
+  assert.equal(r.temaSor.items[0].kizarva, null);
+});

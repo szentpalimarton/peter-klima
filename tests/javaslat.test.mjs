@@ -36,3 +36,13 @@ test('ékezet nélküli lekérdezés is lefedett, ha van rá oldal', () => {
   const r = javaslatok([{ query: 'budos klima', page: '/z/', impressions: 20, clicks: 0, position: 8 }], { temaSor, oldalak, ma });
   assert.equal(r.length, 0);
 });
+
+test('3 karakternél rövidebb slugú lekérdezés nem lesz javaslat', () => {
+  // oldalak üres: így csak a slug-hossz szűr
+  const r = javaslatok([
+    { query: 'ár', page: '/', impressions: 50, clicks: 0, position: 9 },
+    { query: '!!', page: '/', impressions: 40, clicks: 0, position: 9 },
+    { query: 'napelem mosás', page: '/', impressions: 10, clicks: 0, position: 9 },
+  ], { temaSor, oldalak: [], ma });
+  assert.deepEqual(r.map((x) => x.id), ['napelem-mosas']);
+});

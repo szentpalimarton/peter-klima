@@ -51,6 +51,11 @@ export function kapu(szoveg, { slug, letezik, tiltott, hirszavak }) {
       if (SZAM.test(mondat) && !KULSO.test(b) && !/tapasztalat/i.test(mondat)) failures.push(`szám forráslink nélkül: „${mondat.trim().slice(0, 60)}…”`);
     }
   }
+  // a fejlécben (description, faq-válaszok) nem lehet forráslink, ezért ott a szám maga a hiba
+  const fejlecSzovegek = [['description', f.description], ...(Array.isArray(f.faq) ? f.faq.map((x, i) => [`faq[${i}]`, x?.a]) : [])];
+  for (const [nev, s] of fejlecSzovegek) {
+    if (typeof s === 'string' && SZAM.test(s) && !/tapasztalat/i.test(s)) failures.push(`szám a fejlécben forrás nélkül: ${nev}`);
+  }
 
   // 6. elsődleges kulcsszó a címben vagy a ledében (szótövek első 5 karaktere)
   const lede = blokkok[0] ?? '';

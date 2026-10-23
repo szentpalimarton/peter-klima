@@ -96,3 +96,18 @@ test('rövidítés nem töri meg a mondatot, a tapasztalat-kivétel marad', () =
   const r = kapu(`${jo}\n\nPéter tapasztalata szerint kb. 20% a többlet.\n`, opts);
   assert.deepEqual(r.failures, []);
 });
+
+test('szám a fejléc description mezőjében forrás nélkül bukik', () => {
+  const r = kapu(jo.replace('a kosz."', 'a kosz, 20% a veszteség."'), opts);
+  assert.ok(r.failures.some((f) => f === 'szám a fejlécben forrás nélkül: description'), r.failures.join('; '));
+});
+
+test('szám a fejléc faq-válaszában forrás nélkül bukik', () => {
+  const r = kapu(jo.replace('a: "V2."', 'a: "A munka 35 ezer Ft."'), opts);
+  assert.ok(r.failures.some((f) => f === 'szám a fejlécben forrás nélkül: faq[1]'), r.failures.join('; '));
+});
+
+test('tapasztalat-mondat a faq-válaszban átmegy', () => {
+  const r = kapu(jo.replace('a: "V1."', 'a: "Péter tapasztalata szerint akár 15–20%."'), opts);
+  assert.deepEqual(r.failures, []);
+});

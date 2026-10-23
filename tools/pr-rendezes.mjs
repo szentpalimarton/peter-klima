@@ -13,7 +13,9 @@ const temaSorUt = path.join(ROOT, 'src/data/tema-sor.json');
 const temaSor = JSON.parse(fs.readFileSync(temaSorUt, 'utf8'));
 
 const gh = JSON.parse(execFileSync('gh', ['pr', 'list', '--label', 'cikk-kor', '--state', 'all', '--limit', '30', '--json', 'number,state,headRefName,createdAt,comments'], { cwd: ROOT, encoding: 'utf8' }));
-const prs = gh.map((p) => ({ number: p.number, state: p.state, headRefName: p.headRefName, createdAt: p.createdAt, zaroKomment: p.comments?.at(-1)?.body?.trim() || null }));
+// A záró komment a legutolsó, ami nem a kör saját emlékeztetője.
+const zaro = (comments = []) => comments.map((c) => c.body?.trim()).filter((b) => b && !b.startsWith('Emlékeztető:')).at(-1) ?? null;
+const prs = gh.map((p) => ({ number: p.number, state: p.state, headRefName: p.headRefName, createdAt: p.createdAt, zaroKomment: zaro(p.comments) }));
 const agak = execFileSync('git', ['ls-remote', '--heads', 'origin', 'refs/heads/cikk/*'], { cwd: ROOT, encoding: 'utf8' })
   .split('\n').filter(Boolean).map((s) => s.split('refs/heads/')[1]);
 
@@ -30,5 +32,5 @@ for (const p of prs) if (p.state === 'MERGED') { const slug = p.headRefName.slic
 
 const r = rendez(temaSor, { prs, agak, eloRendben, ma: new Date() });
 const valtozott = JSON.stringify(r.temaSor.items) !== JSON.stringify(temaSor.items);
-if (valtozott && !proba) fs.writeFileSync(temaSorUt, `${JSON.stringify({ ...r.temaSor, frissitve: new Date().toISOString().slice(0, 10) }, null, 2)}\n`);
+if (valtozott && !proba) fs.writeFileSync(temaSorUt, `${JSON.stringify(r.temaSor, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify({ nyitott: r.nyitott, irhat: r.irhat, temaSorValtozott: valtozott, teendok: r.teendok, proba }, null, 2)}\n`);

@@ -32,7 +32,6 @@ for (const t of temaSor.items) oldalak.push({ cim: t.kerdes, elsodleges: t.elsod
 const uj = javaslatok(sorok, { temaSor, oldalak, ma: new Date() });
 if (uj.length && !proba) {
   temaSor.items.push(...uj);
-  temaSor.frissitve = new Date().toISOString().slice(0, 10);
   fs.writeFileSync(temaSorUt, `${JSON.stringify(temaSor, null, 2)}\n`);
 }
 process.stdout.write(`${JSON.stringify({ felvett: uj, proba }, null, 2)}\n`);
