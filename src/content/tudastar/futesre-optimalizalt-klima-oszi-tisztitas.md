@@ -45,8 +45,8 @@ Mit hoz az egyes beavatkozás, a források szerint:
 | Beavatkozás | Várható hatás | Forrás |
 |-------------|---------------|--------|
 | Szűrő tisztítása vagy cseréje | kisebb energiaköltség, kisebb az idő előtti meghibásodás kockázata | <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">ENERGY STAR</a> |
-| A légáramlás rendbetétele (hűtési karbantartás) | akár 15 százalékkal jobb hatásfok; ez a forrás hűtésre vonatkozó adata | <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">ENERGY STAR</a> |
-| A beltéri egység belsejének tisztítása, fertőtlenítése | eltűnik a nedves rétegben megtelepedett baktérium és gomba | <a href="https://www.bosch-homecomfort.com/hu/hu/residential/tudas/klima/kellemetlen-szagot-araszt-a-legkondicionalo-lehetseges-okok-megoldasok-es-tippek/" rel="nofollow">Bosch</a> |
+| A légáramlás rendbetétele (hűtési karbantartás) | a légáramlási problémák okozta hatásfokromlás mérséklése; a forrás szerint ez a romlás hűtési üzemben akár 15 százalék | <a href="https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist" rel="nofollow">ENERGY STAR</a> |
+| A beltéri egység belsejének tisztítása, fertőtlenítése | a lerakódott szennyeződés eltávolítása, a baktériumok felhalmozódásának megelőzése | <a href="https://www.bosch-homecomfort.com/hu/hu/residential/tudas/klima/kellemetlen-szagot-araszt-a-legkondicionalo-lehetseges-okok-megoldasok-es-tippek/" rel="nofollow">Bosch</a> |
 
 Ha a klíma bekapcsoláskor dohos szagot áraszt, az is jelzi, hogy tisztításra szorul. Erről a [Miért büdös a klíma?](/tudastar/miert-budos-a-klima/) cikkben írtunk bővebben.
 
