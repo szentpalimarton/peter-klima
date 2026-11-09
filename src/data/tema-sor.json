@@ -235,6 +235,37 @@
       "allapotDatum": null,
       "adat": null,
       "kizarva": null
+    },
+    {
+      "id": "napelem-mosas-arak",
+      "kerdes": "Napelem mosás árak?",
+      "elsodleges": "napelem mosás árak",
+      "bokor": "napelem",
+      "szezon": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "forras": "gsc",
+      "allapot": "topic",
+      "allapotDatum": null,
+      "adat": {
+        "lekerdezes": "napelem mosás árak",
+        "megjelenes": 6,
+        "kattintas": 0,
+        "pozicio": 9.8,
+        "ablak": "28 nap, 2026-11-09-ig"
+      },
+      "kizarva": null
     }
   ]
 }
