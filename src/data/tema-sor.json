@@ -29,7 +29,7 @@
         11
       ],
       "forras": "szezon",
-      "allapot": "draft",
+      "allapot": "live",
       "allapotDatum": "2026-10-26",
       "adat": null,
       "kizarva": null
@@ -54,8 +54,8 @@
         12
       ],
       "forras": "ugyfel",
-      "allapot": "topic",
-      "allapotDatum": null,
+      "allapot": "draft",
+      "allapotDatum": "2026-11-09",
       "adat": null,
       "kizarva": null
     },
