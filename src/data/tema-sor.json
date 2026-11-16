@@ -54,7 +54,7 @@
         12
       ],
       "forras": "ugyfel",
-      "allapot": "draft",
+      "allapot": "live",
       "allapotDatum": "2026-11-09",
       "adat": null,
       "kizarva": null
@@ -256,8 +256,8 @@
         12
       ],
       "forras": "gsc",
-      "allapot": "topic",
-      "allapotDatum": null,
+      "allapot": "draft",
+      "allapotDatum": "2026-11-16",
       "adat": {
         "lekerdezes": "napelem mosás árak",
         "megjelenes": 6,
