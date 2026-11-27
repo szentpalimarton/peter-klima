@@ -36,7 +36,7 @@ Részben igen, de a rátapadt levelet és a beszáradt madárürüléket által�
 
 Az IEA PVPS adatlapja szerint az eső tisztító hatása a szennyeződési modellek egyik legnagyobb bizonytalansága: <a href="https://iea-pvps.org/wp-content/uploads/2025/09/Fact-Sheet-Task-1316-Soiling.pdf" rel="nofollow">a veszteségtérképeik csak napi 5 mm-nél több esőnél feltételeznek tisztulást</a>, és a makacs szennyeződést leíró forgatókönyvben ilyenkor is csak a részecskék tizede távozik. A laposabb dőlésszögű paneleken a víz lassan folyik le, és a törmelék az alsó keret mentén gyűlik össze.
 
-Ezért az esős ősz után is érdemes felnézni a panelekre. Ha a levelek és a foltok ott maradtak, a panel egész télen velük termel.
+Ezért az esős ősz után is érdemes felnézni a panelekre. Ha a levelek és a foltok ott maradtak, a panel egész télen velük termel. A havat viszont általában nem kell levenni a panelről; hogy miért, azt a [hó és jég a napelemen](/tudastar/ho-es-jeg-a-napelemen/) című cikkünk írja le.
 
 ## Mit tehet maga ősszel?
 

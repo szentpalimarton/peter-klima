@@ -54,7 +54,7 @@
         12
       ],
       "forras": "ugyfel",
-      "allapot": "draft",
+      "allapot": "live",
       "allapotDatum": "2026-11-09",
       "adat": null,
       "kizarva": null
@@ -71,8 +71,8 @@
         2
       ],
       "forras": "szezon",
-      "allapot": "topic",
-      "allapotDatum": null,
+      "allapot": "draft",
+      "allapotDatum": "2026-11-23",
       "adat": null,
       "kizarva": null
     },
@@ -265,7 +265,10 @@
         "pozicio": 9.8,
         "ablak": "28 nap, 2026-11-09-ig"
       },
-      "kizarva": null
+      "kizarva": {
+        "datum": "2026-11-16",
+        "ok": "Márton döntése: a cikk nem kell. A „napelem mosás árak” lekérdezést a /arak/ oldal és a /tudastar/napelem-tisztitas-arak-2026/ cikk már lefedi, egy harmadik ár-oldal csak versengene velük. A téma kizárva a téma-sorból."
+      }
     }
   ]
 }
